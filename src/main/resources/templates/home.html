@@ -7,36 +7,48 @@
 </head>
 <body>
   <h3>Home</h3>
-  <th:block th:switch="${session.login == null}">
-    <th:block th:case=true>
+  <div th:if="${session.login == null}">
       <button type="button" id="btn-login">LOGIN</button>
       <button type="button" id="btn-join">JOIN</button>
-    </th:block>
-    <th:block th:case=false>
+  </div>
+  <div th:if="${session.login != null}">
       <button type="button" id="btn-member">MEMBER</button>
       <button type="button" id="btn-logout">LOGOUT</button>
-    </th:block>
-  </th:block>
+  </div>
 
   <!-- Javascript -->
   <script>
     // 로그인 페이지로 이동
     const btnLogin = document.getElementById('btn-login');
-    btnLogin.addEventListener('click', () => {
-      location.href = '/login';
-    });
+    if (btnLogin != null) {
+      btnLogin.addEventListener('click', () => {
+        location.href = '/login';
+      });
+    }
+
+    // 로그아웃
+    const btnLogout = document.getElementById('btn-logout');
+    if (btnLogout != null) {
+      btnLogout.addEventListener('click', () => {
+        location.href = '/logout';
+      });
+    }
 
     // 회원가입 페이지로 이동
     const btnJoin = document.getElementById('btn-join');
-    btnJoin.addEventListener('click', () => {
-      location.href = '/member/add';
-    });
+    if (btnJoin != null) {
+      btnJoin.addEventListener('click', () => {
+        location.href = '/member/add';
+      });
+    }
 
     // 회원목록 페이지로 이동
     const btnMember = document.getElementById('btn-member');
-    btnMember.addEventListener('click', () => {
-      location.href = '/member/list';
-    });
+    if (btnMember != null) {
+      btnMember.addEventListener('click', () => {
+        location.href = '/member/list';
+      });
+    }
   </script>
 </body>
 </html>
