@@ -1,14 +1,17 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <title>LOGIN</title>
 </head>
 <body>
   <h3>Login</h3>
-  <form action="/login" method="post">
-    <input type="text" name="email" placeholder="email" />
-    <input type="password" name="password" placeholder="password" />
+  <form th:action="@{/login}" th:object="${loginForm}" method="post">
+    <input type="text" th:field="*{email}" placeholder="email" />
+    <span th:errors="*{email}"></span>
+    <input type="password" th:field="*{password}" placeholder="password" />
+    <span th:errors="*{password}"></span>
     <button type="submit">LOGIN</button>
   </form>
 </body>

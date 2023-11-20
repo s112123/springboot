@@ -1,14 +1,19 @@
 package org.demo.app.web.login.controller;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.demo.app.web.login.dto.LoginForm;
 import org.demo.app.web.login.service.LoginService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
+@Slf4j
 @Controller
 @RequiredArgsConstructor
 public class LoginController {
@@ -16,21 +21,27 @@ public class LoginController {
     private final LoginService loginService;
 
     @GetMapping("/login")
-    public String loginForm() {
+    public String loginForm(Model model) {
+        model.addAttribute("loginForm", new LoginForm());
         return "login";
     }
 
     @PostMapping("/login")
-    public String login(LoginForm loginForm, HttpSession session) {
+    public String login(@Valid LoginForm loginForm, BindingResult bindingResult, HttpSession session) {
+        if (bindingResult.hasErrors()) {
+            return "login";
+        }
+
         boolean isLogin = loginService.isLogin(loginForm);
 
-        // 세션 생성
+        // 로그인 성공시, 세션 생성
         if (isLogin) {
             session.setAttribute("login", loginForm.getEmail());
             return "redirect:/";
+        } else {
+            log.info("비밀번호가 일치하지 않습니다");
+            return "login";
         }
-
-        return "login";
     }
 
     @GetMapping("/logout")
