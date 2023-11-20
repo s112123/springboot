@@ -26,7 +26,7 @@ class LoginServiceImplTest {
         loginForm.setEmail("a1234@naver.com");
         loginForm.setPassword("1234");
 
-        boolean isLogin = loginService.login(loginForm);
+        boolean isLogin = loginService.isLogin(loginForm);
         assertThat(isLogin).isTrue();
     }
 }

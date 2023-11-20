@@ -7,5 +7,5 @@ public interface LoginService {
     // 로그인
     // email로 회원을 조회하고 비밀번호 일치 여부를 확인
     // 로그인 되면 true, 로그인이 되지 않으면 false
-    boolean login(LoginForm loginForm);
+    boolean isLogin(LoginForm loginForm);
 }

@@ -1,7 +1,6 @@
 package org.demo.app.web.login.service;
 
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.demo.app.web.login.dto.LoginForm;
 import org.demo.app.web.login.repository.LoginRepository;
 import org.demo.app.web.member.domain.Member;
@@ -9,7 +8,6 @@ import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-@Slf4j
 @Service
 @Transactional
 @RequiredArgsConstructor
@@ -18,7 +16,7 @@ public class LoginServiceImpl implements LoginService {
     private final LoginRepository loginRepository;
 
     @Override
-    public boolean login(LoginForm loginForm) {
+    public boolean isLogin(LoginForm loginForm) {
         Member member = loginRepository.findMemberByEmail(loginForm.getEmail());
         return isMatchPassword(loginForm, member);
     }
