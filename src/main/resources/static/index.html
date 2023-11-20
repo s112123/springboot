@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>HOME</title>
+</head>
+<body>
+  <h3>Home</h3>
+  <button type="button" id="btn-join">JOIN</button>
+  <button type="button" id="btn-member">MEMBER</button>
+
+  <!-- Javascript -->
+  <script>
+    // 회원가입 페이지로 이동
+    const btnJoin = document.getElementById('btn-join');
+    btnJoin.addEventListener('click', () => {
+      location.href = '/member/add';
+    });
+
+    // 회원목록 페이지로 이동
+    const btnMember = document.getElementById('btn-member');
+    btnMember.addEventListener('click', () => {
+      location.href = '/member/list';
+    });
+  </script>
+</body>
+</html>
