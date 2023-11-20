@@ -9,5 +9,6 @@ public interface MemberRepository {
     Long save(Member member);
 
     // 회원조회
+    // memberId로 조회
     Member findMemberById(Long memberId);
 }

@@ -8,7 +8,7 @@
     values (#{email}, #{password}, #{username})
   </insert>
 
-  <!-- 조회하기 -->
+  <!-- 조회하기: memberId로 조회 -->
   <select id="selectOneById" resultType="org.demo.app.web.member.domain.Member">
     select member_id,
            email,
@@ -19,4 +19,5 @@
     from member
     where member_id = #{memberId}
   </select>
+
 </mapper>

@@ -11,5 +11,6 @@ public interface MemberMapper {
     void insertOne(Member member);
 
     // 회원조회
+    // memberId로 조회
     Member selectOneById(Long memberId);
 }

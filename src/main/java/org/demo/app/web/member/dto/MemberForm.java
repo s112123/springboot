@@ -24,10 +24,4 @@ public class MemberForm {
     public void encrypt(String password) {
         this.password = BCrypt.hashpw(password, BCrypt.gensalt());
     }
-
-    // 비밀번호 복호화 검증
-    // 비밀번호가 일치하면 true, 그렇지 않으면 false
-    public boolean decrypt(Member member, String password) {
-        return BCrypt.checkpw(member.getPassword(), password);
-    }
 }

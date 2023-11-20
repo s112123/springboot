@@ -10,6 +10,7 @@ public interface MemberService {
     Long addMember(MemberForm memberForm);
 
     // 회원조회
+    // memberId로 조회
     MemberForm getMemberById(Long memberId);
 
     // MemberForm (DTO) → Member (Entity)

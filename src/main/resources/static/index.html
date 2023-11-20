@@ -6,11 +6,18 @@
 </head>
 <body>
   <h3>Home</h3>
+  <button type="button" id="btn-login">LOGIN</button>
   <button type="button" id="btn-join">JOIN</button>
   <button type="button" id="btn-member">MEMBER</button>
 
   <!-- Javascript -->
   <script>
+    // 로그인 페이지로 이동
+    const btnLogin = document.getElementById('btn-login');
+    btnLogin.addEventListener('click', () => {
+      location.href = '/login';
+    });
+
     // 회원가입 페이지로 이동
     const btnJoin = document.getElementById('btn-join');
     btnJoin.addEventListener('click', () => {
