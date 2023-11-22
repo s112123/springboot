@@ -34,7 +34,6 @@ public class LoginController {
             HttpSession session,
             @RequestParam(defaultValue = "/") String redirectURI
     ) {
-        log.info("redirectURI = {}", redirectURI);
         if (bindingResult.hasErrors()) {
             return "login";
         }
