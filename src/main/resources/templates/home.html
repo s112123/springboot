@@ -1,54 +1,10 @@
 <!DOCTYPE html>
-<html lang="ko"
-      xmlns:th="http://www.thymeleaf.org">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <title>HOME</title>
 </head>
 <body>
   <h3>Home</h3>
-  <div th:if="${session.login == null}">
-      <button type="button" id="btn-login">LOGIN</button>
-      <button type="button" id="btn-join">JOIN</button>
-  </div>
-  <div th:if="${session.login != null}">
-      <button type="button" id="btn-member">MEMBER</button>
-      <button type="button" id="btn-logout">LOGOUT</button>
-  </div>
-
-  <!-- Javascript -->
-  <script>
-    // 로그인 페이지로 이동
-    const btnLogin = document.getElementById('btn-login');
-    if (btnLogin != null) {
-      btnLogin.addEventListener('click', () => {
-        location.href = '/login';
-      });
-    }
-
-    // 로그아웃
-    const btnLogout = document.getElementById('btn-logout');
-    if (btnLogout != null) {
-      btnLogout.addEventListener('click', () => {
-        location.href = '/logout';
-      });
-    }
-
-    // 회원가입 페이지로 이동
-    const btnJoin = document.getElementById('btn-join');
-    if (btnJoin != null) {
-      btnJoin.addEventListener('click', () => {
-        location.href = '/member/add';
-      });
-    }
-
-    // 회원목록 페이지로 이동
-    const btnMember = document.getElementById('btn-member');
-    if (btnMember != null) {
-      btnMember.addEventListener('click', () => {
-        location.href = '/member/list';
-      });
-    }
-  </script>
 </body>
 </html>

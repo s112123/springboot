@@ -1,0 +1,17 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.demo.app.init.repository.mapper.InitMapper">
+
+  <!-- 임시회원등록 -->
+  <insert id="insertMembers">
+    insert into member (email, password, username)
+    values
+    <foreach collection="members" item="member" separator=", ">
+      (#{member.email}, #{member.password}, #{member.username})
+    </foreach>
+  </insert>
+
+  <!-- 전체회원삭제 -->
+  <delete id="deleteMembers">
+    delete from member
+  </delete>
+</mapper>

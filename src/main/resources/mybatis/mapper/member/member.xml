@@ -1,23 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.demo.app.web.member.repository.mapper.MemberMapper">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.demo.app.member.repository.mapper.MemberMapper">
 
   <!-- 회원등록 -->
-  <insert id="insertOne" useGeneratedKeys="true" keyProperty="memberId">
+  <insert id="insertOne">
     insert into member (email, password, username)
     values (#{email}, #{password}, #{username})
   </insert>
-
-  <!-- 조회하기: memberId로 조회 -->
-  <select id="selectOneById" resultType="org.demo.app.web.member.domain.Member">
-    select member_id,
-           email,
-           password,
-           username,
-           reg_date,
-           mod_date
-    from member
-    where member_id = #{memberId}
-  </select>
-
 </mapper>
