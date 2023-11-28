@@ -1,8 +1,8 @@
 package org.demo.app.init.service;
 
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.demo.app.init.repository.InitRepository;
+import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -10,7 +10,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@Slf4j
 @Service
 @RequiredArgsConstructor
 public class InitService {
@@ -20,10 +19,10 @@ public class InitService {
     public void addMembers() {
         List<Map<String, String>> members = new ArrayList<>();
 
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 10; i++) {
             Map<String, String> map = new HashMap<>();
             map.put("email", "temp" + i + "@naver.com");
-            map.put("password", "1234");
+            map.put("password", BCrypt.hashpw("1234", BCrypt.gensalt()));
             map.put("username", ((i % 2 == 0) ? "lee" : "kim") + i);
             members.add(map);
         }

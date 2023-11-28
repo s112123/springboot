@@ -16,7 +16,7 @@ public class InitConfig {
     public void init() {
         // 전체회원삭제
         initService.removeMembers();
-        // 임시회원등록 (100명)
+        // 임시회원등록 (10명)
         initService.addMembers();
     }
 }
