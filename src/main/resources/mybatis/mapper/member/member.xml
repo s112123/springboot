@@ -6,4 +6,11 @@
     insert into member (email, password, username)
     values (#{email}, #{password}, #{username})
   </insert>
+
+  <!-- 중복 이메일 조회 -->
+  <select id="selectOneByEmail" resultType="int">
+    select count(*)
+    from member
+    where email = #{email}
+  </select>
 </mapper>

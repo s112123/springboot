@@ -6,4 +6,7 @@ public interface MemberRepository {
 
     // 회원등록
     Long save(Member member);
+
+    // 중복 이메일 조회
+    int countByEmail(String email);
 }

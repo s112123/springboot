@@ -8,4 +8,7 @@ public interface MemberMapper {
 
     // 회원등록
     void insertOne(Member member);
+
+    // 중복 이메일 조회
+    int selectOneByEmail(String email);
 }

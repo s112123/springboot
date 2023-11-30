@@ -13,7 +13,13 @@ public class MemberRepositoryImpl implements MemberRepository {
 
     @Override
     public Long save(Member member) {
-         memberMapper.insertOne(member);
+        memberMapper.insertOne(member);
         return member.getMemberId();
+    }
+
+    @Override
+    public int countByEmail(String email) {
+        int result = memberMapper.selectOneByEmail(email);
+        return result;
     }
 }
