@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout.html}">
+<head>
+  <title>SIGN UP</title>
+  <link rel="stylesheet" href="/css/sign_up.css" />
+</head>
+<body>
+  <div layout:fragment="content" class="container">
+    <div class="sign-up-box">
+      <h2>회원가입</h2>
+      <form>
+        <div class="sign-up-item">
+          <label for="#">이메일</label>
+          <input type="text" placeholder="email@email.com" />
+          <small></small>
+        </div>
+        <div class="sign-up-item">
+          <label for="#">비밀번호</label>
+          <input type="password" placeholder="*****" />
+          <small></small>
+        </div>
+        <div class="sign-up-item">
+          <label for="#">비밀번호 확인</label>
+          <input type="password" placeholder="*****" />
+          <small></small>
+        </div>
+        <button id="btn-sign-up">가입하기</button>
+      </form>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout.html}">
+<head>
+  <title>HOME</title>
+  <link rel="stylesheet" href="/css/index.css" />
+</head>
+<body>
+  <div layout:fragment="content" class="container">
+    <div class="reviews-top">
+      <ul class="reviews-top-left">
+        <li>최신 순</li>
+        <li>찜 많은 순</li>
+        <!--<li>가까운 순</li>-->
+      </ul>
+      <div class="reviews-top-right">
+        <button type="button" id="btn-review">리뷰쓰기</button>
+      </div>
+    </div>
+    <div class="reviews-middle">
+      <div class="review-wrap">
+        리뷰1
+      </div>
+      <div class="review-wrap">
+        리뷰2
+      </div>
+      <div class="review-wrap">
+        리뷰3
+      </div>
+      <div class="review-wrap">
+        리뷰4
+      </div>
+      <div class="review-wrap">
+        리뷰5
+      </div>
+      <div class="review-wrap">
+        리뷰6
+      </div>
+      <div class="review-wrap">
+        리뷰7
+      </div>
+    </div>
+    <div class="reviews-bottom">
+      paging
+    </div>
+  </div>
+</body>
+</html>

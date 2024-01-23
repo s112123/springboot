@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout.html}">
+<head>
+  <title>REVIEW</title>
+  <link rel="stylesheet" href="/css/review.css" />
+</head>
+<body>
+  <div layout:fragment="content" class="container">
+    <div class="review-top">
+      <div id="review-map">
+        map
+      </div>
+      <div id="review-store">
+        <div>가게명</div>
+        <div>주소</div>
+        <div>전화번호</div>
+        <div>평점</div>
+      </div>
+      <div id="review-writer">
+        <div class="writer-image">
+          <img src="#" art="profile-image" />
+        </div>
+        <div class="writer-info">
+          <p class="writer-name">닉네임</p>
+          <p class="writer-introduce">한줄소개</p>
+        </div>
+        <div class="writer-action">
+          <button id="btn-subscribe">구독하기</button>
+          <!--<button id="btn-subscribe-cancel">구독취소</button>-->
+          <button id="btn-send-message">쪽지보내기</button>
+          <button id="btn-chat">1:1 채팅</button>
+        </div>
+      </div>
+    </div>
+    <div class="review-middle">
+      <div class="review-content">
+        리뷰 내용
+      </div>
+    </div>
+    <div class="review-bottom">
+      <div>
+        리플
+      </div>
+      <div>
+        페이징
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
