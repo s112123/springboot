@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout.html}">
+<head>
+  <title>MYPAGE > CHAT</title>
+  <link rel="stylesheet" href="/css/mypage/fragments/aside.css" />
+  <link rel="stylesheet" href="/css/mypage/chat.css" />
+  <script defer src="/js/mypage/fragments/aside.js"></script>
+</head>
+<body>
+  <div layout:fragment="content" class="container">
+    <!-- aside -->
+    <div th:replace="mypage/fragments/aside::aside"></div>
+    <div class="chat-wrap">
+      <p>1:1 채팅 목록</p>
+      <div class="chat-box">
+        <div class="chat-list">
+          <ul>
+            <li>대화상대1</li>
+            <li>대화상대1</li>
+            <li>대화상대1</li>
+            <li>대화상대1</li>
+            <li>대화상대1</li>
+            <li>대화상대1</li>
+            <li>대화상대1</li>
+            <li>대화상대1</li>
+            <li>대화상대1</li>
+            <li>대화상대1</li>
+          </ul>
+        </div>
+        <div class="conversation">
+          <div class="conversation-view">
+            View
+          </div>
+          <div class="conversation-send">
+            <div>
+              <input type="text" placeholder="input message" />
+            </div>
+            <div>
+              <button>보내기</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

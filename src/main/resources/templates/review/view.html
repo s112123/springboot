@@ -5,7 +5,7 @@
       layout:decorate="~{layouts/layout.html}">
 <head>
   <title>REVIEW</title>
-  <link rel="stylesheet" href="/css/review.css" />
+  <link rel="stylesheet" href="/css/review/view.css" />
 </head>
 <body>
   <div layout:fragment="content" class="container">
@@ -14,10 +14,14 @@
         map
       </div>
       <div id="review-store">
-        <div>가게명</div>
-        <div>주소</div>
-        <div>전화번호</div>
-        <div>평점</div>
+        <div class="store-name">가게명</div>
+        <div class="store-address">주소</div>
+        <div class="store-mark">평점</div>
+        <div class="store-mark-graph"></div>
+        <button type="button" class="store-heart">
+          <i class="fa-solid fa-heart"></i>
+          <i class="fa-regular fa-heart"></i>
+        </button>
       </div>
       <div id="review-writer">
         <div class="writer-image">
@@ -30,7 +34,7 @@
         <div class="writer-action">
           <button id="btn-subscribe">구독하기</button>
           <!--<button id="btn-subscribe-cancel">구독취소</button>-->
-          <button id="btn-send-message">쪽지보내기</button>
+<!--          <button id="btn-send-message">쪽지보내기</button>-->
           <button id="btn-chat">1:1 채팅</button>
         </div>
       </div>
@@ -39,13 +43,24 @@
       <div class="review-content">
         리뷰 내용
       </div>
+      <div class="review-btn">
+        <button>HOME</button>
+        <button>수정</button>
+        <button>삭제</button>
+      </div>
     </div>
     <div class="review-bottom">
       <div>
-        리플
+        댓글 (0)
       </div>
       <div>
-        페이징
+        댓글쓰기
+      </div>
+      <div>
+        댓글뷰
+      </div>
+      <div>
+        댓글페이징
       </div>
     </div>
   </div>

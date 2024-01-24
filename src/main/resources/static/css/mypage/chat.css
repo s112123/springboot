@@ -1,0 +1,72 @@
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.chat-wrap {
+  width: 950px;
+  padding: 50px;
+}
+
+.chat-wrap p {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.chat-box {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.chat-box .chat-list {
+  width: 250px;
+  margin-right: 20px;
+  border: 1px solid rgb(180, 180, 180);
+  border-radius: 5px;
+}
+
+.chat-box .conversation {
+  width: 650px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+.chat-box .conversation .conversation-view {
+  width: 100%;
+  height: 550px;
+  padding: 25px 20px;
+  margin-bottom: 15px;
+  border: 1px solid rgb(180, 180, 180);
+  border-radius: 5px;
+}
+
+.chat-box .conversation .conversation-send {
+  display: flex;
+}
+
+.chat-box .conversation .conversation-send input {
+  width: 500px;
+  margin-right: 8px;
+  padding: 5px 8px;
+  border: 1px solid rgb(180, 180, 180);
+  border-radius: 5px;
+}
+
+.chat-box .conversation .conversation-send input::placeholder {
+	font-size: 13px;
+	font-weight: 300;
+	color: rgb(160, 160, 160);
+}
+
+.chat-box .conversation .conversation-send button {
+  width: 93px;
+  padding: 5px;
+  border: 1px solid rgb(210, 40, 40);
+  background-color: rgb(210, 40, 40);
+  border-radius: 5px;
+  color: #fff;
+}

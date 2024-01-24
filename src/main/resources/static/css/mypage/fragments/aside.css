@@ -1,0 +1,25 @@
+aside {
+  width: 250px;
+  height: 100vh;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+
+#aside ul {
+  list-style: none;
+  padding: 50px 0;
+}
+
+#aside ul li {
+  margin-bottom: 8px;
+  padding: 5px 20px;
+  cursor: pointer;
+}
+
+.active {
+  background-color: rgb(210, 40, 40);
+}
+
+.active a {
+  color: white;
+}
