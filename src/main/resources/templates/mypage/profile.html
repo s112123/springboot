@@ -2,17 +2,74 @@
 <html lang="ko"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="~{layouts/layout.html}">
+      layout:decorate="~{layouts/layout.html}" xmlns="http://www.w3.org/1999/html">
 <head>
   <title>MYPAGE > PROFILE</title>
   <link rel="stylesheet" href="/css/mypage/fragments/aside.css" />
-  <link rel="stylesheet" href="/css/mypage/view.css" />
+  <link rel="stylesheet" href="/css/mypage/profile.css" />
+  <script defer src="/js/mypage/fragments/aside.js"></script>
 </head>
 <body>
   <div layout:fragment="content" class="container">
     <div th:replace="mypage/fragments/aside::aside"></div>
     <div class="profile-wrap">
-      asdfasdf
+      <p>내 정보</p>
+      <div class="profile-box">
+        <div class="profile-box-top">
+          <div class="profile-image-box">
+            <div class="profile-image">
+              <img src="#" />
+              <form>
+                <input type="file" />
+              </form>
+            </div>
+          </div>
+          <div class="profile-information">
+            <div class="profile-information-item">
+              <p></p><label for="#">이메일</label></p>
+              <input type="text" placeholder="email" />
+            </div>
+            <div class="profile-information-item">
+              <p></p><label for="#">닉네임</label></p>
+              <input type="text" placeholder="nickname" />
+            </div>
+            <div class="profile-information-item">
+              <p></p><label for="#">한 줄 소개</label></p>
+              <input type="text" placeholder="description" />
+            </div>
+            <div class="profile-information-item">
+              <p></p><label for="#">비밀번호</label></p>
+              <input type="password" placeholder="password" />
+            </div>
+            <div class="profile-information-action">
+              <button type="button" id="update-my-info">변경</button>
+              <button type="button" id="withdraw-membership">회원탈퇴</button>
+            </div>
+          </div>
+        </div>
+        <div class="profile-box-bottom">
+          <div class="follow-list">
+            <p>내가 구독한 사람</p>
+            <ul>
+              <li class="follow-item">
+                <a href="#">대화상대1</a>
+                <button>구독취소</button>
+                <button>1:1채팅</button>
+              </li>
+            </ul>
+          </div>
+          <div class="follower-list">
+            <p>나를 구독한 사람</p>
+            <ul>
+              <li class="follower-item">
+                <a href="#">대화상대1</a>
+                <button>구독하기</button>
+                <button>1:1채팅</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </body>

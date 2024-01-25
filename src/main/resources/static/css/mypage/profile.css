@@ -2,11 +2,133 @@
   width: 100%;
   display: flex;
   justify-content: flex-start;
-  align-items: center;
 }
 
 .profile-wrap {
-  width: 900px;
-  height: 100vh;
+  width: 650px;
+  padding: 50px;
+}
+
+.profile-wrap p {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* TOP */
+.profile-box .profile-box-top {
+  border: 1px solid tomato;
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.profile-box .profile-box-top .profile-image-box {
+  width: 250px;
   border: 1px solid blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-box .profile-box-top .profile-image-box .profile-image {
+  border: 1px solid red;
+  text-align: center;
+}
+
+.profile-box .profile-box-top .profile-image-box .profile-image img {
+  border: 1px solid tomato;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 25px;
+  border-radius: 15px;
+}
+
+.profile-box .profile-box-top .profile-image-box .profile-image input {
+  border: 1px solid blue;
+}
+
+.profile-box .profile-box-top .profile-information {
+  border: 1px solid black;
+  margin-left: 15px;
+}
+
+.profile-box .profile-box-top .profile-information .profile-information-item {
+  margin-bottom: 8px;
+}
+
+.profile-box .profile-box-top .profile-information .profile-information-item label {
+  font-size: 13px;
+}
+
+.profile-box .profile-box-top .profile-information .profile-information-item input {
+  width: 280px;
+  height: 30px;
+  margin-top: 3px;
+  border: 1px solid rgb(180, 180, 180);
+  padding-left: 10px;
+}
+
+.profile-box .profile-box-top .profile-information .profile-information-item input::placeholder {
+	font-size: 12px;
+	font-weight: 300;
+	color: rgb(160, 160, 160);
+}
+
+.profile-box .profile-box-top .profile-information .profile-information-action {
+  float: right;
+}
+
+.profile-box .profile-box-top .profile-information .profile-information-action button {
+  width: 65px;
+  height: 25px;
+  margin-left: 3px;
+  border: 1px solid rgb(225, 225, 225);
+  background-color: rgb(225, 225, 225);
+  color: #000;
+}
+
+.profile-box .profile-box-top .profile-information .profile-information-action button:hover {
+  border: 1px solid rgb(210, 40, 40);
+  background-color: rgb(210, 40, 40);
+  color: white;
+  transition: 0.3s;
+}
+
+/* BOTTOM */
+.profile-box .profile-box-bottom {
+  border: 1px solid blue;
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile-box .profile-box-bottom p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.profile-box .profile-box-bottom ul {
+  list-style: none;
+}
+
+.profile-box .profile-box-bottom ul li {
+  height: 40px;
+  padding: 0px 10px;
+  border: 1px solid rgb(180, 180, 180);
+  cursor: pointer;
+}
+
+.chat-box .chat-list ul li a {
+  width: 100%;
+  line-height: 30px;
+}
+
+.profile-box .profile-box-bottom .follow-list {
+  border: 1px solid black;
+  width: 325px;
+}
+
+.profile-box .profile-box-bottom .follower-list {
+  border: 1px solid tomato;
+  width: 325px;
 }

@@ -4,15 +4,41 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layouts/layout.html}">
 <head>
-  <title>MYPAGE > PROFILE</title>
+  <title>MYPAGE > NOTIFICATION</title>
   <link rel="stylesheet" href="/css/mypage/fragments/aside.css" />
-  <link rel="stylesheet" href="/css/mypage/view.css" />
+  <link rel="stylesheet" href="/css/mypage/notification.css" />
+  <script defer src="/js/mypage/fragments/aside.js"></script>
 </head>
 <body>
   <div layout:fragment="content" class="container">
     <div th:replace="mypage/fragments/aside::aside"></div>
-    <div class="profile-wrap">
-      asdfasdf
+    <div class="notification-wrap">
+      <p>알림 내역</p>
+      <div class="notification-box">
+        <div class="notification-tool">
+          <div class="notification-no-read">읽지 않은 알림 <span class="no-read-count">0</span> 개</div>
+          <div><button type="button" id="all-read"><i class="fa-solid fa-check"></i>모두 읽음 표시</button></div>
+        </div>
+        <div class="notification-list">
+          <div class="notification-content">
+            <div>
+              <i class="fa-solid fa-circle fa-2xs"></i>
+              <a href="#">알림 내용</a>
+            </div>
+            <div>알림시간</div>
+          </div>
+          <div class="notification-content">
+            <div>
+              <i class="fa-solid fa-circle fa-2xs"></i>
+              <a href="#">알림 내용</a>
+            </div>
+            <div>알림시간</div>
+          </div>
+        </div>
+        <div class="my-reviews-pagination">
+          페이지
+        </div>
+      </div>
     </div>
   </div>
 </body>

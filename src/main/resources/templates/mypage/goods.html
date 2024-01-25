@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout.html}">
+<head>
+  <title>MYPAGE > GOODS</title>
+  <link rel="stylesheet" href="/css/mypage/fragments/aside.css" />
+  <link rel="stylesheet" href="/css/mypage/goods.css" />
+  <script defer src="/js/mypage/fragments/aside.js"></script>
+</head>
+<body>
+  <div layout:fragment="content" class="container">
+    <div th:replace="mypage/fragments/aside::aside"></div>
+    <div class="my-goods-wrap">
+      <p>내가 찜한 리뷰</p>
+      <div class="my-goods-box">
+        <div class="my-goods-list">
+          <table>
+            <thead>
+            <tr>
+              <th>column 1</th>
+              <th>column 2</th>
+              <th>column 3</th>
+              <th>column 4</th>
+              <th>column 5</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>data 1</td>
+              <td>data 2</td>
+              <td>data 3</td>
+              <td>data 4</td>
+              <td>data 5</td>
+            </tr>
+            <tr>
+              <td>data 1</td>
+              <td>data 2</td>
+              <td>data 3</td>
+              <td>data 4</td>
+              <td>data 5</td>
+            </tr>
+            <tr>
+              <td>data 1</td>
+              <td>data 2</td>
+              <td>data 3</td>
+              <td>data 4</td>
+              <td>data 5</td>
+            </tr>
+            <tr>
+              <td>data 1</td>
+              <td>data 2</td>
+              <td>data 3</td>
+              <td>data 4</td>
+              <td>data 5</td>
+            </tr>
+            <tr>
+              <td>data 1</td>
+              <td>data 2</td>
+              <td>data 3</td>
+              <td>data 4</td>
+              <td>data 5</td>
+            </tr>
+            <tr>
+              <td>data 1</td>
+              <td>data 2</td>
+              <td>data 3</td>
+              <td>data 4</td>
+              <td>data 5</td>
+            </tr>
+            <tr>
+              <td>data 1</td>
+              <td>data 2</td>
+              <td>data 3</td>
+              <td>data 4</td>
+              <td>data 5</td>
+            </tr>
+            <tr>
+              <td>data 1</td>
+              <td>data 2</td>
+              <td>data 3</td>
+              <td>data 4</td>
+              <td>data 5</td>
+            </tr>
+            <tr>
+              <td>data 1</td>
+              <td>data 2</td>
+              <td>data 3</td>
+              <td>data 4</td>
+              <td>data 5</td>
+            </tr>
+            <tr>
+              <td>data 1</td>
+              <td>data 2</td>
+              <td>data 3</td>
+              <td>data 4</td>
+              <td>data 5</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="my-goods-search">
+          <select name="my-goods-search-option">
+            <option>선택</option>
+            <option>작성자</option>
+            <option>제목</option>
+          </select>
+          <input type="text" id="search-keyword" placeholder="search" />
+          <button type="button">검색</button>
+        </div>
+        <div class="my-goods-pagination">
+          페이지
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

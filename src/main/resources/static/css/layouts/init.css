@@ -24,3 +24,30 @@ button {
   border: 0;
   cursor: pointer;
 }
+
+/* TABLE */
+table {
+	width: 100%;
+	margin: 10px 0;
+	border-collapse: collapse;
+}
+
+table tr {
+	height: 50px;
+	border: 1px solid #ccc;
+}
+
+table thead tr {
+	border-top: 3px solid rgb(52, 52, 54);
+}
+
+table th {
+	font-weight: bold;
+}
+
+table th, table td{
+	padding: 0 10px;
+	font-size: 14px;
+	text-align: center;
+	vertical-align: middle;
+}
