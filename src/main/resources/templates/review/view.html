@@ -40,9 +40,7 @@
       </div>
     </div>
     <div class="review-middle">
-      <div class="review-content">
-        리뷰 내용
-      </div>
+      <div class="review-content" th:utext="${reviewForm.content}"></div>
       <div class="review-btn">
         <button>HOME</button>
         <button>수정</button>
@@ -64,6 +62,5 @@
       </div>
     </div>
   </div>
-</div>
 </body>
 </html>

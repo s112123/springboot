@@ -1,0 +1,21 @@
+.container {
+  margin: 0 150px;
+  height: 100vh;
+}
+
+.review-add-wrap {
+  border: 1px solid blue;
+  margin-top: 30px;
+}
+
+/* CKEditor 5 start */
+/* 높이 설정 */
+.ck-editor__editable:not(.ck-editor__nested-editable) {
+  height: 500px;
+}
+
+/* 글자 크기 */
+.ck-content {
+  font-size: 14px;
+}
+/* CKEditor 5 end */
