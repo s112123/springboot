@@ -1,5 +1,6 @@
 package com.tasty.app.module.review.repository;
 
+import com.tasty.app.module.review.domain.Review;
 import com.tasty.app.module.review.form.ReviewForm;
 import com.tasty.app.module.review.repository.mapper.ReviewMapper;
 import lombok.RequiredArgsConstructor;
@@ -13,9 +14,11 @@ public class ReviewRepositoryImpl implements ReviewRepository {
 
     private final ReviewMapper reviewMapper;
 
+    // 등록된 reviewId 반환
     @Override
-    public void saveReview(ReviewForm reviewForm) {
-        reviewMapper.insertOne(reviewForm);
+    public Long saveReview(Review review) {
+        reviewMapper.insertOne(review);
+        return review.getReviewId();
     }
 
     @Override

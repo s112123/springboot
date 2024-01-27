@@ -4,13 +4,13 @@
 
   <!-- 리뷰 등록 -->
   <insert id="insertOne" useGeneratedKeys="true" keyProperty="reviewId">
-    insert into review (store, title, content)
-    values (#{store}, #{title}, #{content})
+    insert into review (title, content)
+    values (#{title}, #{content})
   </insert>
 
   <!-- 리뷰 조회 -->
   <select id="selectOneById" resultType="com.tasty.app.module.review.form.ReviewForm">
-    select review_id, store, title, content
+    select review_id, title, content
     from review
     where review_id = #{reviewId}
   </select>

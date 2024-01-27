@@ -1,6 +1,7 @@
 package com.tasty.app.module.review.service;
 
 import com.tasty.app.infra.file.FileUtils;
+import com.tasty.app.module.review.domain.Review;
 import com.tasty.app.module.review.form.ReviewForm;
 import com.tasty.app.module.review.repository.ReviewRepository;
 import lombok.RequiredArgsConstructor;
@@ -14,7 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 @RequiredArgsConstructor
 public class ReviewServiceImpl implements ReviewService {
 
-    //@Value("${review.image.dir}")
+    @Value("${review.upload.dir}")
     private String reviewUploadDir;
 
     private final ReviewRepository reviewRepository;
@@ -22,12 +23,15 @@ public class ReviewServiceImpl implements ReviewService {
 
     @Override
     public void addReview(ReviewForm reviewForm) {
-        reviewRepository.saveReview(reviewForm);
+        // DTO → Entity
+        Review review = Review.toReviewFromReviewForm(reviewForm);
+        Long reviewId = reviewRepository.saveReview(review);
+        log.info("reviewId={}", reviewId);
     }
 
     @Override
     public String uploadImage(MultipartFile multipartFile) {
-        return fileUtils.uploadFile(reviewUploadDir, multipartFile);
+        return  "/review/image/" + fileUtils.uploadFile(reviewUploadDir, multipartFile);
     }
 
     @Override

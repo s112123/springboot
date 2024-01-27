@@ -14,37 +14,63 @@
         map
       </div>
       <div id="review-store">
-        <div class="store-name">가게명</div>
-        <div class="store-address">주소</div>
-        <div class="store-mark">평점</div>
-        <div class="store-mark-graph"></div>
-        <button type="button" class="store-heart">
-          <i class="fa-solid fa-heart"></i>
-          <i class="fa-regular fa-heart"></i>
-        </button>
+        <div class="review-store-box">
+          <div class="store-name">가게이름</div>
+          <div class="store-address">주소</div>
+          <div class="store-mark">
+            <p>전체 평점</p>
+            <ul>
+              <li><i class="fa-solid fa-star"></i></li>
+              <li><i class="fa-solid fa-star"></i></li>
+              <li><i class="fa-solid fa-star"></i></li>
+              <li><i class="fa-solid fa-star"></i></li>
+              <li><i class="fa-solid fa-star"></i></li>
+            </ul>
+          </div>
+          <div class="store-mark">
+            <p>리뷰어 평점</p>
+            <ul>
+              <li><i class="fa-solid fa-star"></i></li>
+              <li><i class="fa-solid fa-star"></i></li>
+              <li><i class="fa-solid fa-star"></i></li>
+              <li><i class="fa-solid fa-star"></i></li>
+              <li><i class="fa-solid fa-star"></i></li>
+            </ul>
+          </div>
+          <div class="store-heart">
+            <a>
+              <i class="fa-regular fa-heart"></i>
+              <!--<i class="fa-solid fa-heart"></i>-->
+            </a>
+          </div>
+        </div>
       </div>
       <div id="review-writer">
-        <div class="writer-image">
-          <img src="#" art="profile-image" />
-        </div>
-        <div class="writer-info">
-          <p class="writer-name">닉네임</p>
-          <p class="writer-introduce">한줄소개</p>
-        </div>
-        <div class="writer-action">
-          <button id="btn-subscribe">구독하기</button>
-          <!--<button id="btn-subscribe-cancel">구독취소</button>-->
-<!--          <button id="btn-send-message">쪽지보내기</button>-->
-          <button id="btn-chat">1:1 채팅</button>
+        <div class="review-writer-box">
+          <div class="writer-image">
+            <img src="#" art="profile-image" />
+          </div>
+          <div class="writer-info">
+            <p class="writer-name">닉네임</p>
+          </div>
+          <div class="writer-action">
+            <button id="btn-subscribe">구독하기</button>
+            <!--<button id="btn-subscribe-cancel">구독취소</button>-->
+            <button id="btn-chat">1:1 채팅</button>
+          </div>
         </div>
       </div>
     </div>
     <div class="review-middle">
+      <p class="review-title">타이틀</p>
       <div class="review-content" th:utext="${reviewForm.content}"></div>
       <div class="review-btn">
-        <button>HOME</button>
-        <button>수정</button>
-        <button>삭제</button>
+        <div class="review-btn-left">
+          <button>HOME</button>
+        </div>
+        <div class="review-btn-right">
+          <button id="update-review">편집</button>
+        </div>
       </div>
     </div>
     <div class="review-bottom">

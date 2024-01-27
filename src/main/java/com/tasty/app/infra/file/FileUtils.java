@@ -15,6 +15,9 @@ import java.util.UUID;
 public class FileUtils {
 
     // 파일 업로드: 1개
+    // uploadDirPath: 파일 업로드 위치
+    // multipartFile: 업로드 파일
+    // return: 업로드 파일 이름
     public String uploadFile(String uploadDirPath, MultipartFile multipartFile) {
         // 업로드 폴더 생성
         File uploadDir = new File(uploadDirPath);
@@ -23,17 +26,17 @@ public class FileUtils {
         }
 
         // 업로드 파일 이름
-        String fileName = multipartFile.getOriginalFilename();
-        String extension = fileName.substring(fileName.lastIndexOf("."));
+        String originalFileName = multipartFile.getOriginalFilename();
+        String extension = originalFileName.substring(originalFileName.lastIndexOf("."));
         String uploadFileName = UUID.randomUUID() + extension;
 
-        // 파일업로드
+        // 파일 업로드
         try {
             multipartFile.transferTo(new File(uploadDirPath + uploadFileName));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
-        return uploadDirPath + uploadFileName;
+        return uploadFileName;
     }
 }

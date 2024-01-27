@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout.html}">
+<head>
+  <title>REVIEW</title>
+  <link rel="stylesheet" href="/css/review/edit.css" />
+  <!-- address -->
+  <script defer src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+  <script defer src="/js/review/address_api.js"></script>
+  <!-- ckeditor5 -->
+  <script defer src="/ckeditor5/build/ckeditor.js"></script>
+  <script defer src="/js/review/ckeditor.js"></script>
+  <!-- javascript -->
+  <script defer src="/js/review/edit.js"></script>
+</head>
+<body>
+<div layout:fragment="content" class="container">
+  <div class="review-edit-wrap">
+    <h3>리뷰 수정</h3>
+    <div class="review-edit-box">
+      <form action="/review/edit" method="post">
+        <input type="text" name="storeName" placeholder="가게이름" />
+        <input type="text" name="storeAddr" id="store-addr" placeHolder="가게주소" />
+        <input type="text" name="title" placeholder="제목" />
+        <textarea name="content" id="content" th:utext="${reviewForm.content}"></textarea>
+        <div class="store-mark-reviewer">
+          <input type="hidden" name="star" id="star" />
+          <p class="reviewer-star">리뷰어 평점</p>
+          <ul id="store-star">
+            <li data-star="1"><i class="fa-solid fa-star"></i></li>
+            <li data-star="2"><i class="fa-solid fa-star"></i></li>
+            <li data-star="3"><i class="fa-solid fa-star"></i></li>
+            <li data-star="4"><i class="fa-solid fa-star"></i></li>
+            <li data-star="5"><i class="fa-solid fa-star"></i></li>
+          </ul>
+        </div>
+        <div class="review-edit-btn">
+          <button id="edit-review">변경</button>
+          <button id="delete-review">삭제</button>
+          <button id="cancel-review">취소</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+</html>

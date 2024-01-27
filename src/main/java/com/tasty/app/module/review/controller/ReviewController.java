@@ -36,8 +36,15 @@ public class ReviewController {
     @GetMapping("/view")
     public String viewReview(@RequestParam("review_id") Long reviewId, Model model) {
         ReviewForm reviewForm = reviewService.getReviewById(reviewId);
-        log.info("reviewForm={}", reviewForm);
         model.addAttribute("reviewForm", reviewForm);
         return "review/view";
+    }
+
+    // 리뷰 편집 화면
+    @GetMapping("/edit")
+    public String editReview(@RequestParam("review_id") Long reviewId, Model model) {
+        ReviewForm reviewForm = reviewService.getReviewById(reviewId);
+        model.addAttribute("reviewForm", reviewForm);
+        return "review/edit";
     }
 }

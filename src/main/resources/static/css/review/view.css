@@ -4,7 +4,6 @@
 
 /* TOP */
 .review-top {
-  border: 1px solid brown;
   margin-top: 30px;
   display: flex;
   justify-content: space-between;
@@ -13,58 +12,90 @@
 
 /* TOP: MAP */
 .review-top #review-map {
-  border: 1px solid blue;
   width: 350px;
   height: 250px;
+  border: 1px solid rgb(200, 200, 200);
 }
 
 /* TOP: STORE */
 .review-top #review-store {
-  border: 1px solid black;
   width: 550px;
   height: 250px;
-  position: relative;
+  border: 1px solid rgb(200, 200, 200);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.review-top #review-store .review-store-box {
+  width: 100%;
 }
 
 .review-top #review-store .store-name {
-  border: 1px solid tomato;
   margin: 25px 0px 10px 0px;
   text-align: center;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
 }
 
 .review-top #review-store .store-address {
-  border: 1px solid tomato;
+  margin-bottom: 16px;
   text-align: center;
   color: rgb(110, 110, 110);
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .review-top #review-store .store-mark {
-  border: 1px solid tomato;
-  margin: 15px 0px 0px 0px;
+  margin-bottom: 8px;
   text-align: center;
+}
+
+.review-top #review-store .store-mark p {
+  margin-bottom: 5px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.review-top #review-store .store-mark ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.review-top #review-store .store-mark ul li {
+  margin-left: 2px;
+  color: rgb(200, 200, 200);
+  font-size: 14px;
 }
 
 .review-top #review-store .store-heart {
 	width: 40px;
 	height: 40px;
-	margin: 20px;
 	border: 1px solid rgb(210, 40, 40);
-	border-radius: 3px;
 	background-color: transparent;
-	color: rgb(210, 40, 40);
-	font-size: 18px;
+	text-align: center;
 	float: right;
+}
+
+.review-top #review-store .store-heart a {
+  border: 1px solid tomato;
+}
+
+.review-top #review-store .store-heart i {
+  line-height: 40px;
+  color: rgb(210, 40, 40);
+  font-size: 22px;
 }
 
 /* TOP: WRITER */
 .review-top #review-writer {
-  border: 1px solid red;
   width: 400px;
   height: 250px;
-  padding: 25px 0px;
+  border: 1px solid rgb(200, 200, 200);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .review-top #review-writer .writer-image {
@@ -80,18 +111,17 @@
 }
 
 .review-top #review-writer .writer-info {
-  margin: 10px 0px;
+/*  margin: 20px 0px;*/
 }
 
 .review-top #review-writer .writer-info .writer-name {
-  margin: 10px 0px;
+  margin: 15px 0px 20px 0px;
   font-size: 16px;
   font-weight: 600;
   text-align: center;
 }
 
 .review-top #review-writer .writer-info .writer-introduce {
-  margin-bottom: 20px;
   font-size: 14px;
   text-align: center;
 }
@@ -114,8 +144,37 @@
 }
 
 /* MIDDLE */
-.review-middle .review-content {
-  border: 1px solid tomato;
-  margin: 30px 0px 10px 0px;
-  height: 900px;
+.review-middle .review-title {
+  margin-top: 40px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgb(200, 200, 200);
+  font-size: 20px;
+  font-weight: 700;
 }
+
+.review-middle .review-content {
+  border-bottom: 1px solid rgb(200, 200, 200);
+  margin: 10px 0px;
+  padding: 20px 0px;
+}
+
+.review-middle .review-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.review-middle .review-btn button {
+  width: 70px;
+  height: 30px;
+  margin-bottom: 50px;
+  color: #fff;
+  background-color: rgb(210, 40, 40);
+}
+
+.review-middle .review-btn .review-btn-right button {
+  color: #000;
+  background-color: rgb(230, 230, 230);
+}
+
+

@@ -23,10 +23,10 @@ public class ReviewControllerR {
     // CKEditor 이미지 업로드
     @PostMapping("/upload_image")
     public Map<String, Object> uploadReviewImage(MultipartRequest multipartRequest) {
-        MultipartFile multipartFile = multipartRequest.getFile("static/upload");
+        MultipartFile multipartFile = multipartRequest.getFile("upload");
         String uploadUrl = reviewService.uploadImage(multipartFile);
-        log.info("uploadUrl={}", uploadUrl);
 
+        // response
         Map<String, Object> responseData = new HashMap<>();
         responseData.put("uploaded", true);
         responseData.put("url", uploadUrl);
