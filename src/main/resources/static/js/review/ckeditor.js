@@ -43,13 +43,13 @@ class UploadAdapter {
     xhr.addEventListener('error', () => {reject(genericErrorText)})
     xhr.addEventListener('abort', () => reject())
     xhr.addEventListener('load', () => {
-    const response = xhr.response
-    if(!response || response.error) {
-      return reject( response && response.error ? response.error.message : genericErrorText );
-    }
+      const response = xhr.response
+      if(!response || response.error) {
+        return reject( response && response.error ? response.error.message : genericErrorText );
+      }
 
-    resolve({
-      default: response.url
+      resolve({
+        default: response.url
       })
     })
   }

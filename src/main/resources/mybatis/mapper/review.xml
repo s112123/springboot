@@ -4,14 +4,32 @@
 
   <!-- 리뷰 등록 -->
   <insert id="insertOne" useGeneratedKeys="true" keyProperty="reviewId">
-    insert into review (title, content)
-    values (#{title}, #{content})
+    insert into review (title, content, store_name, store_address, star, good, hits)
+    values (#{title}, #{content}, #{storeName}, #{storeAddress}, #{star}, #{good}, #{hits})
   </insert>
 
   <!-- 리뷰 조회 -->
-  <select id="selectOneById" resultType="com.tasty.app.module.review.form.ReviewForm">
-    select review_id, title, content
+  <select id="selectOneById" resultType="com.tasty.app.module.review.domain.Review">
+    select *
     from review
     where review_id = #{reviewId}
+  </select>
+
+  <!-- 총 리뷰 수 -->
+  <select id="countAll" resultType="int">
+    select count(review_id)
+    from review
+  </select>
+
+  <!-- 리뷰 목록 -->
+  <select id="selectAll" resultType="com.tasty.app.module.review.domain.Review">
+    select *
+    from review
+    <trim prefix="order by">
+      <!-- sortOption: 최근 순 (0), 평점 순 (1) -->
+      <if test="sortOption == 0"> review_id desc</if>
+      <if test="sortOption == 1"> star desc</if>
+    </trim>
+    limit #{pageable.offset}, #{pageable.size}
   </select>
 </mapper>

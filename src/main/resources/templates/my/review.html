@@ -5,13 +5,13 @@
       layout:decorate="~{layouts/layout.html}">
 <head>
   <title>MYPAGE > REVIEWS</title>
-  <link rel="stylesheet" href="/css/mypage/fragments/aside.css" />
-  <link rel="stylesheet" href="/css/mypage/reviews.css" />
-  <script defer src="/js/mypage/fragments/aside.js"></script>
+  <link rel="stylesheet" href="/css/my/fragments/aside.css" />
+  <link rel="stylesheet" href="/css/my/review.css" />
+  <script defer src="/js/my/fragments/aside.js"></script>
 </head>
 <body>
   <div layout:fragment="content" class="container">
-    <div th:replace="mypage/fragments/aside::aside"></div>
+    <div th:replace="my/fragments/aside::aside"></div>
     <div class="my-reviews-wrap">
       <p>내가 쓴 리뷰</p>
       <div class="my-reviews-box">
@@ -109,7 +109,7 @@
           <input type="text" id="search-keyword" placeholder="search" />
           <button type="button">검색</button>
         </div>
-        <div class="my-reviews-pagination">
+        <div class="my-reviews-pageable">
           페이지
         </div>
       </div>

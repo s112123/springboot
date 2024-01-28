@@ -5,13 +5,13 @@
       layout:decorate="~{layouts/layout.html}">
 <head>
   <title>MYPAGE > NOTIFICATION</title>
-  <link rel="stylesheet" href="/css/mypage/fragments/aside.css" />
-  <link rel="stylesheet" href="/css/mypage/notification.css" />
-  <script defer src="/js/mypage/fragments/aside.js"></script>
+  <link rel="stylesheet" href="/css/my/fragments/aside.css" />
+  <link rel="stylesheet" href="/css/my/notification.css" />
+  <script defer src="/js/my/fragments/aside.js"></script>
 </head>
 <body>
   <div layout:fragment="content" class="container">
-    <div th:replace="mypage/fragments/aside::aside"></div>
+    <div th:replace="my/fragments/aside::aside"></div>
     <div class="notification-wrap">
       <p>알림 내역</p>
       <div class="notification-box">
@@ -35,7 +35,7 @@
             <div>알림시간</div>
           </div>
         </div>
-        <div class="my-reviews-pagination">
+        <div class="my-reviews-pageable">
           페이지
         </div>
       </div>

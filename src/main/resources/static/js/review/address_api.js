@@ -1,8 +1,6 @@
 // 우편주소 API
-const target = document.getElementById('store-addr');
+const target = document.getElementById('storeAddress');
 target.addEventListener('click', function () {
-  console.log('target!!');
-
   new daum.Postcode({
     oncomplete: function(data) {
       // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분

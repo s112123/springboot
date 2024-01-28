@@ -1,11 +1,14 @@
 package com.tasty.app.module.review.repository;
 
 import com.tasty.app.module.review.domain.Review;
+import com.tasty.app.module.review.dto.Pageable;
 import com.tasty.app.module.review.form.ReviewForm;
 import com.tasty.app.module.review.repository.mapper.ReviewMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Slf4j
 @Repository
@@ -24,5 +27,10 @@ public class ReviewRepositoryImpl implements ReviewRepository {
     @Override
     public ReviewForm findReviewById(Long reviewId) {
         return reviewMapper.selectOneById(reviewId);
+    }
+
+    @Override
+    public List<Review> findAll(int sortOption, Pageable pageable) {
+        return reviewMapper.selectAll(sortOption, pageable);
     }
 }

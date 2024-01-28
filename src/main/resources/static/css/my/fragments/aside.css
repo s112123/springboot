@@ -16,10 +16,15 @@ aside {
   cursor: pointer;
 }
 
+#aside ul li span {
+  margin-right: 5px;
+}
+
 .active {
   background-color: rgb(210, 40, 40);
 }
 
-.active a {
+.active a,
+.active span {
   color: white;
 }
