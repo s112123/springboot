@@ -24,6 +24,10 @@ public class Review {
     private String storeName;
     // 가게주소
     private String storeAddress;
+    // 썸네일 이미지 요청 주소
+    private String thumbnailUrl;
+    // 썸네일 이미지 파일 이름
+    private String thumbnailFileName;
     // 평점
     private Integer star;
     // 찜
@@ -42,6 +46,8 @@ public class Review {
                 .content(reviewForm.getContent())
                 .storeName(reviewForm.getStoreName())
                 .storeAddress(reviewForm.getStoreAddress())
+                .thumbnailUrl(reviewForm.getThumbnailUrl())
+                .thumbnailFileName(reviewForm.getThumbnailFileName())
                 .star(reviewForm.getStar())
                 .build();
     }

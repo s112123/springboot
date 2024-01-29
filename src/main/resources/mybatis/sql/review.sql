@@ -5,6 +5,8 @@ create table review (
   content longtext not null,
   store_name varchar(100),
   store_address varchar(200),
+  thumbnail_url varchar(300),
+  thumbnail_file_name varchar(200),
   star int,
   good int,
   hits int,

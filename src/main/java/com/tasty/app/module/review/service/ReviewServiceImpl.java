@@ -40,7 +40,7 @@ public class ReviewServiceImpl implements ReviewService {
     }
 
     @Override
-    public ReviewForm getReviewById(Long reviewId) {
+    public Review getReviewById(Long reviewId) {
         return reviewRepository.findReviewById(reviewId);
     }
 

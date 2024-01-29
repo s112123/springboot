@@ -26,7 +26,7 @@
       <div class="review-wrap" th:data-review-num="${review.reviewId}">
         <div class="review-box">
           <div class="review-image">
-            <img src="#" />
+            <img th:src="${review.thumbnailUrl}" />
           </div>
           <div class="review-summary">
             <div class="review-summary-star">
@@ -38,11 +38,8 @@
                 <li><i class="fa-solid fa-star"></i></li>
               </ul>
             </div>
-            <div class="review-summary-title" th:text="${review.title}">타이틀</div>
-            <div class="review-summary-content">
-              <div>찜개수</div>
-              <div>등록날짜</div>
-            </div>
+            <div class="review-summary-title" th:text="${review.title}"></div>
+            <div class="review-summary-content" th:text="${review.content}"></div>
           </div>
         </div>
       </div>

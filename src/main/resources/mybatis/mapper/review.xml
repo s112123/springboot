@@ -4,8 +4,8 @@
 
   <!-- 리뷰 등록 -->
   <insert id="insertOne" useGeneratedKeys="true" keyProperty="reviewId">
-    insert into review (title, content, store_name, store_address, star, good, hits)
-    values (#{title}, #{content}, #{storeName}, #{storeAddress}, #{star}, #{good}, #{hits})
+    insert into review (title, content, store_name, store_address, thumbnail_url, thumbnail_file_name, star, good, hits)
+    values (#{title}, #{content}, #{storeName}, #{storeAddress}, #{thumbnailUrl}, #{thumbnailFileName}, #{star}, #{good}, #{hits})
   </insert>
 
   <!-- 리뷰 조회 -->

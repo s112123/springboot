@@ -11,7 +11,7 @@
 }
 
 /* TOP: MAP */
-.review-top #review-map {
+.review-top .review-map {
   width: 350px;
   height: 250px;
   border: 1px solid rgb(200, 200, 200);
@@ -42,11 +42,11 @@
   margin-bottom: 16px;
   text-align: center;
   color: rgb(110, 110, 110);
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .review-top #review-store .store-mark {
-  margin-bottom: 8px;
+  margin: 30px 0px 30px 0px;
   text-align: center;
 }
 
@@ -66,26 +66,20 @@
 .review-top #review-store .store-mark ul li {
   margin-left: 2px;
   color: rgb(200, 200, 200);
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .review-top #review-store .store-heart {
-	width: 40px;
-	height: 40px;
-	border: 1px solid rgb(210, 40, 40);
+	width: 50px;
+	height: 50px;
 	background-color: transparent;
 	text-align: center;
 	float: right;
 }
-
-.review-top #review-store .store-heart a {
-  border: 1px solid tomato;
-}
-
 .review-top #review-store .store-heart i {
-  line-height: 40px;
+  line-height: 50px;
   color: rgb(210, 40, 40);
-  font-size: 22px;
+  font-size: 24px;
 }
 
 /* TOP: WRITER */
@@ -155,7 +149,7 @@
 .review-middle .review-content {
   border-bottom: 1px solid rgb(200, 200, 200);
   margin: 10px 0px;
-  padding: 20px 0px;
+  padding: 35px 0px 100px 0px;
 }
 
 .review-middle .review-btn {

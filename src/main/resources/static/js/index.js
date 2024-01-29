@@ -18,6 +18,12 @@ function orderReviews(sortOption) {
     }
 }
 
+// 리뷰 등록 화면으로 이동
+const btnReview = document.getElementById('btn-review');
+btnReview.addEventListener('click', () => {
+  location.href = '/review/add';
+});
+
 // 리뷰 목록
 const reviews = document.querySelectorAll('.review-wrap');
 reviews.forEach(review => {
@@ -39,12 +45,39 @@ reviews.forEach(review => {
   });
 });
 
-
-// 리뷰 등록 화면으로 이동
-const btnReview = document.getElementById('btn-review');
-btnReview.addEventListener('click', () => {
-  location.href = '/review/add';
+// 타이틀 글자 수 줄이기
+const titles = document.querySelectorAll('.review-summary-title');
+titles.forEach(title => {
+  if (title.innerText.length > 14) {
+    title.textContent = title.textContent.substring(0, 14) + '...';
+  }
 });
+
+// 내용 글자 수 줄이기
+const contents = document.querySelectorAll('.review-summary-content');
+contents.forEach(content => {
+  const reviewContent = removeHTMLTag(content.textContent);
+  if (reviewContent.length > 32) {
+    content.textContent = reviewContent.substring(0, 32) + '...';
+  } else {
+    content.textContent = reviewContent;
+  }
+});
+
+function removeHTMLTag(content) {
+  let result = content.replaceAll('</p><p>', ' ');
+  result = result.replace(/(<([^>]+)>)/gi, '');
+  result = result.replace(/\s\s+/ig, '');
+  result = result.replace(/&nbsp;/ig, '');
+  result = result.replace(/ +/ig, ' ');
+  result = result.replaceAll('&gt;', '>');
+  result = result.replaceAll('&lt;', '<');
+  result = result.replaceAll('&lt;', '<');
+  result = result.replaceAll('&quot;', "");
+  result = result.replaceAll('&amp;', '&');
+  return result;
+}
+
 
 
 

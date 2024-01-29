@@ -1,8 +1,12 @@
 // CKEditor 연결
-ClassicEditor
-  .create(document.querySelector('#content'), {
+let reviewEditor;
+
+ClassicEditor.create(document.querySelector('#content'), {
     extraPlugins: [MyCustomUploadAdapterPlugin],
     language: 'ko'
+  })
+  .then(editor => {
+    reviewEditor = editor;
   })
   .catch(error => {
     console.log(error);

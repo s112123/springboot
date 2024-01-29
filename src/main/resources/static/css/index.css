@@ -67,11 +67,19 @@
 }
 
 .reviews-middle .review-wrap .review-image {
-  border: 1px solid tomato;
   border-radius: 5px;
   width: 100%;
   height: 150px;
+  overflow: hidden;
 }
+
+.reviews-middle .review-wrap .review-image img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
 
 .reviews-middle .review-wrap .review-summary {
   margin-top: 10px;
@@ -108,7 +116,7 @@
 
 .reviews-middle .review-wrap .review-summary .review-summary-content {
   height: 55px;
-  padding: 5px 2px;
+  padding: 8px 2px 5px 2px;
   font-size: 14px;
 }
 

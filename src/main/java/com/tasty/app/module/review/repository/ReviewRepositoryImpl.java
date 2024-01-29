@@ -2,7 +2,6 @@ package com.tasty.app.module.review.repository;
 
 import com.tasty.app.module.review.domain.Review;
 import com.tasty.app.module.review.dto.Pageable;
-import com.tasty.app.module.review.form.ReviewForm;
 import com.tasty.app.module.review.repository.mapper.ReviewMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -25,7 +24,7 @@ public class ReviewRepositoryImpl implements ReviewRepository {
     }
 
     @Override
-    public ReviewForm findReviewById(Long reviewId) {
+    public Review findReviewById(Long reviewId) {
         return reviewMapper.selectOneById(reviewId);
     }
 

@@ -16,7 +16,7 @@ public interface ReviewService {
     String uploadImage(MultipartFile multipartFile);
 
     // 리뷰 조회
-    ReviewForm getReviewById(Long reviewId);
+    Review getReviewById(Long reviewId);
 
     // 리뷰 목록
     List<Review> getReviews(int sortOption, Pageable pageable);
