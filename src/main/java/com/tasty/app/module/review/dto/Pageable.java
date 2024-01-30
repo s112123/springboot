@@ -44,7 +44,7 @@ public class Pageable {
     public void setTotal(int total) {
         this.total = total;
         this.last = (int) (Math.ceil(total / (double) 10));
-        this.end = end > last ? last : end;
+        this.end = (last == 0) ? 1 : (end > last) ? last : end;
         this.start = (end - (size - 1)) > 0 ? (end - (size - 1)) : 1;
         this.prev = start > 1;
         this.next = total > (end * size);

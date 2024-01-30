@@ -12,8 +12,9 @@
   <div layout:fragment="content" class="container">
     <div class="reviews-top">
       <ul class="reviews-top-left">
-        <li class="order-item" th:classappend="${sortOption == 0} ? 'sort-active' : 'sort-deactive'">최근 순</li>
-        <li class="order-item" th:classappend="${sortOption == 1} ? 'sort-active' : 'sort-deactive'">평점 순</li>
+        <li class="order-item" th:classappend="${sortOption == 0} ? 'sort-active' : 'sort-deactive'">전체</li>
+        <li class="order-item" th:classappend="${sortOption == 1} ? 'sort-active' : 'sort-deactive'">최근 순</li>
+        <li class="order-item" th:classappend="${sortOption == 2} ? 'sort-active' : 'sort-deactive'">평점 순</li>
         <!--<li>찜 많은 순</li>-->
         <!--<li>가까운 순</li>-->
       </ul>
@@ -21,6 +22,7 @@
         <button type="button" id="btn-review">리뷰쓰기</button>
       </div>
     </div>
+    <th:block th:if="${#lists.size(reviews) > 0}">
     <div class="reviews-middle">
       <th:block th:each="review : ${reviews}">
       <div class="review-wrap" th:data-review-num="${review.reviewId}">
@@ -45,6 +47,10 @@
       </div>
       </th:block>
     </div>
+    </th:block>
+    <th:block th:unless="${#lists.size(reviews) > 0}">
+    <div class="no-data">검색된 결과가 없습니다</div>
+    </th:block>
     <div class="reviews-bottom">
       <div class="pageable">
         <ul>
@@ -56,7 +62,7 @@
             </a>
           </li>
           <!--/* 페이지 번호 */-->
-          <th:block th:each="pageNum : ${#numbers.sequence(pageable.start, pageable.end)}">
+          <th:block th:if="${pageable.end} > 1" th:each="pageNum : ${#numbers.sequence(pageable.start, pageable.end)}">
           <li>
             <a th:href="@{?(sort_option=${sortOption}, page=${pageNum})}"
                th:data-num="${pageNum}"
@@ -72,6 +78,7 @@
             </a>
           </li>
         </ul>
+      </div>
     </div>
   </div>
 </body>

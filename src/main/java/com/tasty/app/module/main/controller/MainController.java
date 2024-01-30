@@ -23,13 +23,17 @@ public class MainController {
     @GetMapping("/")
     public String home(Model model,
                        @RequestParam(value = "sort_option", defaultValue = "0") int sortOption,
+                       @RequestParam(value = "search", required = false) String search,
                        Pageable pageable) {
-        // sortOption: 최근 순 (0), 평점 순 (1)
-        List<Review> reviews = reviewService.getReviews(sortOption, pageable);
+        // sortOption: 전체 (0), 최근 순 (1), 평점 순 (2)
+        List<Review> reviews = reviewService.getReviews(sortOption, search, pageable);
         log.info("pageable={}", pageable);
         log.info("sortOption={}", sortOption);
+        log.info("search={}", search);
+        log.info("reviews={}", reviews);
         model.addAttribute("reviews", reviews);
         model.addAttribute("sortOption", sortOption);
+        model.addAttribute("search", search);
         model.addAttribute("pageable", pageable);
         return "index";
     }

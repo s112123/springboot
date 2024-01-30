@@ -29,7 +29,7 @@ public class ReviewRepositoryImpl implements ReviewRepository {
     }
 
     @Override
-    public List<Review> findAll(int sortOption, Pageable pageable) {
-        return reviewMapper.selectAll(sortOption, pageable);
+    public List<Review> findAll(int sortOption, String search, Pageable pageable) {
+        return reviewMapper.selectAll(sortOption, search, pageable);
     }
 }

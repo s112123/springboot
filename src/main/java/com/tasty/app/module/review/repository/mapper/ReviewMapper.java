@@ -20,5 +20,7 @@ public interface ReviewMapper {
     int countAll();
 
     // 리뷰 목록
-    List<Review> selectAll(@Param("sortOption") int sortOption, @Param("pageable") Pageable pageable);
+    List<Review> selectAll(@Param("sortOption") int sortOption,
+                           @Param("search") String search,
+                           @Param("pageable") Pageable pageable);
 }

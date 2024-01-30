@@ -59,10 +59,10 @@
       <div class="review-content" th:utext="${review.content}"></div>
       <div class="review-btn">
         <div class="review-btn-left">
-          <button>HOME</button>
+          <button id="go-home">HOME</button>
         </div>
         <div class="review-btn-right">
-          <button id="update-review">편집</button>
+          <button id="update-review" th:data-review-id="${review.reviewId}">편집</button>
         </div>
       </div>
     </div>

@@ -1,21 +1,50 @@
+// 리뷰 검색
+const search = document.querySelector('#search');
+const sortOption = document.querySelector('#sortOption');
+const btnSearch = document.querySelector('#btn-search');
+
+// 검색어 입력 input 에서 Enter 키 처리
+search.addEventListener('keypress', () => {
+  if (event.keyCode === 13) {
+    if (search !== null && search.value !== '') {
+      location.href = '?sort_option=' + sortOption.value + '&search=' + search.value.trim();
+    }
+  }
+});
+
+// 검색어 입력 후, 검색 버튼 클릭 처리
+btnSearch.addEventListener('click', () => {
+  if (search !== null && search.value !== '') {
+    location.href = '?sort_option=' + sortOption.value + '&search=' + search.value.trim();
+  }
+});
+
 // 리뷰 정렬
 const orderItems = document.querySelectorAll('.order-item');
 orderItems.forEach((orderItem, index) => {
   orderItem.addEventListener('click', () => {
     // 정렬 처리
-    orderReviews(index);
+    orderReviews(index, search);
   });
 });
 
 // 정렬 처리
-function orderReviews(sortOption) {
-  // sort_option: 최근 순 (0), 평점 순 (1)
-    switch (sortOption) {
-      case 0:
-        location.href = '?sort_option=0'; break;
-      case 1:
-        location.href = '?sort_option=1'; break;
-    }
+function orderReviews(sortOption, search) {
+  console.log(search.value.trim().length);
+  let searchQuery = (search.value.trim().length > 0) ? ('&search=' + search.value.trim()) : '';
+
+  // sort_option: 전체 (0), 최근 순 (1), 평점 순 (2)
+  switch (sortOption) {
+    case 0:
+      location.href = '?sort_option=0';
+      break;
+    case 1:
+      location.href = '?sort_option=1' + searchQuery;
+      break;
+    case 2:
+      location.href = '?sort_option=2' + searchQuery;
+      break;
+  }
 }
 
 // 리뷰 등록 화면으로 이동

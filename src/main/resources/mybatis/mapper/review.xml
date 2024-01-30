@@ -25,10 +25,17 @@
   <select id="selectAll" resultType="com.tasty.app.module.review.domain.Review">
     select *
     from review
+    <where>
+      <if test="search != null and search !=''">
+        and title like concat('%', #{search}, '%')
+        or content like concat('%', #{search}, '%')
+      </if>
+    </where>
     <trim prefix="order by">
-      <!-- sortOption: 최근 순 (0), 평점 순 (1) -->
+      <!-- sortOption: 전체 (0), 최근 순 (1), 평점 순 (2) -->
       <if test="sortOption == 0"> review_id desc</if>
-      <if test="sortOption == 1"> star desc</if>
+      <if test="sortOption == 1"> review_id desc</if>
+      <if test="sortOption == 2"> star desc</if>
     </trim>
     limit #{pageable.offset}, #{pageable.size}
   </select>

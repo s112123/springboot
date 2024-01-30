@@ -19,5 +19,5 @@ public interface ReviewService {
     Review getReviewById(Long reviewId);
 
     // 리뷰 목록
-    List<Review> getReviews(int sortOption, Pageable pageable);
+    List<Review> getReviews(int sortOption, String search, Pageable pageable);
 }

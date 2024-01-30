@@ -45,10 +45,10 @@ public class ReviewServiceImpl implements ReviewService {
     }
 
     @Override
-    public List<Review> getReviews(int sortOption, Pageable pageable) {
+    public List<Review> getReviews(int sortOption, String search, Pageable pageable) {
         // 페이지 조건 전달
         int total = reviewMapper.countAll();
         pageable.setTotal(total);
-        return reviewRepository.findAll(sortOption, pageable);
+        return reviewRepository.findAll(sortOption, search, pageable);
     }
 }

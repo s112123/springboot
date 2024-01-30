@@ -14,5 +14,5 @@ public interface ReviewRepository {
     Review findReviewById(Long reviewId);
 
     // 리뷰 목록
-    List<Review> findAll(int sortOption, Pageable pageable);
+    List<Review> findAll(int sortOption, String search, Pageable pageable);
 }
