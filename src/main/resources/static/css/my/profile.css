@@ -48,7 +48,7 @@
 }
 
 .profile-box .profile-box-top .profile-information {
-  border: 1px solid black;
+/*  border: 1px solid black;*/
   margin-left: 15px;
 }
 
@@ -65,7 +65,7 @@
   height: 30px;
   margin-top: 3px;
   border: 1px solid rgb(180, 180, 180);
-  padding-left: 10px;
+  padding-left: 8px;
 }
 
 .profile-box .profile-box-top .profile-information .profile-information-item input::placeholder {
@@ -74,7 +74,47 @@
 	color: rgb(160, 160, 160);
 }
 
+.profile-box .profile-box-top .profile-information .profile-information-item .information-password input {
+	width: 83%;
+}
+
+.profile-box .profile-box-top .profile-information .profile-information-item .information-password button {
+	width: 40px;
+	height: 30px;
+	background-color: #fff;
+  border: 1px solid rgb(180, 180, 180);
+	margin-left: 2px;
+	font-size: 13px;
+	color: rgb(140, 140, 140);
+}
+
+.profile-box .profile-box-top .profile-information .profile-information-item .information-password button:hover {
+  border: 1px solid rgb(210, 40, 40);
+  color: rgb(210, 40, 40);
+}
+
+.error {
+  width: 100%;
+  padding: 5px 10px;
+  margin-top: 10px;
+  background-color: rgba(210, 40, 40, 0.2);
+  color: rgb(210, 40, 40);
+  font-weight: 500;
+  display: none;
+}
+
+#updated-message {
+  width: 100%;
+  padding: 5px 10px;
+  margin-top: 10px;
+  background-color: rgba(65, 196, 118, 0.2);
+  color: rgb(34, 116, 67);
+  font-weight: 500;
+  display: none;
+}
+
 .profile-box .profile-box-top .profile-information .profile-information-action {
+  margin-top: 10px;
   float: right;
 }
 
@@ -87,11 +127,10 @@
   color: #000;
 }
 
-.profile-box .profile-box-top .profile-information .profile-information-action button:hover {
+.profile-box .profile-box-top .profile-information .profile-information-action #update-my-info {
   border: 1px solid rgb(210, 40, 40);
   background-color: rgb(210, 40, 40);
   color: white;
-  transition: 0.3s;
 }
 
 /* BOTTOM */

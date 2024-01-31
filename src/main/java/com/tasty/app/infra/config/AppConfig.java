@@ -10,10 +10,12 @@ public class AppConfig implements WebMvcConfigurer {
 
     @Value("${review.upload.storage}")
     private String reviewUploadStorage;
+    @Value("${member.upload.storage}")
+    private String memberUploadStorage;
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/review/image/**")
-                .addResourceLocations(reviewUploadStorage);
+        registry.addResourceHandler("/review/image/**", "/members/image/**")
+                .addResourceLocations(reviewUploadStorage, memberUploadStorage);
     }
 }

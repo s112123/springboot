@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tasty.app.module.member.repository.mapper.MemberMapper">
+
+  <!-- 회원 등록 -->
+  <insert id="insertOne" useGeneratedKeys="true" keyProperty="memberId">
+    insert into member (email, password, nick_name, image_url, file_name)
+    values (#{email}, #{password}, #{nickName}, #{imageUrl}, #{fileName})
+  </insert>
+
+  <!-- 이메일로 회원 조회 -->
+  <select id="selectOneByEmail" resultType="com.tasty.app.module.member.domain.Member">
+    select *
+    from member
+    where email = #{email};
+  </select>
+
+  <!-- 회원 정보 수정 -->
+  <update id="updateOneByEmail">
+    update member
+    set nick_name = #{params.member.nickName},
+        password = #{params.member.password},
+        image_url = #{params.member.imageUrl},
+        file_name = #{params.member.fileName}
+    where email = #{params.email}
+  </update>
+</mapper>

@@ -11,25 +11,24 @@
   <div layout:fragment="content" class="container">
     <div class="sign-up-box">
       <h2>회원가입</h2>
-      <form>
+      <form th:action="@{/member/add}" th:object="${memberForm}" method="post">
         <div class="sign-up-item">
           <label for="#">이메일</label>
-          <input type="text" placeholder="email@email.com" />
-          <small></small>
+          <input type="text" th:field="*{email}" placeholder="email@email.com" />
+          <small>이메일은 필수입니다</small>
         </div>
         <div class="sign-up-item">
           <label for="#">비밀번호</label>
-          <input type="password" placeholder="*****" />
-          <small></small>
+          <input type="password" th:field="*{password}" placeholder="*****" />
+          <small>비밀번호는 필수입니다 </small>
         </div>
         <div class="sign-up-item">
           <label for="#">비밀번호 확인</label>
           <input type="password" placeholder="*****" />
-          <small></small>
+          <small>비밀번호가 일치하지 않습니다</small>
         </div>
-        <button id="btn-sign-up">가입하기</button>
+        <button type="submit" id="btn-sign-up">가입하기</button>
       </form>
-
     </div>
   </div>
 </body>

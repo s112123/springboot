@@ -5,9 +5,14 @@
       layout:decorate="~{layouts/layout.html}" xmlns="http://www.w3.org/1999/html">
 <head>
   <title>MYPAGE > PROFILE</title>
+  <!-- css -->
   <link rel="stylesheet" href="/css/my/fragments/aside.css" />
   <link rel="stylesheet" href="/css/my/profile.css" />
+  <!-- axios -->
+  <script defer src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <!-- javascript -->
   <script defer src="/js/my/fragments/aside.js"></script>
+  <script defer src="/js/my/profile.js"></script>
 </head>
 <body>
   <div layout:fragment="content" class="container">
@@ -16,36 +21,46 @@
       <p>내 정보</p>
       <div class="profile-box">
         <div class="profile-box-top">
-          <div class="profile-image-box">
-            <div class="profile-image">
-              <img src="#" />
-              <form>
-                <input type="file" />
-              </form>
+
+
+<!--          <form th:action="@{/member/edit}" method="post" enctype="multipart/form-data">-->
+            <div class="profile-image-box">
+              <div class="profile-image">
+                <img th:src="${member.imageUrl}" id="profile-image" />
+                <div>
+                  <input type="text" th:field="${member.fileName}" />
+                  <input type="text" th:field="${member.imageUrl}" />
+                  <label for="profile-file">프로필 이미지 선택</label>
+                  <input type="file" id="profile-file" />
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="profile-information">
-            <div class="profile-information-item">
-              <p></p><label for="#">이메일</label></p>
-              <input type="text" placeholder="email" />
+            <div class="profile-information">
+              <div class="profile-information-item">
+                <p><label for="email">이메일</label></p>
+                <input type="text" th:field="${member.email}" placeholder="email" readonly />
+              </div>
+              <div class="profile-information-item">
+                <p><label for="nickName">닉네임</label></p>
+                <input type="text" th:field="${member.nickName}" placeholder="nick_name" />
+                <small class="error">닉네임은 필수입니다</small>
+              </div>
+              <div class="profile-information-item">
+                <p><label for="password">비밀번호</label></p>
+                <div class="information-password">
+                  <input type="password" th:field="${member.password}" placeholder="password" readonly />
+                  <button id="btn-change-pass"><i class="fa-solid fa-pen-to-square"></i></button>
+                </div>
+              </div>
+              <small id="updated-message">회원정보가 변경되었습니다</small>
+              <div class="profile-information-action">
+                <button type="button" id="update-my-info">변경</button>
+                <button type="button" id="withdraw-membership">회원탈퇴</button>
+              </div>
             </div>
-            <div class="profile-information-item">
-              <p></p><label for="#">닉네임</label></p>
-              <input type="text" placeholder="nickname" />
-            </div>
-            <div class="profile-information-item">
-              <p></p><label for="#">한 줄 소개</label></p>
-              <input type="text" placeholder="description" />
-            </div>
-            <div class="profile-information-item">
-              <p></p><label for="#">비밀번호</label></p>
-              <input type="password" placeholder="password" />
-            </div>
-            <div class="profile-information-action">
-              <button type="button" id="update-my-info">변경</button>
-              <button type="button" id="withdraw-membership">회원탈퇴</button>
-            </div>
-          </div>
+ <!--         </form>-->
+
+
         </div>
         <div class="profile-box-bottom">
           <div class="follow-list">
