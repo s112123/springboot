@@ -2,6 +2,7 @@ package com.tasty.app.module.review.controller;
 
 import com.tasty.app.module.review.domain.Review;
 import com.tasty.app.module.review.form.ReviewForm;
+import com.tasty.app.module.review.form.EditForm;
 import com.tasty.app.module.review.service.ReviewService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -47,9 +48,28 @@ public class ReviewController {
 
     // 리뷰 편집 화면
     @GetMapping("/edit")
-    public String editReview(@RequestParam("review_id") Long reviewId, Model model) {
+    public String editForm(@RequestParam("review_id") Long reviewId, Model model) {
         Review review = reviewService.getReviewById(reviewId);
         model.addAttribute("review", review);
         return "review/edit";
+    }
+
+    // 리뷰 변경 처리
+    @PostMapping("/edit")
+    public String editReview(
+            @RequestParam("review_id") Long reviewId,
+            EditForm form
+    ) {
+        reviewService.editReview(reviewId, form);
+        return "redirect:/";
+    }
+
+    // 리뷰 삭제 처리
+    @GetMapping("/remove")
+    public String removeReview(
+            @RequestParam("review_id") Long reviewId
+    ) {
+        reviewService.removeReview(reviewId);
+        return "redirect:/";
     }
 }

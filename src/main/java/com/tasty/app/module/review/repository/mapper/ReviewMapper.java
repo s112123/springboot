@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
+import java.util.Map;
 
 @Mapper
 public interface ReviewMapper {
@@ -23,4 +24,10 @@ public interface ReviewMapper {
     List<Review> selectAll(@Param("sortOption") int sortOption,
                            @Param("search") String search,
                            @Param("pageable") Pageable pageable);
+
+    // 리뷰 수정
+    Long updateOneById(@Param("params") Map<String, Object> params);
+
+    // 리뷰 삭제
+    Long deleteOne(Long reviewId);
 }

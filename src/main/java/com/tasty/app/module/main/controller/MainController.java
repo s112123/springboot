@@ -21,6 +21,11 @@ public class MainController {
 
     // 리뷰 목록
     @GetMapping("/")
+    public String home(Review review) {
+        return "index";
+    }
+
+/*    @GetMapping("/")
     public String home(Model model,
                        @RequestParam(value = "sort_option", defaultValue = "0") int sortOption,
                        @RequestParam(value = "search", required = false) String search,
@@ -36,5 +41,5 @@ public class MainController {
         model.addAttribute("search", search);
         model.addAttribute("pageable", pageable);
         return "index";
-    }
+    }*/
 }

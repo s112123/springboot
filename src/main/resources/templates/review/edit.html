@@ -20,7 +20,7 @@
   <div class="review-edit-wrap">
     <h3>리뷰 수정</h3>
     <div class="review-edit-box">
-      <form action="/review/edit" method="post" id="review-edit-form">
+      <form th:action="@{/review/edit}" method="post" id="review-edit-form">
         <div class="review-edit-box-item">
           <input type="text" name="storeName" id="storeName" th:value="${review.storeName}" placeholder="가게이름" />
           <small class="error">가게이름은 필수입니다</small>
@@ -52,10 +52,10 @@
           <small class="error">평점은 필수입니다</small>
         </div>
         <div class="review-edit-btn">
-          <input type="hidden" name="review_id" th:value="${review.reviewId}"/>
-          <button type="submit" id="edit-review">변경</button>
-          <button id="delete-review">삭제</button>
-          <button id="cancel-review">취소</button>
+          <input type="hidden" name="review_id" id="review_id" th:value="${review.reviewId}"/>
+          <button type="button" id="edit-review">변경</button>
+          <button type="button" id="delete-review">삭제</button>
+          <button type="button" id="cancel-review">취소</button>
         </div>
       </form>
     </div>

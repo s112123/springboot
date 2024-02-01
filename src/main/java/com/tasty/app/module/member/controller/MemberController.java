@@ -20,22 +20,31 @@ public class MemberController {
 
     // 회원 등록 화면
     @GetMapping("/add")
-    public String addForm(MemberForm memberForm) {
+    public String addForm(
+            MemberForm memberForm
+    ) {
         return "sign_up";
     }
 
     // 회원 등록 처리
     @PostMapping("/add")
-    public String addMember(MemberForm memberForm) {
+    public String addMember(
+            MemberForm memberForm
+    ) {
         memberService.addMember(memberForm);
         return "redirect:/";
     }
 
     // 회원 조회 화면
-    @GetMapping("/view/{email}")
-    public String viewMember(@PathVariable("email") String email, Model model) {
+    @GetMapping("/view")
+    public String viewMember(
+            @RequestParam("email") String email,
+            @RequestParam(value = "menu_option", defaultValue = "0") int menuOption,
+            Model model
+    ) {
         Member member = memberService.getMemberByEmail(email);
         model.addAttribute("member", member);
+        model.addAttribute("menuOption", menuOption);
         return "my/profile";
     }
 }

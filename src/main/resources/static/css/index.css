@@ -116,6 +116,10 @@
   color: rgb(200, 200, 200);
 }
 
+.star-active i {
+  color: rgb(249, 199, 53);
+}
+
 .reviews-middle .review-wrap .review-summary .review-summary-title {
   height: 25px;
   padding: 2px;

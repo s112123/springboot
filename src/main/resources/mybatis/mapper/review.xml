@@ -39,4 +39,23 @@
     </trim>
     limit #{pageable.offset}, #{pageable.size}
   </select>
+
+  <!-- 리뷰 수정 -->
+  <update id="updateOneById">
+    update review
+    set title = #{params.review.title},
+        content = #{params.review.content},
+        store_name = #{params.review.storeName},
+        store_address = #{params.review.storeAddress},
+        thumbnail_url = #{params.review.thumbnailUrl},
+        thumbnail_file_name = #{params.review.thumbnailFileName},
+        star = #{params.review.star}
+    where review_id = #{params.reviewId}
+  </update>
+
+  <!-- 리뷰 삭제 -->
+  <delete id="deleteOne">
+    delete from review
+    where review_id = #{reviewId}
+  </delete>
 </mapper>

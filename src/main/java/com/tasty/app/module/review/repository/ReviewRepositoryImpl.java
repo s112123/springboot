@@ -7,7 +7,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Slf4j
 @Repository
@@ -31,5 +33,18 @@ public class ReviewRepositoryImpl implements ReviewRepository {
     @Override
     public List<Review> findAll(int sortOption, String search, Pageable pageable) {
         return reviewMapper.selectAll(sortOption, search, pageable);
+    }
+
+    @Override
+    public Long edit(Long reviewId, Review review) {
+        Map<String, Object> params = new HashMap<>();
+        params.put("reviewId", reviewId);
+        params.put("review", review);
+        return reviewMapper.updateOneById(params);
+    }
+
+    @Override
+    public Long delete(Long reviewId) {
+        return reviewMapper.deleteOne(reviewId);
     }
 }

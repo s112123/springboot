@@ -39,6 +39,10 @@ btnUpdate.addEventListener('click', () => {
     result = response.data;
     if (result === 'updated') {
       updatedMessage.style.display = 'block';
+      setTimeout(() => {
+        updatedMessage.style.display = 'none';
+      }, 3000);
+      password.value = '';
     }
   });
   //}

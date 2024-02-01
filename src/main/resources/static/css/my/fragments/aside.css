@@ -1,5 +1,5 @@
 aside {
-  width: 250px;
+  min-width: 220px;
   height: 100vh;
   border-left: 1px solid #ccc;
   border-right: 1px solid #ccc;
@@ -7,7 +7,7 @@ aside {
 
 #aside ul {
   list-style: none;
-  padding: 50px 0;
+  padding: 50px 0px;
 }
 
 #aside ul li {
@@ -20,11 +20,16 @@ aside {
   margin-right: 5px;
 }
 
-.active {
+.menu-active {
   background-color: rgb(210, 40, 40);
 }
 
-.active a,
-.active span {
+.menu-active a,
+.menu-active span {
   color: white;
+}
+
+.menu-deactive {
+  background-color: #fff;
+  color: #000;
 }

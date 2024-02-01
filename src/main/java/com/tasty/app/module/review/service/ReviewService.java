@@ -2,6 +2,7 @@ package com.tasty.app.module.review.service;
 
 import com.tasty.app.module.review.domain.Review;
 import com.tasty.app.module.review.dto.Pageable;
+import com.tasty.app.module.review.form.EditForm;
 import com.tasty.app.module.review.form.ReviewForm;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -20,4 +21,9 @@ public interface ReviewService {
 
     // 리뷰 목록
     List<Review> getReviews(int sortOption, String search, Pageable pageable);
+
+    // 리뷰 수정
+    void editReview(Long reviewId, EditForm form);
+
+    void removeReview(Long reviewId);
 }

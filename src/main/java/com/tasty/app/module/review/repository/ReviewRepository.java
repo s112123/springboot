@@ -15,4 +15,10 @@ public interface ReviewRepository {
 
     // 리뷰 목록
     List<Review> findAll(int sortOption, String search, Pageable pageable);
+
+    // 리뷰 수정 (DB에서 변경된 행 수 반환)
+    Long edit(Long reviewId, Review review);
+
+    // 리뷰 삭제 (DB에서 변경된 행 수 반환)
+    Long delete(Long reviewId);
 }

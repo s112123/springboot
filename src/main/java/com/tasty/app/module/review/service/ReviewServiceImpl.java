@@ -3,6 +3,7 @@ package com.tasty.app.module.review.service;
 import com.tasty.app.infra.file.FileUtils;
 import com.tasty.app.module.review.domain.Review;
 import com.tasty.app.module.review.dto.Pageable;
+import com.tasty.app.module.review.form.EditForm;
 import com.tasty.app.module.review.form.ReviewForm;
 import com.tasty.app.module.review.repository.ReviewRepository;
 import com.tasty.app.module.review.repository.mapper.ReviewMapper;
@@ -50,5 +51,16 @@ public class ReviewServiceImpl implements ReviewService {
         int total = reviewMapper.countAll();
         pageable.setTotal(total);
         return reviewRepository.findAll(sortOption, search, pageable);
+    }
+
+    @Override
+    public void editReview(Long reviewId, EditForm form) {
+        Review review = Review.toReviewFromEditForm(form);
+        reviewRepository.edit(reviewId, review);
+    }
+
+    @Override
+    public void removeReview(Long reviewId) {
+        reviewRepository.delete(reviewId);
     }
 }

@@ -20,47 +20,41 @@
     <div class="profile-wrap">
       <p>내 정보</p>
       <div class="profile-box">
+        <small id="updated-message">회원정보가 변경되었습니다</small>
         <div class="profile-box-top">
-
-
-<!--          <form th:action="@{/member/edit}" method="post" enctype="multipart/form-data">-->
-            <div class="profile-image-box">
-              <div class="profile-image">
-                <img th:src="${member.imageUrl}" id="profile-image" />
-                <div>
-                  <input type="text" th:field="${member.fileName}" />
-                  <input type="text" th:field="${member.imageUrl}" />
-                  <label for="profile-file">프로필 이미지 선택</label>
-                  <input type="file" id="profile-file" />
-                </div>
+          <div class="profile-image-box">
+            <div class="profile-image">
+              <img th:src="${member.imageUrl}" id="profile-image" />
+              <div class="profile-image-file">
+                <input type="hidden" th:field="${member.fileName}" />
+                <input type="hidden" th:field="${member.imageUrl}" />
+                <label for="profile-file">이미지 선택</label>
+                <input type="file" id="profile-file" />
               </div>
             </div>
-            <div class="profile-information">
-              <div class="profile-information-item">
-                <p><label for="email">이메일</label></p>
-                <input type="text" th:field="${member.email}" placeholder="email" readonly />
-              </div>
-              <div class="profile-information-item">
-                <p><label for="nickName">닉네임</label></p>
-                <input type="text" th:field="${member.nickName}" placeholder="nick_name" />
-                <small class="error">닉네임은 필수입니다</small>
-              </div>
-              <div class="profile-information-item">
-                <p><label for="password">비밀번호</label></p>
-                <div class="information-password">
-                  <input type="password" th:field="${member.password}" placeholder="password" readonly />
-                  <button id="btn-change-pass"><i class="fa-solid fa-pen-to-square"></i></button>
-                </div>
-              </div>
-              <small id="updated-message">회원정보가 변경되었습니다</small>
-              <div class="profile-information-action">
-                <button type="button" id="update-my-info">변경</button>
-                <button type="button" id="withdraw-membership">회원탈퇴</button>
+          </div>
+          <div class="profile-information">
+            <div class="profile-information-item">
+              <p><label for="email">이메일</label></p>
+              <input type="text" th:field="${member.email}" placeholder="email" readonly />
+            </div>
+            <div class="profile-information-item">
+              <p><label for="nickName">닉네임</label></p>
+              <input type="text" th:field="${member.nickName}" placeholder="nick_name" />
+              <small class="error">닉네임은 필수입니다</small>
+            </div>
+            <div class="profile-information-item">
+              <p><label for="password">비밀번호</label></p>
+              <div class="information-password">
+                <input type="password" th:field="${member.password}" placeholder="password" readonly />
+                <button id="btn-change-pass"><i class="fa-solid fa-pen-to-square"></i></button>
               </div>
             </div>
- <!--         </form>-->
-
-
+            <div class="profile-information-action">
+              <button type="button" id="update-my-info">변경</button>
+              <button type="button" id="withdraw-membership">회원탈퇴</button>
+            </div>
+          </div>
         </div>
         <div class="profile-box-bottom">
           <div class="follow-list">

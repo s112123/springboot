@@ -16,39 +16,54 @@
 
 /* TOP */
 .profile-box .profile-box-top {
-  border: 1px solid tomato;
   margin-top: 20px;
+  padding: 30px 0px;
+  border-top: 1px solid rgb(200, 200, 200);
+  border-bottom: 1px solid rgb(200, 200, 200);
   display: flex;
   justify-content: flex-start;
 }
 
 .profile-box .profile-box-top .profile-image-box {
   width: 250px;
-  border: 1px solid blue;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .profile-box .profile-box-top .profile-image-box .profile-image {
-  border: 1px solid red;
   text-align: center;
 }
 
 .profile-box .profile-box-top .profile-image-box .profile-image img {
-  border: 1px solid tomato;
   width: 80px;
   height: 80px;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   border-radius: 15px;
 }
 
-.profile-box .profile-box-top .profile-image-box .profile-image input {
-  border: 1px solid blue;
+.profile-box .profile-box-top .profile-image-box .profile-image .profile-image-file {
+  height: 30px;
+}
+
+.profile-box .profile-box-top .profile-image-box .profile-image label[for=profile-file] {
+  width: 100%;
+  padding: 3px 5px;
+  background-color: rgb(225, 225, 225);
+  font-size: 13px;
+  font-weight: 500;
+  display: inline-block;
+  cursor:pointer;
+}
+
+.profile-box .profile-box-top .profile-image-box .profile-image #profile-file {
+  width: 0;
+  height: 0;
+  padding:0;
+  border: 0;
 }
 
 .profile-box .profile-box-top .profile-information {
-/*  border: 1px solid black;*/
   margin-left: 15px;
 }
 
@@ -85,6 +100,7 @@
   border: 1px solid rgb(180, 180, 180);
 	margin-left: 2px;
 	font-size: 13px;
+	font-weight: 500;
 	color: rgb(140, 140, 140);
 }
 
@@ -124,6 +140,7 @@
   margin-left: 3px;
   border: 1px solid rgb(225, 225, 225);
   background-color: rgb(225, 225, 225);
+  font-weight: 500;
   color: #000;
 }
 

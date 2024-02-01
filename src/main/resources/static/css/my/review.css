@@ -2,11 +2,10 @@
   width: 100%;
   display: flex;
   justify-content: flex-start;
-  align-items: center;
 }
 
 .my-reviews-wrap {
-  width: 100%;
+  width: 100%;  /* 650px */
   padding: 50px 0px 50px 50px;
 }
 

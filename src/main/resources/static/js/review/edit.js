@@ -1,6 +1,24 @@
-// 등록 버튼 클릭
-const btnAdd = document.getElementById('edit-review');
-btnAdd.addEventListener('click', (e) => {
+// 변수 선언
+var form = document.getElementById('review-edit-form');
+var reviewId = document.getElementById('review_id');
+var btnEdit = document.getElementById('edit-review');
+var btnRemove = document.getElementById('delete-review');
+var btnCancel = document.getElementById('cancel-review');
+
+// 삭제 버튼 클릭
+btnRemove.addEventListener('click', () => {
+  if (confirm('리뷰를 삭제하시겠습니까?')) {
+    location.replace('/review/remove?review_id=' + reviewId.value);
+  }
+});
+
+// 취소 버튼 클릭
+btnCancel.addEventListener('click', () => {
+  history.back();
+});
+
+// 변경 버튼 클릭
+btnEdit.addEventListener('click', (e) => {
   e.preventDefault();
 
   let isValid = true;
@@ -63,12 +81,11 @@ btnAdd.addEventListener('click', (e) => {
   // 리뷰 목록 페이지에서 보여줄 이미지 경로 추출
   getThumbnailUrl(imgTag, thumbnail, thumbnailFileName);
 
-/*  if (isValid) {
-    const form = document.getElementById('review-edit-form');
-    form.action = '/review/edit';
+  if (isValid) {
+    form.action = '/review/edit?review_id=' + reviewId.value;
     form.method = 'post';
     form.submit();
-  }*/
+  }
 });
 
 // 리뷰 목록 페이지에서 보여줄 이미지 경로 추출
@@ -117,3 +134,4 @@ reviewerStarItems.forEach((reviewerStarItem, index) => {
       reviewerStarItem.style.color = 'rgb(249, 199, 53)';
     }
 });
+

@@ -29,13 +29,9 @@ public class MemberRepositoryImpl implements MemberRepository {
 
     @Override
     public Long edit(String email, Member member) {
-        log.info("member={}", member);
-
-        Map<String, Object> map = new HashMap<>();
-        map.put("email", email);
-        map.put("member", member);
-
-        memberMapper.updateOneByEmail(map);
-        return member.getMemberId();
+        Map<String, Object> params = new HashMap<>();
+        params.put("email", email);
+        params.put("member", member);
+        return memberMapper.updateOneByEmail(params);
     }
 }
