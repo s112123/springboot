@@ -1,7 +1,7 @@
 package com.tasty.app.module.review.repository.mapper;
 
 import com.tasty.app.module.review.domain.Review;
-import com.tasty.app.module.review.dto.Pageable;
+import com.tasty.app.infra.dto.Pageable;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -18,7 +18,7 @@ public interface ReviewMapper {
     Review selectOneById(Long reviewId);
 
     // 총 리뷰 수
-    int countAll();
+    int countAll(String search);
 
     // 리뷰 목록
     List<Review> selectAll(@Param("sortOption") int sortOption,

@@ -1,14 +1,17 @@
 package com.tasty.app.module.member.service;
 
 import com.tasty.app.module.member.domain.Member;
+import com.tasty.app.module.member.form.AddForm;
 import com.tasty.app.module.member.form.EditForm;
-import com.tasty.app.module.member.form.MemberForm;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.multipart.MultipartFile;
+
+import java.util.Map;
 
 public interface MemberService {
 
     // 회원 등록
-    void addMember(MemberForm memberForm);
+    int addMember(AddForm form);
     
     // 회원 조회
     Member getMemberByEmail(String email);

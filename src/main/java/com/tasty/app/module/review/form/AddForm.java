@@ -7,7 +7,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class ReviewForm {
+public class AddForm {
 
     // 제목
     private String title;

@@ -1,7 +1,7 @@
 package com.tasty.app.module.review.controller;
 
 import com.tasty.app.module.review.domain.Review;
-import com.tasty.app.module.review.form.ReviewForm;
+import com.tasty.app.module.review.form.AddForm;
 import com.tasty.app.module.review.form.EditForm;
 import com.tasty.app.module.review.service.ReviewService;
 import lombok.RequiredArgsConstructor;
@@ -9,10 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @Slf4j
 @Controller
@@ -32,14 +29,18 @@ public class ReviewController {
 
     // 리뷰 등록 처리
     @PostMapping("/add")
-    public String addReview(ReviewForm reviewForm) {
-        reviewService.addReview(reviewForm);
+    public String addReview(
+            @ModelAttribute("form") AddForm form
+    ) {
+        reviewService.addReview(form);
         return "redirect:/";
     }
 
     // 리뷰 조회 처리
     @GetMapping("/view")
-    public String viewReview(@RequestParam("review_id") Long reviewId, Model model) {
+    public String viewReview(
+            @RequestParam("review_id") Long reviewId, Model model
+    ) {
         Review review = reviewService.getReviewById(reviewId);
         model.addAttribute("review", review);
         model.addAttribute("serviceKey", serviceKey);
@@ -48,7 +49,9 @@ public class ReviewController {
 
     // 리뷰 편집 화면
     @GetMapping("/edit")
-    public String editForm(@RequestParam("review_id") Long reviewId, Model model) {
+    public String editForm(
+            @RequestParam("review_id") Long reviewId, Model model
+    ) {
         Review review = reviewService.getReviewById(reviewId);
         model.addAttribute("review", review);
         return "review/edit";

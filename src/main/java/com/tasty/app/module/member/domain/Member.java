@@ -1,7 +1,7 @@
 package com.tasty.app.module.member.domain;
 
+import com.tasty.app.module.member.form.AddForm;
 import com.tasty.app.module.member.form.EditForm;
-import com.tasty.app.module.member.form.MemberForm;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -32,11 +32,11 @@ public class Member {
     private LocalDateTime modDate;
 
     // DTO(MemberForm) → Entity(Member)
-    public static Member toMemberFromMemberForm(MemberForm memberForm) {
+    public static Member toMemberFromAddForm(AddForm addForm) {
         return Member.builder()
-                .email(memberForm.getEmail())
-                .password(memberForm.getPassword())
-                .nickName(memberForm.getEmail())
+                .email(addForm.getEmail())
+                .password(addForm.getPassword())
+                .nickName(addForm.getEmail())
                 .imageUrl("/members/image/default_profile_image.png")
                 .fileName("default_profile_image.png")
                 .build();

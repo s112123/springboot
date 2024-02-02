@@ -1,14 +1,18 @@
 package com.tasty.app.module.member.controller;
 
 import com.tasty.app.module.member.domain.Member;
-import com.tasty.app.module.member.form.MemberForm;
-import com.tasty.app.module.member.form.EditForm;
+import com.tasty.app.module.member.form.AddForm;
 import com.tasty.app.module.member.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
+import java.util.HashMap;
+import java.util.Map;
 
 @Slf4j
 @Controller
@@ -20,19 +24,23 @@ public class MemberController {
 
     // 회원 등록 화면
     @GetMapping("/add")
-    public String addForm(
-            MemberForm memberForm
-    ) {
+    public String addForm(@ModelAttribute("form") AddForm form) {
         return "sign_up";
     }
 
     // 회원 등록 처리
     @PostMapping("/add")
-    public String addMember(
-            MemberForm memberForm
-    ) {
-        memberService.addMember(memberForm);
-        return "redirect:/";
+    @ResponseBody
+    public Object add(@Valid @RequestBody AddForm form, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return bindingResult.getAllErrors();
+        }
+
+        int res = memberService.addMember(form);
+        Map<String, Object> response = new HashMap<>();
+        response.put("res", res);
+        response.put("defaultMessage", "중복된 이메일입니다");
+        return response;
     }
 
     // 회원 조회 화면

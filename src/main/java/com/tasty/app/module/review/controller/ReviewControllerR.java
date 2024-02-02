@@ -1,11 +1,10 @@
 package com.tasty.app.module.review.controller;
 
 import com.tasty.app.module.review.domain.Review;
-import com.tasty.app.module.review.dto.Pageable;
+import com.tasty.app.infra.dto.Pageable;
 import com.tasty.app.module.review.service.ReviewService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartRequest;
@@ -25,27 +24,20 @@ public class ReviewControllerR {
     // 리뷰 목록
     @GetMapping
     public Map<String, Object> reviews(
-           @RequestParam(value = "sort_option") int sortOption
-            /*
-            @RequestParam(value = "search", required = false) String search,
-            Pageable pageable
-            */
+           @RequestParam(value = "sort_option") int sortOption,
+           @RequestParam(value = "search", defaultValue = "") String search,
+           Pageable pageable
     ) {
-        //List<Review> reviews = reviewService.getReviews(sortOption, search, pageable);
-        Pageable pageable = new Pageable();
-        String search = "";
-
+        // 리뷰 목록 조회
         List<Review> reviews = reviewService.getReviews(sortOption, search, pageable);
-        log.info("pageable={}", pageable);
-        log.info("sortOption={}", sortOption);
-        log.info("search={}", search);
-        log.info("reviews={}", reviews);
 
+        // response
         Map<String, Object> response = new HashMap<>();
         response.put("sortOption", sortOption);
         response.put("search", search);
         response.put("pageable", pageable);
         response.put("reviews", reviews);
+
         return response;
     }
 
@@ -59,6 +51,7 @@ public class ReviewControllerR {
         Map<String, Object> responseData = new HashMap<>();
         responseData.put("uploaded", true);
         responseData.put("url", uploadUrl);
+
         return responseData;
     }
 }

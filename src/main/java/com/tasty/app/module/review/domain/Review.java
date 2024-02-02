@@ -1,7 +1,7 @@
 package com.tasty.app.module.review.domain;
 
 import com.tasty.app.module.review.form.EditForm;
-import com.tasty.app.module.review.form.ReviewForm;
+import com.tasty.app.module.review.form.AddForm;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -42,15 +42,15 @@ public class Review {
     private LocalDateTime modDate;
 
     // DTO(ReviewForm) → Entity(Review)
-    public static Review toReviewFromReviewForm(ReviewForm reviewForm) {
+    public static Review toReviewFromAddForm(AddForm addForm) {
         return Review.builder()
-                .title(reviewForm.getTitle())
-                .content(reviewForm.getContent())
-                .storeName(reviewForm.getStoreName())
-                .storeAddress(reviewForm.getStoreAddress())
-                .thumbnailUrl(reviewForm.getThumbnailUrl())
-                .thumbnailFileName(reviewForm.getThumbnailFileName())
-                .star(reviewForm.getStar())
+                .title(addForm.getTitle())
+                .content(addForm.getContent())
+                .storeName(addForm.getStoreName())
+                .storeAddress(addForm.getStoreAddress())
+                .thumbnailUrl(addForm.getThumbnailUrl())
+                .thumbnailFileName(addForm.getThumbnailFileName())
+                .star(addForm.getStar())
                 .build();
     }
 

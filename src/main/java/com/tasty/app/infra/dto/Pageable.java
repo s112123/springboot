@@ -1,4 +1,4 @@
-package com.tasty.app.module.review.dto;
+package com.tasty.app.infra.dto;
 
 import lombok.Getter;
 import lombok.ToString;
@@ -14,7 +14,7 @@ public class Pageable {
      * last = (int) (Math.ceil(total / (double) size));
      * end = (int) (Math.ceil(page / (double) size)) * size;
      * (마지막 페이지 번호 영역에서) end = end > last ? last : end
-     * start = (end - (size - 1)) > 0 ? (end - (size - 1)) : 1
+     * start = (end - ((end - 1) % size)) > 0 ? (end - ((end - 1) % size)) : 1;
      * prev = start > 1
      * next = total > (end * size);
      */
@@ -45,7 +45,7 @@ public class Pageable {
         this.total = total;
         this.last = (int) (Math.ceil(total / (double) 10));
         this.end = (last == 0) ? 1 : (end > last) ? last : end;
-        this.start = (end - (size - 1)) > 0 ? (end - (size - 1)) : 1;
+        this.start = (end - ((end - 1) % size)) > 0 ? (end - ((end - 1) % size)) : 1;
         this.prev = start > 1;
         this.next = total > (end * size);
     }

@@ -5,30 +5,41 @@
       layout:decorate="~{layouts/layout.html}">
 <head>
   <title>SIGN UP</title>
+  <!-- css -->
   <link rel="stylesheet" href="/css/sign_up.css" />
+  <!-- axios -->
+  <script defer src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <!-- javascript -->
+  <script defer src="/js/sign_up.js"></script>
 </head>
 <body>
   <div layout:fragment="content" class="container">
     <div class="sign-up-box">
       <h2>회원가입</h2>
-      <form th:action="@{/member/add}" th:object="${memberForm}" method="post">
+<!--      <form th:action="@{/member/add}" th:object="${form}" method="post">-->
         <div class="sign-up-item">
-          <label for="#">이메일</label>
-          <input type="text" th:field="*{email}" placeholder="email@email.com" />
-          <small>이메일은 필수입니다</small>
+          <label for="email">이메일</label>
+          <input type="text" id="email" placeholder="email@email.com" />
+          <div class="sign-up-code">
+            <input type="text" id="verify-email" placeholder="인증 코드" readonly />
+            <button type="button" id="btn-verify-code">이메일 인증</button>
+          </div>
+          <small class="error" id="error-email"></small>
+          <small class="error" id="error-duplicated"></small>
+          <small class="error" id="error-verify-code"></small>
         </div>
         <div class="sign-up-item">
-          <label for="#">비밀번호</label>
-          <input type="password" th:field="*{password}" placeholder="*****" />
-          <small>비밀번호는 필수입니다 </small>
+          <label for="password">비밀번호</label>
+          <input type="password" id="password" placeholder="*****" />
+          <small class="error" id="error-password"></small>
         </div>
         <div class="sign-up-item">
-          <label for="#">비밀번호 확인</label>
-          <input type="password" placeholder="*****" />
-          <small>비밀번호가 일치하지 않습니다</small>
+          <label for="re-password">비밀번호 확인</label>
+          <input type="password" id="re-password" placeholder="*****" />
+          <small class="error" id="error-re-password"></small>
         </div>
-        <button type="submit" id="btn-sign-up">가입하기</button>
-      </form>
+        <button type="click" id="btn-sign-up">가입하기</button>
+<!--      </form>-->
     </div>
   </div>
 </body>

@@ -19,6 +19,12 @@
   <select id="countAll" resultType="int">
     select count(review_id)
     from review
+    <where>
+      <if test="search != null and search !=''">
+        and title like concat('%', #{search}, '%')
+        or content like concat('%', #{search}, '%')
+      </if>
+    </where>
   </select>
 
   <!-- 리뷰 목록 -->

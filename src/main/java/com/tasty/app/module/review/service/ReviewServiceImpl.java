@@ -2,9 +2,9 @@ package com.tasty.app.module.review.service;
 
 import com.tasty.app.infra.file.FileUtils;
 import com.tasty.app.module.review.domain.Review;
-import com.tasty.app.module.review.dto.Pageable;
+import com.tasty.app.infra.dto.Pageable;
 import com.tasty.app.module.review.form.EditForm;
-import com.tasty.app.module.review.form.ReviewForm;
+import com.tasty.app.module.review.form.AddForm;
 import com.tasty.app.module.review.repository.ReviewRepository;
 import com.tasty.app.module.review.repository.mapper.ReviewMapper;
 import lombok.RequiredArgsConstructor;
@@ -28,9 +28,9 @@ public class ReviewServiceImpl implements ReviewService {
     private final FileUtils fileUtils;
 
     @Override
-    public void addReview(ReviewForm reviewForm) {
+    public void addReview(AddForm form) {
         // DTO → Entity
-        Review review = Review.toReviewFromReviewForm(reviewForm);
+        Review review = Review.toReviewFromAddForm(form);
         Long reviewId = reviewRepository.saveReview(review);
         log.info("reviewId={}", reviewId);
     }
@@ -48,7 +48,7 @@ public class ReviewServiceImpl implements ReviewService {
     @Override
     public List<Review> getReviews(int sortOption, String search, Pageable pageable) {
         // 페이지 조건 전달
-        int total = reviewMapper.countAll();
+        int total = reviewMapper.countAll(search);
         pageable.setTotal(total);
         return reviewRepository.findAll(sortOption, search, pageable);
     }

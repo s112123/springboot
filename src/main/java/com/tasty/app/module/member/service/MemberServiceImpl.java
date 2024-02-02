@@ -2,8 +2,8 @@ package com.tasty.app.module.member.service;
 
 import com.tasty.app.infra.file.FileUtils;
 import com.tasty.app.module.member.domain.Member;
+import com.tasty.app.module.member.form.AddForm;
 import com.tasty.app.module.member.form.EditForm;
-import com.tasty.app.module.member.form.MemberForm;
 import com.tasty.app.module.member.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -23,17 +23,17 @@ public class MemberServiceImpl implements MemberService {
     private final FileUtils fileUtils;
 
     @Override
-    public void addMember(MemberForm memberForm) {
+    public int addMember(AddForm form) {
         // 중복확인
-        Member findMember = memberRepository.findMemberByEmail(memberForm.getEmail());
+        Member findMember = memberRepository.findMemberByEmail(form.getEmail());
         if (findMember != null) {
-            log.info("이미 존재하는 이메일입니다");
-            return;
+            return -1;
         }
 
         // 비번 암호 (spring security)
-        Member member = Member.toMemberFromMemberForm(memberForm);
+        Member member = Member.toMemberFromAddForm(form);
         memberRepository.save(member);
+        return 1;
     }
 
     @Override

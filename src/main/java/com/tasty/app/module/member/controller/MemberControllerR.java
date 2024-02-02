@@ -1,13 +1,9 @@
 package com.tasty.app.module.member.controller;
 
-import com.tasty.app.module.member.domain.Member;
 import com.tasty.app.module.member.form.EditForm;
-import com.tasty.app.module.member.form.MemberForm;
 import com.tasty.app.module.member.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
