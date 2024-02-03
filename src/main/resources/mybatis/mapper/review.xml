@@ -4,8 +4,10 @@
 
   <!-- 리뷰 등록 -->
   <insert id="insertOne" useGeneratedKeys="true" keyProperty="reviewId">
-    insert into review (title, content, store_name, store_address, thumbnail_url, thumbnail_file_name, star, good, hits)
-    values (#{title}, #{content}, #{storeName}, #{storeAddress}, #{thumbnailUrl}, #{thumbnailFileName}, #{star}, #{good}, #{hits})
+    insert into review (email, title, content, store_name, store_address,
+                        thumbnail_url, thumbnail_file_name, star)
+    values (#{email}, #{title}, #{content}, #{storeName}, #{storeAddress},
+            #{thumbnailUrl}, #{thumbnailFileName}, #{star})
   </insert>
 
   <!-- 리뷰 조회 -->
@@ -15,8 +17,8 @@
     where review_id = #{reviewId}
   </select>
 
-  <!-- 총 리뷰 수 -->
-  <select id="countAll" resultType="int">
+  <!-- 총 리뷰 수 (검색어) -->
+  <select id="countAllBySearch" resultType="int">
     select count(review_id)
     from review
     <where>
@@ -25,6 +27,13 @@
         or content like concat('%', #{search}, '%')
       </if>
     </where>
+  </select>
+
+  <!-- 총 리뷰 수 (이메일) -->
+  <select id="countAllByEmail" resultType="int">
+    select count(review_id)
+    from review
+    where email = #{email}
   </select>
 
   <!-- 리뷰 목록 -->
@@ -64,4 +73,35 @@
     delete from review
     where review_id = #{reviewId}
   </delete>
+
+  <!-- 리뷰 선택 삭제 -->
+  <delete id="deleteAll">
+    delete from review
+    where review_id in
+    <foreach collection="array" item="review_id" open="(" separator=", " close=")">
+      #{review_id}
+    </foreach>
+  </delete>
+
+  <!-- 조회 수 증가 -->
+  <update id="updateHits">
+    update review
+    set hits = hits + 1
+    where review_id = #{reviewId}
+  </update>
+
+  <!-- 리뷰 목록을 이메일로 조회 -->
+  <select id="selectAllByEmail" resultType="com.tasty.app.module.review.domain.Review">
+    select review_id,
+           title,
+           store_name,
+           star,
+           good,
+           hits,
+           reg_date
+    from review
+    where email = #{email}
+    order by review_id desc
+    limit #{pageable.offset}, #{pageable.size};
+  </select>
 </mapper>

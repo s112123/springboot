@@ -10,6 +10,9 @@ import java.util.Map;
 
 public interface MemberService {
 
+    // 회원 이메일(아이디) 중복 확인
+    boolean isExistsEmail(String email);
+
     // 회원 등록
     int addMember(AddForm form);
     

@@ -82,6 +82,10 @@
   font-size: 24px;
 }
 
+#good {
+  display: none;
+}
+
 /* TOP: WRITER */
 .review-top #review-writer {
   width: 400px;

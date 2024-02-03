@@ -21,4 +21,13 @@ public interface ReviewRepository {
 
     // 리뷰 삭제 (DB에서 변경된 행 수 반환)
     Long delete(Long reviewId);
+
+    // 조회수 증가
+    void increaseHits(Long reviewId);
+    
+    // 리뷰 목록을 Email로 조회
+    List<Review> findAllByEmail(String email, Pageable pageable);
+
+    // 리뷰 선택 삭제
+    Long deleteAll(int[] checkItems);
 }

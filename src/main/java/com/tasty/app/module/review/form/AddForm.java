@@ -9,6 +9,8 @@ import lombok.*;
 @Builder
 public class AddForm {
 
+    // fk
+    private String email;
     // 제목
     private String title;
     // 내용

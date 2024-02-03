@@ -23,6 +23,12 @@ public class MemberServiceImpl implements MemberService {
     private final FileUtils fileUtils;
 
     @Override
+    public boolean isExistsEmail(String email) {
+        Member findMember = memberRepository.findMemberByEmail(email);
+        return findMember != null;
+    }
+
+    @Override
     public int addMember(AddForm form) {
         // 중복확인
         Member findMember = memberRepository.findMemberByEmail(form.getEmail());

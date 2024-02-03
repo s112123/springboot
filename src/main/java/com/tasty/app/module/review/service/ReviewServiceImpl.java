@@ -42,13 +42,19 @@ public class ReviewServiceImpl implements ReviewService {
 
     @Override
     public Review getReviewById(Long reviewId) {
+        // 리뷰 조회
         return reviewRepository.findReviewById(reviewId);
+    }
+
+    @Override
+    public void increaseHits(Long reviewId) {
+        reviewRepository.increaseHits(reviewId);
     }
 
     @Override
     public List<Review> getReviews(int sortOption, String search, Pageable pageable) {
         // 페이지 조건 전달
-        int total = reviewMapper.countAll(search);
+        int total = reviewMapper.countAllBySearch(search);
         pageable.setTotal(total);
         return reviewRepository.findAll(sortOption, search, pageable);
     }
@@ -62,5 +68,17 @@ public class ReviewServiceImpl implements ReviewService {
     @Override
     public void removeReview(Long reviewId) {
         reviewRepository.delete(reviewId);
+    }
+
+    @Override
+    public List<Review> getReviewsByEmail(String email, Pageable pageable) {
+        int total = reviewMapper.countAllByEmail(email);
+        pageable.setTotal(total);
+        return reviewRepository.findAllByEmail(email, pageable);
+    }
+
+    @Override
+    public void removeReviews(int[] checkItems) {
+        reviewRepository.deleteAll(checkItems);
     }
 }

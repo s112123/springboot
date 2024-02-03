@@ -17,7 +17,7 @@ public class Review {
     // PK
     private Long reviewId;
     // FK
-    // private Long memberId;
+    private String email;
     // 제목
     private String title;
     // 내용
@@ -42,15 +42,16 @@ public class Review {
     private LocalDateTime modDate;
 
     // DTO(ReviewForm) → Entity(Review)
-    public static Review toReviewFromAddForm(AddForm addForm) {
+    public static Review toReviewFromAddForm(AddForm form) {
         return Review.builder()
-                .title(addForm.getTitle())
-                .content(addForm.getContent())
-                .storeName(addForm.getStoreName())
-                .storeAddress(addForm.getStoreAddress())
-                .thumbnailUrl(addForm.getThumbnailUrl())
-                .thumbnailFileName(addForm.getThumbnailFileName())
-                .star(addForm.getStar())
+                .email(form.getEmail())
+                .title(form.getTitle())
+                .content(form.getContent())
+                .storeName(form.getStoreName())
+                .storeAddress(form.getStoreAddress())
+                .thumbnailUrl(form.getThumbnailUrl())
+                .thumbnailFileName(form.getThumbnailFileName())
+                .star(form.getStar())
                 .build();
     }
 

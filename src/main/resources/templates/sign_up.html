@@ -16,30 +16,30 @@
   <div layout:fragment="content" class="container">
     <div class="sign-up-box">
       <h2>회원가입</h2>
-<!--      <form th:action="@{/member/add}" th:object="${form}" method="post">-->
-        <div class="sign-up-item">
-          <label for="email">이메일</label>
-          <input type="text" id="email" placeholder="email@email.com" />
-          <div class="sign-up-code">
-            <input type="text" id="verify-email" placeholder="인증 코드" readonly />
-            <button type="button" id="btn-verify-code">이메일 인증</button>
+      <div class="sign-up-item">
+        <label for="email">이메일</label>
+        <div class="sign-up-email-box">
+          <div class="sign-up-email">
+            <input type="text" id="email" placeholder="email@email.com" />
           </div>
-          <small class="error" id="error-email"></small>
-          <small class="error" id="error-duplicated"></small>
-          <small class="error" id="error-verify-code"></small>
+          <div class="btn-sign-up-email">
+            <button type="button" id="btn-send-mail">메일인증</button>
+          </div>
         </div>
-        <div class="sign-up-item">
-          <label for="password">비밀번호</label>
-          <input type="password" id="password" placeholder="*****" />
-          <small class="error" id="error-password"></small>
-        </div>
-        <div class="sign-up-item">
-          <label for="re-password">비밀번호 확인</label>
-          <input type="password" id="re-password" placeholder="*****" />
-          <small class="error" id="error-re-password"></small>
-        </div>
-        <button type="click" id="btn-sign-up">가입하기</button>
-<!--      </form>-->
+        <small class="error" id="error-email"></small>
+        <small id="send-message"></small>
+      </div>
+      <div class="sign-up-item">
+        <label for="password">비밀번호</label>
+        <input type="password" id="password" placeholder="*****" />
+        <small class="error" id="error-password"></small>
+      </div>
+      <div class="sign-up-item">
+        <label for="re-password">비밀번호 확인</label>
+        <input type="password" id="re-password" placeholder="*****" />
+        <small class="error" id="error-re-password"></small>
+      </div>
+      <button type="click" id="btn-sign-up">가입하기</button>
     </div>
   </div>
 </body>

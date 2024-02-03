@@ -32,7 +32,6 @@
   margin-top: 5px;
   padding: 8px;
   border: 1px solid rgb(180, 180, 180);
-  border-radius: 2px;
   vertical-align: center;
 }
 
@@ -42,20 +41,29 @@
 	color: rgb(130, 130, 130);
 }
 
-.sign-up-box .sign-up-item .sign-up-code {
-  border: 1px solid red;
+.sign-up-box .sign-up-item .sign-up-email-box {
   display: flex;
-  align-items: center;
+  justify-content: space-between;
 }
 
-.sign-up-box .sign-up-item .sign-up-code button {
-  margin-left: 5px;
-  width: 90px;
-  border-radius: 3px;
+.sign-up-box .sign-up-item .sign-up-email-box .sign-up-email input {
+  width: 235px;
+}
+
+.sign-up-box .sign-up-item .sign-up-email-box .btn-sign-up-email {
+  display: inline-block;
+  padding-top: 5px;
+}
+
+.sign-up-box .sign-up-item .sign-up-email-box .btn-sign-up-email button {
+  display: inline-block;
+  width: 60px;
+  height: 100%;
+  background-color: rgb(210, 40, 40);
+  color: #fff;
   font-size: 12px;
-  font-weight: 400;
-  background-color: rgb(225, 225, 225);
-  float: right;
+  font-weight: 500;
+  border-radius: 3px;
 }
 
 .error {
@@ -64,6 +72,16 @@
   margin: 10px 0px;
   background-color: rgba(210, 40, 40, 0.2);
   color: rgb(210, 40, 40);
+  font-weight: 500;
+  display: none;
+}
+
+#send-message {
+  width: 100%;
+  padding: 5px 10px;
+  margin-top: 10px;
+  background-color: rgba(65, 196, 118, 0.2);
+  color: rgb(34, 116, 67);
   font-weight: 500;
   display: none;
 }

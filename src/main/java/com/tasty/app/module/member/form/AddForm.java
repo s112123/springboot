@@ -12,7 +12,7 @@ import javax.validation.constraints.NotBlank;
 @ToString
 public class AddForm {
 
-    @NotBlank(message = "아이디는 필수입니다")
+    @NotBlank(message = "이메일은 필수입니다")
     @Email(message = "이메일 형식이 아닙니다 (예: email@email.com)")
     private String email;
 

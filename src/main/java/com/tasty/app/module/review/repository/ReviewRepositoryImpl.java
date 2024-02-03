@@ -49,4 +49,19 @@ public class ReviewRepositoryImpl implements ReviewRepository {
     public Long delete(Long reviewId) {
         return reviewMapper.deleteOne(reviewId);
     }
+
+    @Override
+    public void increaseHits(Long reviewId) {
+        reviewMapper.updateHits(reviewId);
+    }
+
+    @Override
+    public List<Review> findAllByEmail(String email, Pageable pageable) {
+        return reviewMapper.selectAllByEmail(email, pageable);
+    }
+
+    @Override
+    public Long deleteAll(int[] checkItems) {
+        return reviewMapper.deleteAll(checkItems);
+    }
 }

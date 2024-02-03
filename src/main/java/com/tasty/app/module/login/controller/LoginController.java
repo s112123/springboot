@@ -2,6 +2,8 @@ package com.tasty.app.module.login.controller;
 
 import com.tasty.app.module.login.form.LoginForm;
 import com.tasty.app.module.login.service.LoginService;
+import com.tasty.app.module.member.domain.Member;
+import com.tasty.app.module.member.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -22,6 +24,7 @@ import java.util.Map;
 public class LoginController {
 
     private final LoginService loginService;
+    private final MemberService memberService;
 
     // 로그인 화면
     @GetMapping("/login")
@@ -40,9 +43,9 @@ public class LoginController {
             return bindingResult.getAllErrors();
         }
 
+        // 로그인이 되면 세션 생성
         int res = loginService.login(form);
         if (res == 1) {
-            // 세션 생성
             session.setAttribute("email", form.getEmail());
         }
 

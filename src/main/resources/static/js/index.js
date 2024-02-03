@@ -46,9 +46,11 @@ orderItems.forEach((orderItem, index) => {
 });
 
 // 리뷰 등록 화면으로 이동
-btnReview.addEventListener('click', () => {
-  location.href = '/review/add';
-});
+if (btnReview != null) {
+  btnReview.addEventListener('click', () => {
+    location.href = '/review/add';
+  });
+}
 
 // 조회 페이지 이동
 function viewReview(reviewId) {
@@ -73,10 +75,8 @@ function renderReviews(sortOption, searchKeyword, page) {
     // 리뷰 목록 렌더링
     var reviews = getReviewsHTML(response.data.reviews);
     if (reviews.length === 0) {
-      middle.innerHTML = '';
-      noData.style.display = 'block';
+      middle.innerHTML = '<div class="no-data" id="no-data">검색된 결과가 없습니다</div>';
     } else {
-      noData.style.display = 'none';
       middle.innerHTML = reviews;
     }
 
@@ -88,7 +88,7 @@ function renderReviews(sortOption, searchKeyword, page) {
 
 // 리뷰 목록 (api)
 async function getReviews(sortOption, searchKeyword, page) {
-  console.log(`/reviews?sort_option=${sortOption}&search=${searchKeyword}&page=${page}`);
+  //console.log(`/reviews?sort_option=${sortOption}&search=${searchKeyword}&page=${page}`);
   var response = await axios.get(`/reviews?sort_option=${sortOption}&search=${searchKeyword}&page=${page}`);
   return response;
 }

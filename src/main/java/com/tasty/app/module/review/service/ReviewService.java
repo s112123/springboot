@@ -25,5 +25,15 @@ public interface ReviewService {
     // 리뷰 수정
     void editReview(Long reviewId, EditForm form);
 
+    // 리뷰 삭제
     void removeReview(Long reviewId);
+
+    // 조회수 증가
+    void increaseHits(Long reviewId);
+
+    // 리뷰 목록을 이메일로 조회
+    List<Review> getReviewsByEmail(String email, Pageable pageable);
+
+    // 리뷰 선택 삭제
+    void removeReviews(int[] checkItems);
 }

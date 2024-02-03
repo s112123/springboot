@@ -5,12 +5,17 @@
       layout:decorate="~{layouts/layout.html}">
 <head>
   <title>REVIEW</title>
+  <!-- css -->
   <link rel="stylesheet" href="/css/review/view.css" />
-  <!-- javascript -->
-  <script defer src="/js/review/view.js"></script>
+  <!-- kakao map -->
   <script defer src="/js/review/kakao_map.js"></script>
   <script type="text/javascript"
           th:src="@{//dapi.kakao.com/v2/maps/sdk.js(appkey=${serviceKey}, libraries=services)}"></script>
+  <!-- axios -->
+  <script defer src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <!-- javascript -->
+  <script defer src="/js/review/view.js"></script>
+  <script defer src="/js/review/good.js"></script>
 </head>
 <body>
   <div layout:fragment="content" class="container">
@@ -30,10 +35,12 @@
               <li><i class="fa-solid fa-star"></i></li>
             </ul>
           </div>
-          <div class="store-heart">
-            <a>
+          <div class="store-heart" id="store-heart" th:data-is-good="${isGood}">
+            <a href="javascript:;" id="good" th:data-review-id="${review.reviewId}">
+              <i class="fa-solid fa-heart"></i>
+            </a>
+            <a href="javascript:;" id="not-good" th:data-review-id="${review.reviewId}">
               <i class="fa-regular fa-heart"></i>
-              <!--<i class="fa-solid fa-heart"></i>-->
             </a>
           </div>
         </div>
