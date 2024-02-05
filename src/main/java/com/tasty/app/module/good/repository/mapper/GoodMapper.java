@@ -21,4 +21,7 @@ public interface GoodMapper {
 
     // 리뷰 찜 개수 내리기
     void decreaseGood(Long reviewId);
+
+    // 특정 회원이 찜한 개수
+    int countAllByEmail(String email);
 }

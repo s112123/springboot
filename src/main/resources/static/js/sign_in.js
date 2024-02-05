@@ -22,6 +22,7 @@ btnSignIn.addEventListener('click', () => {
     isValid = validateLogin(results);
     // 로그인 성공시
     if (isValid) {
+      // 메인 페이지로 이동
       location.replace('/');
     }
   });

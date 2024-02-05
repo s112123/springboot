@@ -102,6 +102,25 @@
     from review
     where email = #{email}
     order by review_id desc
-    limit #{pageable.offset}, #{pageable.size};
+    limit #{pageable.offset}, #{pageable.size}
+  </select>
+
+  <!-- 내가 찜한 리뷰 -->
+  <select id="selectAllByGoodByEmail" resultType="java.util.HashMap">
+    select r.review_id,
+           r.title,
+           r.store_name,
+           r.good,
+           r.hits,
+           r.reg_date,
+           m.nick_name
+    from review as r
+    inner join member as m
+      on r.email = m.email
+    inner join good as g
+      on r.review_id = g.review_id
+    where g.email = #{email}
+    order by r.review_id desc
+    limit #{pageable.offset}, #{pageable.size}
   </select>
 </mapper>

@@ -34,4 +34,11 @@
     set good = good - 1
     where review_id = #{reviewId}
   </update>
+
+  <!-- 특정 회원이 찜한 개수 -->
+  <select id="countAllByEmail" resultType="int">
+    select count(good_id)
+    from good
+    where email = #{email}
+  </select>
 </mapper>

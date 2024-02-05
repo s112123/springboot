@@ -15,10 +15,14 @@
   <script defer src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <!-- javascript -->
   <script defer src="/js/review/view.js"></script>
-  <script defer src="/js/review/good.js"></script>
+  <script defer src="/js/review/good.js" type="module"></script>
+  <script defer src="/js/review/subscribe.js" type="module"></script>
 </head>
 <body>
   <div layout:fragment="content" class="container">
+    <input type="hidden" id="email" th:value="${session.email}" />
+    <input type="hidden" id="writer" th:value="${writer.email}" />
+    <input type="hidden" id="member-nickname" th:if="${session.email != null}" th:value="${member.nickName}" />
     <div class="review-top">
       <div class="review-map" id="map"></div>
       <div id="review-store">
@@ -35,6 +39,7 @@
               <li><i class="fa-solid fa-star"></i></li>
             </ul>
           </div>
+          <th:block th:if="${session.email == null} or ${session.email != writer.email}">
           <div class="store-heart" id="store-heart" th:data-is-good="${isGood}">
             <a href="javascript:;" id="good" th:data-review-id="${review.reviewId}">
               <i class="fa-solid fa-heart"></i>
@@ -43,36 +48,42 @@
               <i class="fa-regular fa-heart"></i>
             </a>
           </div>
+          </th:block>
         </div>
       </div>
       <div id="review-writer">
         <div class="review-writer-box">
           <div class="writer-image">
-            <img src="#" art="profile-image" />
+            <img th:src="${writer.imageUrl}" art="profile-image" />
           </div>
           <div class="writer-info">
-            <p class="writer-name">닉네임</p>
+            <p class="writer-name" id="writer-name"
+               th:text="${writer.nickName}" th:data-writer-email="${writer.email}"></p>
           </div>
+          <th:block th:if="${session.email == null} or ${session.email != writer.email}">
           <div class="writer-action">
             <button id="btn-subscribe">구독하기</button>
-            <!--<button id="btn-subscribe-cancel">구독취소</button>-->
             <button id="btn-chat">1:1 채팅</button>
           </div>
+          </th:block>
         </div>
       </div>
     </div>
     <div class="review-middle">
-      <p class="review-title" th:text="${review.title}"></p>
+      <p class="review-title" id="review-title" th:text="${review.title}"></p>
       <div class="review-content" th:utext="${review.content}"></div>
       <div class="review-btn">
         <div class="review-btn-left">
           <button id="go-home">HOME</button>
         </div>
-        <div class="review-btn-right">
-          <button id="update-review" th:data-review-id="${review.reviewId}">편집</button>
-        </div>
+        <th:block th:if="${session.email != null} and ${session.email == writer.email}">
+          <div class="review-btn-right">
+            <button id="update-review" th:data-review-id="${review.reviewId}">편집</button>
+          </div>
+        </th:block>
       </div>
     </div>
+    <!--
     <div class="review-bottom">
       <div>
         댓글 (0)
@@ -87,6 +98,7 @@
         댓글페이징
       </div>
     </div>
+    -->
   </div>
 </body>
 </html>

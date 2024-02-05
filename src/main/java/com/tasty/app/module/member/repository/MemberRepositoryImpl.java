@@ -34,4 +34,9 @@ public class MemberRepositoryImpl implements MemberRepository {
         params.put("member", member);
         return memberMapper.updateOneByEmail(params);
     }
+
+    @Override
+    public void deleteMemberShip(String email) {
+        memberMapper.deleteMemberShip(email);
+    }
 }

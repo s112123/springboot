@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tasty.app.module.subscribe.repository.mapper.SubscribeMapper">
+
+  <!-- 구독하기 -->
+  <insert id="insertOne" useGeneratedKeys="true" keyProperty="subscribeId">
+    insert into subscribe (subscriber_email, publisher_email)
+    values (#{subscriberEmail}, #{publisherEmail})
+  </insert>
+
+  <!-- 구독취소 -->
+  <delete id="deleteOne">
+    delete from subscribe
+    where subscriber_email = #{subscriberEmail} and publisher_email = #{publisherEmail}
+  </delete>
+
+  <!-- 내가 구독한 사람 -->
+  <select id="selectAllForPublisherByEmail" resultType="java.util.HashMap">
+    select s.publisher_email,
+           m.nick_name,
+           m.image_url
+    from subscribe s
+    inner join member m
+      on s.publisher_email = m.email
+    where s.subscriber_email = #{email}
+  </select>
+
+  <!-- 내가 구독 안했지만 나를 구독한 사람 -->
+  <select id="selectAllForSubscriberByEmail" resultType="java.util.HashMap">
+    select s1.subscriber_email,
+           m.nick_name,
+           m.image_url
+    from subscribe s1
+    inner join member m
+     on s1.subscriber_email = m.email
+    where s1.publisher_email = #{email}
+      and not exists (
+        select 1
+        from subscribe s2
+        inner join member m
+          on s2.publisher_email = m.email
+        where s2.subscriber_email = #{email}
+          and s1.subscriber_email = s2.publisher_email
+      )
+  </select>
+</mapper>

@@ -64,4 +64,9 @@ public class ReviewRepositoryImpl implements ReviewRepository {
     public Long deleteAll(int[] checkItems) {
         return reviewMapper.deleteAll(checkItems);
     }
+
+    @Override
+    public List<Map<String, Object>> findAllByGoodByEmail(String email, Pageable pageable) {
+        return reviewMapper.selectAllByGoodByEmail(email, pageable);
+    }
 }

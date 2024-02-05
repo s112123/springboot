@@ -44,4 +44,7 @@ public interface ReviewMapper {
 
     // 리뷰 선택 삭제
     Long deleteAll(int[] checkItems);
+
+    // 내가 찜한 리뷰 목록
+    List<Map<String, Object>> selectAllByGoodByEmail(@Param("email") String email, @Param("pageable") Pageable pageable);
 }

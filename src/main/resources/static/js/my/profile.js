@@ -5,11 +5,14 @@ var password = document.getElementById('password');
 var errors = document.querySelectorAll('.error');
 var btnUpdate = document.getElementById('update-my-info');
 var btnChangePassword = document.getElementById('btn-change-pass');
+var btnWithdrawMembership = document.getElementById('withdraw-membership');
 var updatedMessage = document.getElementById('updated-message');
 var profileImage = document.getElementById('profile-image');
 var file = document.getElementById('profile-file');
 var fileName = document.getElementById('fileName');
 var imageUrl = document.getElementById('imageUrl');
+var btnSubscribeCancels = document.querySelectorAll('.btn-subscribe-cancel');
+var btnSubscribes = document.querySelectorAll('.btn-subscribe');
 var isChangePassword = false;
 var isValid = true;
 
@@ -84,6 +87,21 @@ btnChangePassword.addEventListener('click', () => {
   });
 });
 
+// 회원탈퇴 버튼 클릭
+btnWithdrawMembership.addEventListener('click', () => {
+  if (confirm('회원탈퇴 하시겠습니까? 모든 내역이 삭제됩니다')) {
+    removeMemberShip().then(response => {
+      location.replace('/');
+    });
+  }
+});
+
+// 회원탈퇴
+async function removeMemberShip() {
+  var response = await axios.get(`/my/profile/remove`);
+  return response;
+}
+
 // 유효성 검사
 function validateForm(form) {
   isValid = true;
@@ -115,3 +133,54 @@ async function saveProfileImage(formData) {
   var response = await axios.post('/members/image/save', formData, {headers: headers});
   return response;
 }
+
+// 내가 구독한 사람에서 구독취소 버튼 클릭
+btnSubscribeCancels.forEach((btnSubscribeCancel) => {
+  btnSubscribeCancel.addEventListener('click', () => {
+    var publisherEmail = btnSubscribeCancel.previousElementSibling;
+
+    // 구독자 - 발행자
+    var subscribe = {
+      'subscriberEmail': email.value,
+      'publisherEmail': publisherEmail.value
+    }
+
+    // 구독취소
+    if (confirm('구독을 취소하시겠습니까?')) {
+      cancelFollow(subscribe).then(response => {
+        location.replace('/my/profile');
+      });
+    }
+  });
+});
+
+// 구독취소
+async function cancelFollow(subscribe) {
+  var response = await axios.post(`/subscribes/cancel`, subscribe);
+  return response;
+}
+
+// 나를 구독한 사람에서 구독하기 버튼 클릭
+btnSubscribes.forEach((btnSubscribe) => {
+  btnSubscribe.addEventListener('click', () => {
+    var publisherEmail = btnSubscribe.previousElementSibling;
+
+    // 구독자 - 발행자
+    var subscribe = {
+      'subscriberEmail': email.value,
+      'publisherEmail': publisherEmail.value
+    }
+
+    // 구독하기
+    follow(subscribe).then(response => {
+      location.replace('/my/profile');
+    });
+  });
+});
+
+// 구독하기
+async function follow(subscribe) {
+  var response = await axios.post(`/subscribes`, subscribe);
+  return response;
+}
+

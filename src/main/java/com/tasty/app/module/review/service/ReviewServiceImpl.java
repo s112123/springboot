@@ -1,6 +1,7 @@
 package com.tasty.app.module.review.service;
 
 import com.tasty.app.infra.file.FileUtils;
+import com.tasty.app.module.good.repository.mapper.GoodMapper;
 import com.tasty.app.module.review.domain.Review;
 import com.tasty.app.infra.dto.Pageable;
 import com.tasty.app.module.review.form.EditForm;
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
+import java.util.Map;
 
 @Slf4j
 @Service
@@ -24,6 +26,7 @@ public class ReviewServiceImpl implements ReviewService {
     private String reviewUploadDir;
 
     private final ReviewMapper reviewMapper;
+    private final GoodMapper goodMapper;
     private final ReviewRepository reviewRepository;
     private final FileUtils fileUtils;
 
@@ -80,5 +83,12 @@ public class ReviewServiceImpl implements ReviewService {
     @Override
     public void removeReviews(int[] checkItems) {
         reviewRepository.deleteAll(checkItems);
+    }
+
+    @Override
+    public List<Map<String, Object>> getReviewsByGoodByEmail(String email, Pageable pageable) {
+        int total = goodMapper.countAllByEmail(email);;
+        pageable.setTotal(total);
+        return reviewRepository.findAllByGoodByEmail(email, pageable);
     }
 }

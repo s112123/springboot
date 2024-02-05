@@ -1,7 +1,8 @@
 package com.tasty.app.module.review.controller;
 
-import com.tasty.app.module.good.domain.Good;
 import com.tasty.app.module.good.service.GoodService;
+import com.tasty.app.module.member.domain.Member;
+import com.tasty.app.module.member.service.MemberService;
 import com.tasty.app.module.review.domain.Review;
 import com.tasty.app.module.review.form.AddForm;
 import com.tasty.app.module.review.form.EditForm;
@@ -14,7 +15,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
-import java.util.Map;
 
 @Slf4j
 @Controller
@@ -25,6 +25,7 @@ public class ReviewController {
     @Value("${kakao.map.serviceKey}")
     private String serviceKey;
     private final ReviewService reviewService;
+    private final MemberService memberService;
     private final GoodService goodService;
 
     // 리뷰 등록 화면
@@ -44,19 +45,24 @@ public class ReviewController {
     // 리뷰 조회 처리
     @GetMapping("/view")
     public String viewReview(
+            @SessionAttribute(value = "email", required = false) String email,
             @RequestParam("review_id") Long reviewId,
-            HttpSession session,
             Model model
     ) {
-        log.info("ReviewController.viewReview()");
-
-        // 아래 과정들은 Controller에서 몰라도 되므로 서비스단에서 하나의 메서드로 뭉칠 필요가 있다
+        // 리뷰 조회
         Review review = reviewService.getReviewById(reviewId);
         // 조회 수 증가: 리뷰를 조회하는 메서드(getReviewById)가 조회 이외의 기능에도 사용되어 조회 수가 계속 올라가 별도 처리
         reviewService.increaseHits(reviewId);
-        boolean isGood = goodService.isExistsGood((String) session.getAttribute("email"), reviewId);
+        // 작성자 이미지
+        Member writer = memberService.getMemberByEmail(review.getEmail());
+        // 사용자 닉네임
+        Member member = memberService.getMemberByEmail(email);
+        // 찜 상태
+        boolean isGood = goodService.isExistsGood(email, reviewId);
 
         model.addAttribute("review", review);
+        model.addAttribute("writer", writer);
+        model.addAttribute("member", member);
         model.addAttribute("isGood", isGood);
         model.addAttribute("serviceKey", serviceKey);
         return "review/view";

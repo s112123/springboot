@@ -57,23 +57,33 @@
           </div>
         </div>
         <div class="profile-box-bottom">
-          <div class="follow-list">
+          <div class="subscribe-list">
             <p>내가 구독한 사람</p>
             <ul>
-              <li class="follow-item">
-                <a href="#">대화상대1</a>
-                <button>구독취소</button>
-                <button>1:1 채팅</button>
+              <li class="subscribe-item" th:each="publisher : ${publishers}">
+                <div class="subscribe-info">
+                  <img th:src="${publisher.image_url}" />
+                  <a href="#" th:text="${publisher.nick_name}"></a>
+                </div>
+                <div class="subscribe-btn">
+                  <input type="hidden" th:value="${publisher.publisher_email}" />
+                  <button type="button" class="btn-subscribe-cancel">구독취소</button>
+                </div>
               </li>
             </ul>
           </div>
-          <div class="follower-list">
+          <div class="subscribe-list">
             <p>나를 구독한 사람</p>
             <ul>
-              <li class="follower-item">
-                <a href="#">대화상대1</a>
-                <button>구독하기</button>
-                <button>1:1 채팅</button>
+              <li class="subscribe-item" th:each="subscriber : ${subscribers}">
+                <div class="subscribe-info">
+                  <img th:src="${subscriber.image_url}" />
+                  <a href="#" th:text="${subscriber.nick_name}"></a>
+                </div>
+                <div class="subscribe-btn">
+                  <input type="hidden" th:value="${subscriber.subscriber_email}" />
+                  <button type="button" class="btn-subscribe">구독하기</button>
+                </div>
               </li>
             </ul>
           </div>

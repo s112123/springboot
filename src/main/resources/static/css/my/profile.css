@@ -152,26 +152,40 @@
 
 /* BOTTOM */
 .profile-box .profile-box-bottom {
-  border: 1px solid blue;
-  margin-top: 25px;
+  margin: 55px 0px;
   display: flex;
   justify-content: space-between;
 }
 
 .profile-box .profile-box-bottom p {
   font-size: 16px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  padding-left: 12px;
 }
 
 .profile-box .profile-box-bottom ul {
+  height: 300px;
+  padding: 5px 2px;
   list-style: none;
+  overflow-y: scroll;
+  border-top: 1px solid rgb(200, 200, 200);
+  border-bottom: 1px solid rgb(200, 200, 200);
+}
+
+.profile-box .profile-box-bottom ul::-webkit-scrollbar {
+	width: 8px;
+	background-color: rgb(240, 240, 240);
+}
+
+.profile-box .profile-box-bottom ul::-webkit-scrollbar-thumb {
+	background-color: rgba(210, 40, 40, 0.5);
+	border-radius: 100px;
 }
 
 .profile-box .profile-box-bottom ul li {
-  height: 40px;
-  padding: 0px 10px;
-  border: 1px solid rgb(180, 180, 180);
-  cursor: pointer;
+  height: 50px;
+  padding: 10px 12px;
+  border-bottom: 1px solid rgb(220, 220, 220);
 }
 
 .chat-box .chat-list ul li a {
@@ -179,12 +193,48 @@
   line-height: 30px;
 }
 
-.profile-box .profile-box-bottom .follow-list {
-  border: 1px solid black;
+.profile-box .profile-box-bottom .subscribe-list {
   width: 325px;
 }
 
-.profile-box .profile-box-bottom .follower-list {
-  border: 1px solid tomato;
-  width: 325px;
+.profile-box .profile-box-bottom .subscribe-list .subscribe-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
+.profile-box .profile-box-bottom .subscribe-list .subscribe-item .subscribe-info {
+  display: flex;
+  align-items: center;
+}
+
+.profile-box .profile-box-bottom .subscribe-list .subscribe-item .subscribe-info img {
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+
+.profile-box .profile-box-bottom .subscribe-list .subscribe-item .subscribe-info a {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.profile-box .profile-box-bottom .subscribe-list .subscribe-item .subscribe-btn button {
+  width: 55px;
+  height: 22px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #000;
+  border: 1px solid rgb(225, 225, 225);
+  background-color: rgb(225, 225, 225);
+}
+
+.profile-box .profile-box-bottom .subscribe-list .subscribe-item .subscribe-btn .btn-subscribe {
+  border: 1px solid rgb(210, 40, 40);
+  background-color: rgb(210, 40, 40);
+  color: #fff;
+}
+
+
+

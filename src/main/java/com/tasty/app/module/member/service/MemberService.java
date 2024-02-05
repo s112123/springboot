@@ -24,4 +24,7 @@ public interface MemberService {
 
     // 회원 프로필 이미지 업로드 (이미지 요청 경로: /review/image/** 반환)
     String uploadImage(MultipartFile multipartFile);
+
+    // 회원 계정 삭제
+    void removeMemberShip(String email);
 }

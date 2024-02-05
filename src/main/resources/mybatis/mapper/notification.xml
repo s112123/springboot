@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tasty.app.module.notification.repository.mapper.NotificationMapper">
+
+  <!-- 알림 등록 -->
+  <insert id="insertOne">
+    insert into notification (from_email, to_email, category, content, url)
+    values (#{fromEmail}, #{toEmail}, #{category}, #{content}, #{url})
+  </insert>
+
+  <!-- 전체 알림 목록 -->
+  <select id="selectAll" resultType="com.tasty.app.module.notification.domain.Notification">
+    select notification_id, from_email, to_email, content, url, is_read, reg_date
+    from notification
+    where to_email = #{email}
+    order by is_read asc, notification_id desc
+    limit #{pageable.offset}, #{pageable.size}
+  </select>
+
+  <!-- 읽지 않은 알림 목록 -->
+  <select id="selectAllByNoRead" resultType="com.tasty.app.module.notification.domain.Notification">
+    select notification_id, from_email, to_email, category, content, url, is_read, reg_date
+    from notification
+    where to_email = #{email} and is_read = false
+    order by notification_id desc
+  </select>
+
+  <!-- 전체 알림 목록 개수 (이메일) -->
+  <select id="countAllByEmail" resultType="int">
+    select count(notification_id)
+    from notification
+    where to_email = #{email}
+  </select>
+
+  <!-- 알림 읽기 처리 -->
+  <update id="updateRead">
+    update notification
+    set is_read = true
+    where notification_id = #{notificationId}
+  </update>
+
+  <!-- 알림 모두 읽기 처리 -->
+  <update id="updateReadAll">
+    update notification
+    set is_read = true
+    <where>
+      <if test="list != null and list.size != 0">
+        notification_id in
+        <foreach collection="list" item="notification_id" open="(" separator=", " close=")">
+          #{notification_id}
+        </foreach>
+      </if>
+    </where>
+  </update>
+</mapper>

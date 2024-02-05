@@ -16,7 +16,9 @@ btnHome.addEventListener('click', () => {
 
 // 편집 화면으로 이동
 const btnUpdate = document.getElementById('update-review');
-btnUpdate.addEventListener('click', () => {
-  const reviewId = btnUpdate.getAttribute('data-review-id');
-  location.href = '/review/edit?review_id=' + reviewId;
-});
+if (btnUpdate != null) {
+  btnUpdate.addEventListener('click', () => {
+    const reviewId = btnUpdate.getAttribute('data-review-id');
+    location.href = '/review/edit?review_id=' + reviewId;
+  });
+}

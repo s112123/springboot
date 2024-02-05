@@ -33,6 +33,7 @@
               </tr>
               </thead>
               <tbody>
+              <th:block th:if="${#lists.size(reviews) > 0}">
               <tr th:each="review : ${reviews}">
                 <td><input type="checkbox" class="checkItem" th:name="checkItem" th:value="${review.reviewId}" /></td>
                 <td><a th:href="@{/review/view(review_id=${review.reviewId})}" th:text="${review.title}"></a></td>
@@ -46,6 +47,12 @@
                   </a>
                 </td>
               </tr>
+              </th:block>
+              <th:block th:if="${#lists.size(reviews) == 0}">
+              <tr>
+                <td colspan="7">등록된 리뷰가 없습니다</td>
+              </tr>
+              </th:block>
               </tbody>
             </table>
           </div>

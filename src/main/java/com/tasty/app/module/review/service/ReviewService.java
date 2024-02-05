@@ -7,6 +7,7 @@ import com.tasty.app.module.review.form.AddForm;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
+import java.util.Map;
 
 public interface ReviewService {
 
@@ -36,4 +37,7 @@ public interface ReviewService {
 
     // 리뷰 선택 삭제
     void removeReviews(int[] checkItems);
+
+    // 내가 찜한 리뷰 목록
+    List<Map<String, Object>> getReviewsByGoodByEmail(String email, Pageable pageable);
 }

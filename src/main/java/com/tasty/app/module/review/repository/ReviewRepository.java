@@ -4,6 +4,7 @@ import com.tasty.app.module.review.domain.Review;
 import com.tasty.app.infra.dto.Pageable;
 
 import java.util.List;
+import java.util.Map;
 
 public interface ReviewRepository {
 
@@ -30,4 +31,7 @@ public interface ReviewRepository {
 
     // 리뷰 선택 삭제
     Long deleteAll(int[] checkItems);
+
+    // 내가 찜한 리뷰
+    List<Map<String, Object>> findAllByGoodByEmail(String email, Pageable pageable);
 }

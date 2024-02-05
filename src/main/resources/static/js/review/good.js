@@ -1,4 +1,9 @@
 // 변수 선언
+var email = document.getElementById('email');
+var writer = document.getElementById('writer');
+var writerNickName = document.getElementById('writer-name');
+var memberNickName = document.getElementById('member-nickname');
+var reviewTitle = document.getElementById('review-title');
 var storeGood = document.getElementById('store-heart');
 var good = document.getElementById('good');
 var notGood = document.getElementById('not-good');
@@ -16,13 +21,20 @@ notGood.addEventListener('click', () => {
 
   addGood(reviewId).then(response => {
     var responseData = response.data;
-    console.log(responseData);
+
     if (responseData.message > 0) {
+      // 찜 버튼 변경
       good.style.display = 'block';
       notGood.style.display = 'none';
+
+      // 알림 푸시
+      sendNotificationGood(writer).then(response => {
+        console.log("server push: good");
+      });
     } else {
       // 로그인이 안되어 있는 경우
-      alert('찜하기는 로그인이 필요합니다');
+      alert('로그인이 필요합니다');
+      return;
     }
   });
 });
@@ -55,3 +67,18 @@ async function cancelGood(reviewId) {
   var response = await axios.get(`/goods/cancel/${reviewId}`);
   return response;
 }
+
+// 알림 발송
+async function sendNotificationGood(writer) {
+  var notification = {
+    'fromEmail': email.value,
+    'toEmail': writer.value,
+    'category': 'good',
+    'content': `${memberNickName.value}님이 [${reviewTitle.innerText}] 리뷰를 찜하였습니다`,
+    'url': `/review/view?review_id=${good.getAttribute('data-review-id')}`
+  }
+  var response = await axios.post(`/notifications/publish/${writer.value}`, notification);
+  return response;
+}
+
+export {email, writer, memberNickName, writerNickName}

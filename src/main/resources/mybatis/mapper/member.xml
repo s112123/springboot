@@ -24,4 +24,10 @@
         file_name = #{params.member.fileName}
     where email = #{params.email}
   </update>
+
+  <!-- 회원 계정 삭제 -->
+  <delete id="deleteMemberShip">
+    delete from member
+    where email = #{email}
+  </delete>
 </mapper>

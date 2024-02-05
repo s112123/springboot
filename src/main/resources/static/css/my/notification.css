@@ -48,9 +48,15 @@
   margin-right: 5px;
 }
 
+.notification-box .notification-tool #all-read:hover {
+  color: rgb(210, 40, 40);
+  transition: 0.2s;
+}
+
 /* LIST */
 .notification-box .notification-list {
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .notification-box .notification-list .notification-content {
@@ -65,12 +71,21 @@
 .notification-box .notification-list .notification-content i {
   margin-right: 8px;
   color: rgb(220, 220, 220);
+  font-size: 8px;
 }
 
 .notification-box .notification-list .notification-content a {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .notification-box .notification-list .notification-content div:nth-child(2) { /* 알림 받은 시간 */
   font-size: 14px;
+}
+
+.notification-box .notification-list .notification-content .no-read {
+  color: rgb(210, 40, 40);
+}
+
+.notification-box .notification-list .notification-content .no-read-content {
+  font-weight: 500;
 }

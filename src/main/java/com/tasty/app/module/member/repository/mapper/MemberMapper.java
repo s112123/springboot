@@ -17,4 +17,7 @@ public interface MemberMapper {
 
     // 회원 정보 변경
     Long updateOneByEmail(@Param("params") Map<String, Object> params);
+
+    // 회원 계정 삭제
+    void deleteMemberShip(String email);
 }

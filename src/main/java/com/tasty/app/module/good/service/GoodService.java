@@ -2,6 +2,8 @@ package com.tasty.app.module.good.service;
 
 import com.tasty.app.module.good.domain.Good;
 import com.tasty.app.module.good.repository.GoodRepository;
+import com.tasty.app.module.notification.domain.Notification;
+import com.tasty.app.module.notification.service.NotificationService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -12,13 +14,16 @@ import org.springframework.stereotype.Service;
 public class GoodService {
 
     private final GoodRepository goodRepository;
+    private final NotificationService notificationService;
 
     // 찜 등록 (등록된 goodId 반환)
     public Long addGood(String email, Long reviewId) {
-        return goodRepository.save(Good.builder()
+        // 찜 등록
+        Long goodId =  goodRepository.save(Good.builder()
                 .email(email)
                 .reviewId(reviewId)
                 .build());
+        return goodId;
     }
 
     // 찜 조회

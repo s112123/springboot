@@ -64,4 +64,9 @@ public class MemberServiceImpl implements MemberService {
     public String uploadImage(MultipartFile multipartFile) {
         return  "/members/image/" + fileUtils.uploadFile(memberUploadDir, multipartFile);
     }
+
+    @Override
+    public void removeMemberShip(String email) {
+        memberRepository.deleteMemberShip(email);
+    }
 }
