@@ -62,8 +62,8 @@
             <ul>
               <li class="subscribe-item" th:each="publisher : ${publishers}">
                 <div class="subscribe-info">
-                  <img th:src="${publisher.image_url}" />
-                  <a href="#" th:text="${publisher.nick_name}"></a>
+                  <img th:src="${publisher.publisher_image_url}" />
+                  <span th:text="${publisher.publisher_nick_name}"></span>
                 </div>
                 <div class="subscribe-btn">
                   <input type="hidden" th:value="${publisher.publisher_email}" />
@@ -78,7 +78,7 @@
               <li class="subscribe-item" th:each="subscriber : ${subscribers}">
                 <div class="subscribe-info">
                   <img th:src="${subscriber.image_url}" />
-                  <a href="#" th:text="${subscriber.nick_name}"></a>
+                  <span th:text="${subscriber.nick_name}"></span>
                 </div>
                 <div class="subscribe-btn">
                   <input type="hidden" th:value="${subscriber.subscriber_email}" />

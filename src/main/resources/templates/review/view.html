@@ -62,7 +62,9 @@
           </div>
           <th:block th:if="${session.email == null} or ${session.email != writer.email}">
           <div class="writer-action">
-            <button id="btn-subscribe">구독하기</button>
+            <button id="btn-subscribe"
+                    th:classappend="${isSubscribed} ? subscribed : not-subscribed"
+                    th:text="${isSubscribed} ? 구독취소 : 구독하기">구독하기</button>
             <button id="btn-chat">1:1 채팅</button>
           </div>
           </th:block>

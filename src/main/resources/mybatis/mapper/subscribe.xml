@@ -15,18 +15,37 @@
   </delete>
 
   <!-- 내가 구독한 사람 -->
-  <select id="selectAllForPublisherByEmail" resultType="java.util.HashMap">
+  <select id="selectAllPublishersFromMe" resultType="java.util.HashMap">
     select s.publisher_email,
-           m.nick_name,
-           m.image_url
+           m1.nick_name as subscriber_nick_name,
+           m2.nick_name as publisher_nick_name,
+           m1.image_url as subscriber_image_url,
+           m2.image_url as publisher_image_url
     from subscribe s
-    inner join member m
-      on s.publisher_email = m.email
+    inner join member m1
+     on s.subscriber_email = m1.email
+    inner join member m2
+     on s.publisher_email = m2.email
     where s.subscriber_email = #{email}
   </select>
 
+  <!-- 나를 구독한 사람 -->
+  <select id="selectAllSubscribersToMe" resultType="java.util.HashMap">
+    select s.subscriber_email,
+           m2.nick_name as subscriber_nick_name,
+           m1.nick_name as publisher_nick_name,
+           m2.image_url as subscriber_image_url,
+           m1.image_url as publisher_image_url
+    from subscribe s
+    inner join member m1
+     on s.publisher_email = m1.email
+    inner join member m2
+     on s.subscriber_email = m2.email
+    where s.publisher_email = #{email}
+  </select>
+
   <!-- 내가 구독 안했지만 나를 구독한 사람 -->
-  <select id="selectAllForSubscriberByEmail" resultType="java.util.HashMap">
+  <select id="selectAllSubscribersToMeNotFromMe" resultType="java.util.HashMap">
     select s1.subscriber_email,
            m.nick_name,
            m.image_url
@@ -42,5 +61,12 @@
         where s2.subscriber_email = #{email}
           and s1.subscriber_email = s2.publisher_email
       )
+  </select>
+
+  <!-- 구독 여부: 1이면 구독, 0이면 구독 안함 -->
+  <select id="isExistsSubscribe" resultType="int">
+    select count(subscribe_id)
+    from subscribe
+    where subscriber_email = #{subscriberEmail} and publisher_email = #{publisherEmail}
   </select>
 </mapper>

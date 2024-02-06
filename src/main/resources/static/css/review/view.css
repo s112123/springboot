@@ -135,9 +135,14 @@
   border-radius: 5px;
 }
 
-.review-top #review-writer .writer-action #btn-subscribe {
-  color: #fff;
+.review-top #review-writer .writer-action .subscribed {
+  background-color: rgb(230, 230, 230);
+  color: #000;
+}
+
+.review-top #review-writer .writer-action .not-subscribed {
   background-color: rgb(210, 40, 40);
+  color: #fff;
 }
 
 /* MIDDLE */

@@ -28,13 +28,22 @@ public class SubscribeRepository {
     }
 
     // 내가 구독한 사람
-    public List<Map<String, Object>> findAllForPublisherByEmail(String email) {
-        log.info("repository.email={}", email);
-        return subscribeMapper.selectAllForPublisherByEmail(email);
+    public List<Map<String, Object>> findAllPublishersFromMe(String email) {
+        return subscribeMapper.selectAllPublishersFromMe(email);
+    }
+
+    // 나를 구독한 사람
+    public List<Map<String, Object>> findAllSubscribersToMe(String email) {
+        return subscribeMapper.selectAllSubscribersToMe(email);
     }
 
     // 내가 구독 안했지만 나를 구독한 사람
-    public List<Map<String, Object>> findAllForSubscriberByEmail(String email) {
-        return subscribeMapper.selectAllForSubscriberByEmail(email);
+    public List<Map<String, Object>> findAllSubscribersToMeNotFromMe(String email) {
+        return subscribeMapper.selectAllSubscribersToMeNotFromMe(email);
+    }
+
+    // 구독 여부
+    public boolean isExistsSubscribe(String subscriberEmail, String publisherEmail) {
+        return subscribeMapper.isExistsSubscribe(subscriberEmail, publisherEmail) > 0;
     }
 }

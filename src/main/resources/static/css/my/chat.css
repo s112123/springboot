@@ -28,6 +28,7 @@
   border: 1px solid rgb(180, 180, 180);
   border-radius: 5px;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .chat-box .chat-list::-webkit-scrollbar {
@@ -42,23 +43,33 @@
 
 .chat-box .chat-list ul {
   list-style: none;
+  padding: 0px 5px;
 }
 
 .chat-box .chat-list ul li {
   height: 50px;
   padding: 0px 10px;
-  border: 1px solid rgb(180, 180, 180);
-  border-radius: 5px;
+  border-bottom: 1px solid rgb(200, 200, 200);
+/*  border-radius: 5px;*/
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
-.chat-box .chat-list ul li a {
-  width: 100%;
-  line-height: 50px;
+.chat-box .chat-list ul li img {
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+
+.chat-box .chat-list ul li span {
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .chat-active {
-  background-color: rgb(210, 40, 40);
+  background-color: rgb(235, 235, 235);
 }
 
 .chat-active a {

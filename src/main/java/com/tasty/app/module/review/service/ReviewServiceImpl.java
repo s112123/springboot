@@ -2,12 +2,15 @@ package com.tasty.app.module.review.service;
 
 import com.tasty.app.infra.file.FileUtils;
 import com.tasty.app.module.good.repository.mapper.GoodMapper;
+import com.tasty.app.module.notification.domain.Notification;
+import com.tasty.app.module.notification.service.NotificationService;
 import com.tasty.app.module.review.domain.Review;
 import com.tasty.app.infra.dto.Pageable;
 import com.tasty.app.module.review.form.EditForm;
 import com.tasty.app.module.review.form.AddForm;
 import com.tasty.app.module.review.repository.ReviewRepository;
 import com.tasty.app.module.review.repository.mapper.ReviewMapper;
+import com.tasty.app.module.subscribe.service.SubscribeService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -29,13 +32,31 @@ public class ReviewServiceImpl implements ReviewService {
     private final GoodMapper goodMapper;
     private final ReviewRepository reviewRepository;
     private final FileUtils fileUtils;
+    private final NotificationService notificationService;
+    private final SubscribeService subscribeService;
 
     @Override
     public void addReview(AddForm form) {
         // DTO → Entity
         Review review = Review.toReviewFromAddForm(form);
         Long reviewId = reviewRepository.saveReview(review);
-        log.info("reviewId={}", reviewId);
+
+        // 알림 발송
+        List<Map<String, Object>> subscribers = subscribeService.getSubscribersToMe(form.getEmail());
+        for (Map<String, Object> subscriber : subscribers) {
+            Notification notification = Notification.builder()
+                    .fromEmail(form.getEmail())
+                    .toEmail((String) subscriber.get("subscriber_email"))
+                    .category("review")
+                    .content(subscriber.get("publisher_nick_name") + "님이 [" + form.getTitle() + "] 리뷰를 등록하였습니다")
+                    .url("/review/view?review_id=" + reviewId)
+                    .build();
+
+            // 알림 발송
+            notificationService.sendNotification((String) subscriber.get("subscriber_email"), notification);
+            // 알림 저장
+            notificationService.addNotification(notification);
+        }
     }
 
     @Override

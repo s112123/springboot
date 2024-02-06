@@ -7,7 +7,6 @@ import com.tasty.app.module.notification.domain.Notification;
 import com.tasty.app.module.notification.service.NotificationService;
 import com.tasty.app.module.review.domain.Review;
 import com.tasty.app.module.review.service.ReviewService;
-import com.tasty.app.module.subscribe.domain.Subscribe;
 import com.tasty.app.module.subscribe.service.SubscribeService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -43,9 +42,9 @@ public class MyController {
         // 개인정보
         Member member = memberService.getMemberByEmail(email);
         // 내가 구독한 사람
-        List<Map<String, Object>> publishers = subscribeService.getPublishers(email);
+        List<Map<String, Object>> publishers = subscribeService.getPublishersFromMe(email);
         // 나를 구독한 사람
-        List<Map<String, Object>> subscribers = subscribeService.getSubscribers(email);
+        List<Map<String, Object>> subscribers = subscribeService.getSubscribersToMeNotFromMe(email);
 
         // 데이터 전달
         model.addAttribute("member", member);
@@ -162,15 +161,5 @@ public class MyController {
         }
         notificationService.readNotificationAll(ids);
         return "all_read";
-    }
-
-    // 1:1 채팅 화면
-    @GetMapping("/chat")
-    public String myChat(
-            @RequestParam(value = "menu_option", defaultValue = "4") int menuOption,
-            Model model
-    ) {
-        model.addAttribute("menuOption", menuOption);
-        return "my/chat";
     }
 }

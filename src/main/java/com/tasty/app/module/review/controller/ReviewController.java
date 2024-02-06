@@ -7,6 +7,7 @@ import com.tasty.app.module.review.domain.Review;
 import com.tasty.app.module.review.form.AddForm;
 import com.tasty.app.module.review.form.EditForm;
 import com.tasty.app.module.review.service.ReviewService;
+import com.tasty.app.module.subscribe.service.SubscribeService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -27,6 +28,7 @@ public class ReviewController {
     private final ReviewService reviewService;
     private final MemberService memberService;
     private final GoodService goodService;
+    private final SubscribeService subscribeService;
 
     // 리뷰 등록 화면
     @GetMapping("/add")
@@ -36,8 +38,7 @@ public class ReviewController {
 
     // 리뷰 등록 처리
     @PostMapping("/add")
-    public String addReview(@ModelAttribute("form") AddForm form, HttpSession session) {
-        form.setEmail((String) session.getAttribute("email"));
+    public String addReview(@ModelAttribute("form") AddForm form) {
         reviewService.addReview(form);
         return "redirect:/";
     }
@@ -59,11 +60,14 @@ public class ReviewController {
         Member member = memberService.getMemberByEmail(email);
         // 찜 상태
         boolean isGood = goodService.isExistsGood(email, reviewId);
+        // 구독 상태
+        boolean isSubscribed = subscribeService.isSubscribed(email, review.getEmail());
 
         model.addAttribute("review", review);
         model.addAttribute("writer", writer);
         model.addAttribute("member", member);
         model.addAttribute("isGood", isGood);
+        model.addAttribute("isSubscribed", isSubscribed);
         model.addAttribute("serviceKey", serviceKey);
         return "review/view";
     }

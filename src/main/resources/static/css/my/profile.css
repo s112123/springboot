@@ -160,14 +160,15 @@
 .profile-box .profile-box-bottom p {
   font-size: 16px;
   margin-bottom: 10px;
-  padding-left: 12px;
+  padding-left: 10px;
 }
 
 .profile-box .profile-box-bottom ul {
   height: 300px;
-  padding: 5px 2px;
+  padding: 5px;
   list-style: none;
   overflow-y: scroll;
+  overflow-x: hidden;
   border-top: 1px solid rgb(200, 200, 200);
   border-bottom: 1px solid rgb(200, 200, 200);
 }
@@ -215,7 +216,7 @@
   border-radius: 10px;
 }
 
-.profile-box .profile-box-bottom .subscribe-list .subscribe-item .subscribe-info a {
+.profile-box .profile-box-bottom .subscribe-list .subscribe-item .subscribe-info span {
   font-size: 14px;
   font-weight: 500;
 }

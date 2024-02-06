@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tasty.app.module.my.chat.repository.mapper.ChatMapper">
+
+  <!-- 채팅 방 만들기 -->
+  <insert id="insertOneForChatRoom" useGeneratedKeys="true" keyProperty="chatRoomId">
+    insert into chatroom (sender_receiver, sender_email, receiver_email)
+    values (#{senderReceiver}, #{senderEmail}, #{receiverEmail})
+  </insert>
+
+  <!-- 채팅 방 조회 -->
+  <select id="selectOneForChatRoom" resultType="com.tasty.app.module.my.chat.domain.ChatRoom">
+    select sender_receiver, sender_email, receiver_email, reg_date
+    from chatroom
+    where sender_receiver = #{senderReceiver}
+  </select>
+
+  <!-- 채팅 메세지 저장 -->
+  <insert id="insertOneForChatMessage" useGeneratedKeys="true" keyProperty="chatId">
+    insert into chatroom (sender_receiver, sender_email, receiver_email, message)
+    values (#{senderReceiver}, #{senderEmail}, #{receiverEmail}, #{message})
+  </insert>
+</mapper>

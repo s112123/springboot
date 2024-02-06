@@ -22,6 +22,7 @@
       <h3>리뷰 등록</h3>
       <div class="review-add-box">
         <form action="/review/add" method="post" id="review-add-form">
+          <input type="hidden" name="email" id="email" th:value="${session.email}" />
           <div class="review-add-box-item">
             <input type="text" name="storeName" id="storeName" placeholder="가게이름" />
             <small class="error">가게이름은 필수입니다</small>

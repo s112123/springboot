@@ -32,9 +32,5 @@ public class NotificationControllerR {
         notificationService.sendNotification(toEmail, notification);
         // 알림 저장
         notificationService.addNotification(notification);
-
-        if (notification.getCategory().equals("subscribe")) {
-            // 구독 테이블에 저장
-        }
     }
 }
