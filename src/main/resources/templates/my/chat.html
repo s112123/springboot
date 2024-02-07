@@ -29,14 +29,13 @@
             <li class="chat-item" th:each="publisher : ${publishers}">
               <img th:src="${publisher.publisher_image_url}" />
               <span th:text="${publisher.publisher_nick_name}"></span>
+              <i class="fa-solid fa-circle fa-2xs"></i>
               <input type="hidden" th:value="${publisher.publisher_email}" />
             </li>
           </ul>
         </div>
         <div class="conversation">
-          <div class="conversation-view">
-            View
-          </div>
+          <div class="conversation-view" id="conversation-view">대화내용이 없습니다</div>
           <div class="conversation-send">
             <div class="conversation-message">
               <input type="text" id="message" placeholder="message" />

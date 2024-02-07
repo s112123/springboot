@@ -9,6 +9,7 @@ import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Slf4j
 @RestController
@@ -19,15 +20,14 @@ public class ChatControllerR {
     private final ChatService chatService;
 
     // 채팅 방 생성
-    @GetMapping("/{receiverEmail}")
+    @GetMapping("/make_room/{receiverEmail}")
     public String makeChatRoom(
-            @SessionAttribute("email") String sendEmail,
+            @SessionAttribute("email") String senderEmail,
             @PathVariable("receiverEmail") String receiverEmail
     ) {
-        //String sendEmail = "admin@test.com";
+        //String senderEmail = "admin@test.com";
         ChatRoom chatRoom = ChatRoom.builder()
-                .senderReceiver(sendEmail + "_" + receiverEmail)
-                .senderEmail(sendEmail)
+                .senderEmail(senderEmail)
                 .receiverEmail(receiverEmail)
                 .build();
         chatService.makeChatRoom(chatRoom);
@@ -41,6 +41,18 @@ public class ChatControllerR {
             @PathVariable("receiverEmail") String receiverEmail,
             @RequestBody ChatMessage chatMessage
     ) {
+        //String senderEmail = "admin@test.com";
         chatService.sendChatMessage(senderEmail, receiverEmail, chatMessage);
+    }
+
+    // 채팅 기록 가져오기
+    @GetMapping("/{receiverEmail}")
+    public List<ChatMessage> getChatMessages(
+            @SessionAttribute("email") String senderEmail,
+            @PathVariable("receiverEmail") String receiverEmail
+    ) {
+        //String senderEmail = "admin@test.com";
+        List<ChatMessage> chatMessages = chatService.getChatMessages(senderEmail, receiverEmail);
+        return chatMessages;
     }
 }
