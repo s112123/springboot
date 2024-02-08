@@ -21,11 +21,13 @@ public class ChatService {
     private final SimpMessagingTemplate simpMessagingTemplate;
 
     // 채팅 방 만들기
-    public void makeChatRoom(ChatRoom chatRoom) {
+    public String makeChatRoom(ChatRoom chatRoom) {
         // 방이 있는지 먼저 검사
         if (!existsChatRoom(chatRoom.getSenderEmail(), chatRoom.getReceiverEmail())) {
             chatRepository.saveChatRoom(chatRoom);
+            return getChatRoom(chatRoom.getSenderEmail(), chatRoom.getReceiverEmail()).getChatRoomKey();
         }
+        return getChatRoom(chatRoom.getSenderEmail(), chatRoom.getReceiverEmail()).getChatRoomKey();
     }
 
     // 채팅방 조회
@@ -39,24 +41,29 @@ public class ChatService {
     }
 
     // 채팅 메시지 전송
-    public void sendChatMessage(String senderEmail, String receiverEmail, ChatMessage chatMessage) {
+    public void sendChatMessage(ChatMessage chatMessage) {
+        // 메시지 발송
+        ChatRoom chatRoom = getChatRoom(chatMessage.getSenderEmail(), chatMessage.getReceiverEmail());
         ChatMessage message = ChatMessage.builder()
-                .chatRoomId(getChatRoom(senderEmail, receiverEmail).getChatRoomId())
-                .senderEmail(senderEmail)
-                .receiverEmail(receiverEmail)
+                .chatRoomKey(chatRoom.getChatRoomKey())
+                .senderEmail(chatMessage.getSenderEmail())
+                .receiverEmail(chatMessage.getReceiverEmail())
                 .message(chatMessage.getMessage())
                 .regDate(LocalDateTime.now())
                 .build();
+        simpMessagingTemplate.convertAndSendToUser(message.getChatRoomKey(), "/private/message", message);
 
         // 메시지 내용을 DB에 저장
         chatRepository.saveChatMessage(message);
-
-        // 메시지 발송
-        simpMessagingTemplate.convertAndSendToUser(receiverEmail,"/private/message", message);
     }
     
     // 채팅 기록 가져오기
     public List<ChatMessage> getChatMessages(String senderEmail, String receiverEmail) {
-        return chatRepository.findChatMessages(getChatRoom(senderEmail, receiverEmail).getChatRoomId());
+        return chatRepository.findChatMessages(getChatRoom(senderEmail, receiverEmail).getChatRoomKey());
+    }
+
+    // 읽음 처리
+    public void readMessage(ChatMessage chatMessage) {
+        chatRepository.readMessage(chatMessage);
     }
 }

@@ -14,6 +14,8 @@ public class ChatRoom {
 
     // pk
     private Long chatRoomId;
+    // key
+    private String chatRoomKey;
     // 보낸 사람 (fk)
     private String senderEmail;
     // 받는 사람 (fk)

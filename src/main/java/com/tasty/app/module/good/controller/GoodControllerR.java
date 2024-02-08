@@ -53,7 +53,7 @@ public class GoodControllerR {
             return response;
         }
 
-        // 찜 등록 성공시, 등록된 삭제된 행 수 반환
+        // 찜 등록 성공시, 등록된 행 수 반환
         long res = goodService.cancelGood(email, reviewId);
         response.put("message", res);
 

@@ -5,6 +5,8 @@ import com.tasty.app.module.notification.domain.Notification;
 import com.tasty.app.module.notification.repository.NotificationRepository;
 import com.tasty.app.module.notification.repository.mapper.NotificationMapper;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 
@@ -13,17 +15,19 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class NotificationService {
 
     // SseEmitter 저장소
     private final Map<String, SseEmitter> emitters = new ConcurrentHashMap<>();
-    private final Long TIME_OUT = 1000L * 60L * 30L;
+    private final Long TIME_OUT = 1000L * 60L * 1L;
     private final NotificationRepository notificationRepository;
     private final NotificationMapper notificationMapper;
 
     // SseEmitter 생성 (구독)
+    @Async
     public SseEmitter subscribe(String email) {
         SseEmitter emitter = new SseEmitter(TIME_OUT);
         emitters.put(email, emitter);
@@ -33,18 +37,20 @@ public class NotificationService {
 
         // 최초 구독시, Dummy 데이터 전송
         sendNotification(email, "subscribe");
-        
+
         // 읽지 않은 알림이 있으면 알림 전송
-/*        List<Notification> notifications = getNotificationsByNoRead(email);
+        List<Notification> notifications = getNotificationsByNoRead(email);
         if (!notifications.isEmpty()) {
             sendNotification(email, notifications);
-        }*/
+        }
 
         return emitter;
     }
 
     // 알림 보내기
+    @Async
     public void sendNotification(String email, Object notifications) {
+        log.info("알림 보내기");
         SseEmitter emitter = emitters.get(email);
 
         if (emitter != null) {

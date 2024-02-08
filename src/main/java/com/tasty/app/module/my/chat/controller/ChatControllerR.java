@@ -5,11 +5,10 @@ import com.tasty.app.module.my.chat.domain.ChatRoom;
 import com.tasty.app.module.my.chat.service.ChatService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDateTime;
 import java.util.List;
+import java.util.UUID;
 
 @Slf4j
 @RestController
@@ -27,22 +26,13 @@ public class ChatControllerR {
     ) {
         //String senderEmail = "admin@test.com";
         ChatRoom chatRoom = ChatRoom.builder()
+                .chatRoomKey(UUID.randomUUID().toString())
                 .senderEmail(senderEmail)
                 .receiverEmail(receiverEmail)
                 .build();
-        chatService.makeChatRoom(chatRoom);
-        return "success make chatroom";
-    }
 
-    // 메시지 전송
-    @PostMapping("/{receiverEmail}")
-    public void sendChatMessage(
-            @SessionAttribute("email") String senderEmail,
-            @PathVariable("receiverEmail") String receiverEmail,
-            @RequestBody ChatMessage chatMessage
-    ) {
-        //String senderEmail = "admin@test.com";
-        chatService.sendChatMessage(senderEmail, receiverEmail, chatMessage);
+        // 채팅 방 Key 반환
+        return chatService.makeChatRoom(chatRoom);
     }
 
     // 채팅 기록 가져오기
@@ -52,7 +42,15 @@ public class ChatControllerR {
             @PathVariable("receiverEmail") String receiverEmail
     ) {
         //String senderEmail = "admin@test.com";
+        //log.info("receiverEmail={}", receiverEmail);
         List<ChatMessage> chatMessages = chatService.getChatMessages(senderEmail, receiverEmail);
         return chatMessages;
+    }
+
+    // 읽음 처리
+    @PatchMapping("/read")
+    public String readMessage(@RequestBody ChatMessage chatMessage) {
+        chatService.readMessage(chatMessage);
+        return "읽음";
     }
 }

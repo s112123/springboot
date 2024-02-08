@@ -26,7 +26,7 @@ public class NotificationControllerR {
     }
 
     // 서버 푸시
-    @PostMapping("/publish/{toEmail}")
+    @PostMapping(value = "/publish/{toEmail}")
     public void publish(@PathVariable("toEmail") String toEmail, @RequestBody Notification notification) {
         // 알림 발송
         notificationService.sendNotification(toEmail, notification);

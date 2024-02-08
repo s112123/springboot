@@ -4,6 +4,7 @@ import com.tasty.app.module.login.form.LoginForm;
 import com.tasty.app.module.login.service.LoginService;
 import com.tasty.app.module.member.domain.Member;
 import com.tasty.app.module.member.service.MemberService;
+import com.tasty.app.module.notification.service.NotificationService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;

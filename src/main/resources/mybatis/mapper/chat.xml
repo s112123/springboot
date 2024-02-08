@@ -4,13 +4,13 @@
 
   <!-- 채팅 방 만들기 -->
   <insert id="insertOneForChatRoom" useGeneratedKeys="true" keyProperty="chatRoomId">
-    insert into chatroom (sender_email, receiver_email)
-    values (#{senderEmail}, #{receiverEmail})
+    insert into chatroom (chat_room_key, sender_email, receiver_email)
+    values (#{chatRoomKey}, #{senderEmail}, #{receiverEmail})
   </insert>
 
   <!-- 채팅 방 조회 -->
   <select id="selectOneForChatRoom" resultType="com.tasty.app.module.my.chat.domain.ChatRoom">
-    select chat_room_id, sender_email, receiver_email, reg_date
+    select chat_room_id, chat_room_key, sender_email, receiver_email, reg_date
     from chatroom
     where (sender_email = #{senderEmail} and receiver_email = #{receiverEmail})
       or (sender_email = #{receiverEmail} and receiver_email = #{senderEmail})
@@ -18,14 +18,22 @@
 
   <!-- 채팅 메세지 저장 -->
   <insert id="insertOneForChatMessage" useGeneratedKeys="true" keyProperty="chatId">
-    insert into chat (chat_room_id, sender_email, receiver_email, message)
-    values (#{chatRoomId}, #{senderEmail}, #{receiverEmail}, #{message})
+    insert into chat (chat_room_key, sender_email, receiver_email, message)
+    values (#{chatRoomKey}, #{senderEmail}, #{receiverEmail}, #{message})
   </insert>
 
   <!-- 채팅 기록 가져오기 -->
   <select id="selectChatMassages" resultType="com.tasty.app.module.my.chat.domain.ChatMessage">
-    select chat_id, chat_room_id, sender_email, receiver_email, message, is_read, reg_date
+    select chat_id, chat_room_key, sender_email, receiver_email, message, is_read, reg_date
     from chat
-    where chat_room_id = #{chatRoomId}
+    where chat_room_key = #{chatRoomKey}
   </select>
+
+  <!-- 읽음 처리 -->
+  <update id="updateRead">
+    update chat
+    set is_read = #{isRead}
+    where sender_email = #{receiverEmail}
+     and chat_room_key = #{chatRoomKey}
+  </update>
 </mapper>

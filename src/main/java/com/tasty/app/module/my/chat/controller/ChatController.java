@@ -7,13 +7,13 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.Payload;
-import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
-import javax.servlet.http.HttpSession;
-import java.security.Principal;
 import java.util.List;
 import java.util.Map;
 
@@ -33,12 +33,12 @@ public class ChatController {
             @RequestParam(value = "menu_option", defaultValue = "4") int menuOption,
             Model model
     ) {
-        //String email = "admin@test.com"
+        //String email = "admin@test.com";
         List<Map<String, Object>> publishers = subscribeService.getPublishersFromMe(email);
         // 임시결과
-        for (Map<String, Object> publisher : publishers) {
+/*        for (Map<String, Object> publisher : publishers) {
             log.info("publisher={}", publisher);
-        }
+        }*/
 
         model.addAttribute("publishers", publishers);
         model.addAttribute("menuOption", menuOption);
@@ -48,10 +48,7 @@ public class ChatController {
     // 메세지 발송
     @MessageMapping("/chat_service")
     public ChatMessage sendMessage(@Payload ChatMessage chatMessage) {
-        //String senderEmail = (String) session.getAttribute("email");
-        //log.info("senderEmail={}", senderEmail);
-
-        chatService.sendChatMessage("admin@test.com", chatMessage.getReceiverEmail(), chatMessage);
+        chatService.sendChatMessage(chatMessage);
         return chatMessage;
     }
 }

@@ -14,8 +14,8 @@ public class ChatMessage {
 
     // pk
     private Long chatId;
-    // 채팅방 ID (fk)
-    private Long chatRoomId;
+    // 채팅방 Key (fk)
+    private String chatRoomKey;
     // 보낸 사람 (fk)
     private String senderEmail;
     // 받는 사람 (fk)

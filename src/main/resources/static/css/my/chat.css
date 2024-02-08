@@ -43,7 +43,7 @@
 
 .chat-box .chat-list ul {
   list-style: none;
-  padding: 0px 5px;
+  padding: 5px;
 }
 
 .chat-box .chat-list ul li {
@@ -115,7 +115,23 @@
 .chat-box .conversation .conversation-view .sender-message-box {
   display:flex;
   justify-content: flex-end;
-  align-items: center;
+  align-items: end;
+}
+
+.chat-box .conversation .conversation-view .sender-message {
+  width: 300px;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: rgba(210, 40, 40, 0.3);
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.chat-box .conversation .conversation-view .receiver-message-box {
+  display:flex;
+  justify-content: flex-start;
+  align-items: end;
 }
 
 .chat-box .conversation .conversation-view .receiver-message {
@@ -128,13 +144,11 @@
   font-weight: 500;
 }
 
-.chat-box .conversation .conversation-view .sender-message {
-  width: 300px;
-  margin-top: 10px;
-  padding: 10px 15px;
-  background-color: rgba(210, 40, 40, 0.3);
-  border-radius: 5px;
-  font-size: 14px;
+.chat-box .conversation .conversation-view .is-read-message {
+  height: 100%;
+  margin: 5px;
+  color: rgb(210, 40, 40);
+  font-size: 12px;
   font-weight: 500;
 }
 

@@ -19,6 +19,7 @@ if (isGood === 'true') {
 notGood.addEventListener('click', () => {
   var reviewId = good.getAttribute('data-review-id');
 
+  // 찜하기 버튼을 눌렀을 때
   addGood(reviewId).then(response => {
     var responseData = response.data;
 

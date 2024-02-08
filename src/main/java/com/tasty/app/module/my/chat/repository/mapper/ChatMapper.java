@@ -22,5 +22,8 @@ public interface ChatMapper {
     void insertOneForChatMessage(ChatMessage message);
 
     // 채팅 기록 가져오기
-    List<ChatMessage> selectChatMassages(Long chatRoomId);
+    List<ChatMessage> selectChatMassages(@Param("chatRoomKey") String chatRoomKey);
+
+    // 읽음 처리
+    Long updateRead(ChatMessage chatMessage);
 }
