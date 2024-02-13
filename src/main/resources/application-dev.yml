@@ -1,6 +1,35 @@
 spring:
   datasource:
-    driver-class-name: org.h2.Driver
-    url: jdbc:h2:mem:testdb
-    username: sa
-    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/tasty
+    username: root
+    password: '0000'
+
+mybatis:
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+# 이미지 업로드 경로
+upload:
+  storage:
+    temp:
+      member: file:///D://upload//images//member//temp//
+    real:
+      member: file:///D://upload//images//member//
+  dir:
+    temp:
+      member: D://upload//member//temp//
+    real:
+      member: D://upload//member//
+
+# 리뷰 이미지 업로드 경로
+review:
+  upload:
+    storage: file:///D://upload//review//
+    dir: D://upload//review//
+
+# kakao map serviceKey
+kakao:
+  map:
+    serviceKey: 230b5d51dc0d7922ef71f2da9388d21f

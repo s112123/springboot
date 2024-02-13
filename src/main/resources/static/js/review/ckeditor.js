@@ -35,7 +35,7 @@ class UploadAdapter {
   // 서버 요청 경로
   _initRequest() {
     const xhr = this.xhr = new XMLHttpRequest();
-    xhr.open('POST', 'http://localhost:8080/reviews/upload_image', true);
+    xhr.open('POST', 'http://s112123.cafe24.com/reviews/upload_image', true);
     xhr.responseType = 'json';
   }
 

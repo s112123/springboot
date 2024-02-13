@@ -6,6 +6,7 @@ import com.tasty.app.module.notification.repository.NotificationRepository;
 import com.tasty.app.module.notification.repository.mapper.NotificationMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.core.annotation.Order;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
@@ -27,7 +28,6 @@ public class NotificationService {
     private final NotificationMapper notificationMapper;
 
     // SseEmitter 생성 (구독)
-    @Async
     public SseEmitter subscribe(String email) {
         SseEmitter emitter = new SseEmitter(TIME_OUT);
         emitters.put(email, emitter);
@@ -48,7 +48,6 @@ public class NotificationService {
     }
 
     // 알림 보내기
-    @Async
     public void sendNotification(String email, Object notifications) {
         log.info("알림 보내기");
         SseEmitter emitter = emitters.get(email);

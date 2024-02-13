@@ -13,6 +13,7 @@ var fileName = document.getElementById('fileName');
 var imageUrl = document.getElementById('imageUrl');
 var btnSubscribeCancels = document.querySelectorAll('.btn-subscribe-cancel');
 var btnSubscribes = document.querySelectorAll('.btn-subscribe');
+var formData = null;
 var isChangePassword = false;
 var isValid = true;
 
@@ -36,7 +37,7 @@ btnUpdate.addEventListener('click', () => {
     return;
   }
 
-  // 수정하기
+  // 회원정보 수정하기
   // if (confirm("회원정보를 변경하시겠습니까?")) {
   editMember(form).then(response => {
     result = response.data;
@@ -49,6 +50,21 @@ btnUpdate.addEventListener('click', () => {
     }
   });
   //}
+
+  // 이미지 파일 저장
+  saveProfileImage(formData).then(response => {
+    // 응답받은 이미지 경로
+    var $imageUrl = response.data;
+    // 프로필 이미지에 변경된 이미지 표시
+    profileImage.src = $imageUrl;
+    // 이미지 경로
+    imageUrl.value = $imageUrl;
+    // 이미지 파일 이름
+    fileName.value = $imageUrl;
+    fileName.value = fileName.value.substring(fileName.value.lastIndexOf('/') + 1);
+
+    // 임시 이미지 폴더 삭제
+  });
 });
 
 // 프로필 이미지 파일 변경
@@ -56,11 +72,11 @@ file.addEventListener('change', (event) => {
   //fileName.value = file.value.replace(/^C:\\fakepath\\/i, '');
 
   // 파일 담기
-  var formData = new FormData();
+  formData = new FormData();
   formData.append('profile-file', event.target.files[0]);
 
-  // 파일 저장
-  saveProfileImage(formData).then(response => {
+  // 임시 파일 저장
+  saveTempProfileImage(formData).then((response) => {
     // 응답받은 이미지 경로
     var $imageUrl = response.data;
     // 프로필 이미지에 변경된 이미지 표시
@@ -131,6 +147,15 @@ async function saveProfileImage(formData) {
     'Content-Type': 'multipart/form-data'
   };
   var response = await axios.post('/members/image/save', formData, {headers: headers});
+  return response;
+}
+
+// 이미지 임시 파일 저장
+async function saveTempProfileImage(formData) {
+  var headers = {
+    'Content-Type': 'multipart/form-data'
+  };
+  var response = await axios.post('/members/temp_image/save', formData, {headers: headers});
   return response;
 }
 

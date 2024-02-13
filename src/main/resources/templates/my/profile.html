@@ -26,8 +26,8 @@
             <div class="profile-image">
               <img th:src="${member.imageUrl}" id="profile-image" />
               <div class="profile-image-file">
-                <input type="hidden" th:field="${member.fileName}" />
-                <input type="hidden" th:field="${member.imageUrl}" />
+                <input type="text" th:field="${member.fileName}" />
+                <input type="text" th:field="${member.imageUrl}" />
                 <label for="profile-file">이미지 선택</label>
                 <input type="file" id="profile-file" />
               </div>

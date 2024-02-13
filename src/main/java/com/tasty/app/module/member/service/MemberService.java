@@ -22,8 +22,11 @@ public interface MemberService {
     // 회원 정보 변경
     void editMember(String email, EditForm form);
 
-    // 회원 프로필 이미지 업로드 (이미지 요청 경로: /review/image/** 반환)
+    // 회원 프로필 이미지 업로드 (이미지 요청 경로: /upload/images/member/** 반환)
     String uploadImage(MultipartFile multipartFile);
+
+    // 회원 프로필 임시 이미지 업로드 (이미지 요청 경로: /upload/images/member/** 반환)
+    String uploadTempImage(String email, MultipartFile multipartFile);
 
     // 회원 계정 삭제
     void removeMemberShip(String email);

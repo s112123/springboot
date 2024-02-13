@@ -75,4 +75,14 @@ public class MemberControllerR {
         log.info("uploadUrl={}", uploadUrl);
         return uploadUrl;
     }
+
+    // 회원 프로필 임시 이미지 저장
+    @PostMapping("/temp_image/save")
+    public String saveTempProfileImage(
+            @SessionAttribute("email") String email, @RequestPart("profile-file") MultipartFile multipartFile
+    ) {
+        String uploadUrl = memberService.uploadTempImage(email, multipartFile);
+        log.info("uploadUrl={}", uploadUrl);
+        return uploadUrl;
+    }
 }

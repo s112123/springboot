@@ -11,13 +11,17 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+
 @Slf4j
 @Service
 @RequiredArgsConstructor
 public class MemberServiceImpl implements MemberService {
 
-    @Value("${member.upload.dir}")
-    private String memberUploadDir;
+    @Value("${upload.dir.temp.member}")
+    private String uploadDirTempMember;
+    @Value("${upload.dir.real.member}")
+    private String uploadDirRealMember;
 
     private final MemberRepository memberRepository;
     private final FileUtils fileUtils;
@@ -62,7 +66,15 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public String uploadImage(MultipartFile multipartFile) {
-        return  "/members/image/" + fileUtils.uploadFile(memberUploadDir, multipartFile);
+        return  "/upload/images/member/" + fileUtils.uploadFile(uploadDirRealMember, multipartFile);
+    }
+
+    @Override
+    public String uploadTempImage(String email, MultipartFile multipartFile) {
+        log.info(uploadDirTempMember);
+        uploadDirTempMember = uploadDirTempMember + email + File.separator;
+        log.info(uploadDirTempMember);
+        return  "/upload/images/member/" + fileUtils.uploadFile(uploadDirTempMember, multipartFile);
     }
 
     @Override
