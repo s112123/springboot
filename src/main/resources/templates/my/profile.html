@@ -26,10 +26,10 @@
             <div class="profile-image">
               <img th:src="${member.imageUrl}" id="profile-image" />
               <div class="profile-image-file">
-                <input type="text" th:field="${member.fileName}" />
-                <input type="text" th:field="${member.imageUrl}" />
+                <input type="hidden" th:field="${member.fileName}" />
+                <input type="hidden" th:field="${member.imageUrl}" />
                 <label for="profile-file">이미지 선택</label>
-                <input type="file" id="profile-file" />
+                <input type="file" id="profile-file" accept="image/*" />
               </div>
             </div>
           </div>
@@ -42,6 +42,7 @@
               <p><label for="nickName">닉네임</label></p>
               <input type="text" th:field="${member.nickName}" placeholder="nick_name" />
               <small class="error">닉네임은 필수입니다</small>
+              <small class="error">이미 존재하는 닉네임입니다</small>
             </div>
             <div class="profile-information-item">
               <p><label for="password">비밀번호</label></p>

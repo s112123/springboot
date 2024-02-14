@@ -1,7 +1,7 @@
 package com.tasty.app.module.review.repository;
 
 import com.tasty.app.module.review.domain.Review;
-import com.tasty.app.infra.dto.Pageable;
+import com.tasty.app.infra.page.Pageable;
 
 import java.util.List;
 import java.util.Map;

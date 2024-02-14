@@ -160,6 +160,11 @@
   padding: 35px 0px 100px 0px;
 }
 
+.review-middle .review-content .image img {
+  max-width: 100%;
+  object-fit: scale-down;
+}
+
 .review-middle .review-btn {
   display: flex;
   justify-content: space-between;

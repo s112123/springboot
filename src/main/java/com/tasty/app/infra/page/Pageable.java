@@ -1,4 +1,4 @@
-package com.tasty.app.infra.dto;
+package com.tasty.app.infra.page;
 
 import lombok.Getter;
 import lombok.ToString;

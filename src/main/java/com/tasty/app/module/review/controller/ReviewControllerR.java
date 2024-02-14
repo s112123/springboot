@@ -1,7 +1,7 @@
 package com.tasty.app.module.review.controller;
 
 import com.tasty.app.module.review.domain.Review;
-import com.tasty.app.infra.dto.Pageable;
+import com.tasty.app.infra.page.Pageable;
 import com.tasty.app.module.review.service.ReviewService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -41,9 +41,9 @@ public class ReviewControllerR {
         return response;
     }
 
-    // 리뷰 등록시, CKEditor 이미지 업로드
+    // 리뷰 등록시, CKEditor 임시 이미지 업로드
     @PostMapping("/upload_image")
-    public Map<String, Object> uploadReviewImage(MultipartRequest multipartRequest) {
+    public Map<String, Object> uploadReviewTempImage(MultipartRequest multipartRequest) {
         MultipartFile multipartFile = multipartRequest.getFile("upload");
         String uploadUrl = reviewService.uploadImage(multipartFile);
 

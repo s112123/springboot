@@ -47,7 +47,7 @@
 }
 
 .profile-box .profile-box-top .profile-image-box .profile-image label[for=profile-file] {
-  width: 100%;
+  width: 80px;
   padding: 3px 5px;
   background-color: rgb(225, 225, 225);
   font-size: 13px;
@@ -59,7 +59,7 @@
 .profile-box .profile-box-top .profile-image-box .profile-image #profile-file {
   width: 0;
   height: 0;
-  padding:0;
+  padding: 0;
   border: 0;
 }
 

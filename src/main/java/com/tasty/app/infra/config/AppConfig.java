@@ -12,14 +12,16 @@ import org.springframework.web.servlet.resource.PathResourceResolver;
 @Configuration
 public class AppConfig implements WebMvcConfigurer {
 
-    @Value("${upload.storage.temp.member}")
-    private String uploadStorageTempMember;
-    @Value("${upload.storage.real.member}")
-    private String uploadStorageRealMember;
+    @Value("${upload.storage.member}")
+    private String uploadStorageMember;
+    @Value("${upload.storage.review}")
+    private String uploadStorageReview;
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/upload/images/member/**")
-                .addResourceLocations(uploadStorageTempMember, uploadStorageRealMember);
+        log.info(uploadStorageMember);
+        log.info(uploadStorageReview);
+        registry.addResourceHandler("/images/member/**", "/images/review/**")
+                .addResourceLocations(uploadStorageMember, uploadStorageReview);
     }
 }

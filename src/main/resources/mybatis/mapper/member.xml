@@ -30,4 +30,11 @@
     delete from member
     where email = #{email}
   </delete>
+
+  <!-- 닉네임 중복 여부 -->
+  <select id="selectOneByNickName" resultType="int">
+    select count(member_id)
+    from member
+    where <![CDATA[email <> #{email}]]> and nick_name = #{nickName}
+  </select>
 </mapper>

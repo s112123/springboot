@@ -1,22 +1,25 @@
+// 변수 선언
+var errors = document.querySelectorAll('.error');
+var storeName = document.getElementById('storeName');
+var storeAddress = document.getElementById('storeAddress');
+var thumbnail = document.getElementById('thumbnailUrl');
+var thumbnailFileName = document.getElementById('thumbnailFileName');
+var star = document.getElementById('star');
+var btnAdd = document.getElementById('add-review');
+var form = document.getElementById('review-add-form');
+var isValid = true;
+
 // 등록 버튼 클릭
-const btnAdd = document.getElementById('add-review');
 btnAdd.addEventListener('click', (e) => {
   e.preventDefault();
-
-  let isValid = true;
-  const errors = document.querySelectorAll('.error');
-  let storeName = document.getElementById('storeName');
-  let storeAddress = document.getElementById('storeAddress');
-  let ckEditor = document.getElementsByClassName('ck-content')[0];
-  let imgTag = ckEditor.getElementsByTagName('img')[0];
-  let thumbnail = document.getElementById('thumbnailUrl');
-  let thumbnailFileName = document.getElementById('thumbnailFileName');
-  let star = document.getElementById('star');
 
   // 에러 표시 모두 닫기
   errors.forEach(error => {
     error.style.display = 'none';
   });
+
+  var ckEditor = document.getElementsByClassName('ck-content')[0];
+  var imgTag = ckEditor.getElementsByTagName('img')[0];
 
   // 입력사항 유효성 검사
   if (storeName.value.trim().length === 0) {
@@ -32,7 +35,6 @@ btnAdd.addEventListener('click', (e) => {
     title.nextElementSibling.style.display = 'block';
     isValid = false;
   } else if (imgTag === undefined) {
-    console.log('imgTag !== undefined');
     // 글 내용에 이미지 삽입 여부
     document.getElementById('editor-error').style.display = 'block';
     isValid = false;
@@ -64,7 +66,6 @@ btnAdd.addEventListener('click', (e) => {
   getThumbnailUrl(imgTag, thumbnail, thumbnailFileName);
 
   if (isValid) {
-    const form = document.getElementById('review-add-form');
     form.action = '/review/add';
     form.method = 'post';
     form.submit();

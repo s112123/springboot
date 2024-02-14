@@ -1,11 +1,11 @@
 package com.tasty.app.module.review.service;
 
-import com.tasty.app.infra.file.FileUtils;
+import com.tasty.app.infra.file.util.FileUtils;
 import com.tasty.app.module.good.repository.mapper.GoodMapper;
 import com.tasty.app.module.notification.domain.Notification;
 import com.tasty.app.module.notification.service.NotificationService;
 import com.tasty.app.module.review.domain.Review;
-import com.tasty.app.infra.dto.Pageable;
+import com.tasty.app.infra.page.Pageable;
 import com.tasty.app.module.review.form.EditForm;
 import com.tasty.app.module.review.form.AddForm;
 import com.tasty.app.module.review.repository.ReviewRepository;
@@ -25,8 +25,8 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class ReviewServiceImpl implements ReviewService {
 
-    @Value("${review.upload.dir}")
-    private String reviewUploadDir;
+    @Value("${upload.dir.review}")
+    private String uploadDirReview;
 
     private final ReviewMapper reviewMapper;
     private final GoodMapper goodMapper;
@@ -61,7 +61,7 @@ public class ReviewServiceImpl implements ReviewService {
 
     @Override
     public String uploadImage(MultipartFile multipartFile) {
-        return  "/upload/review/image/" + fileUtils.uploadFile(reviewUploadDir, multipartFile);
+        return  "/images/review/" + fileUtils.uploadFile(uploadDirReview, multipartFile, false);
     }
 
     @Override

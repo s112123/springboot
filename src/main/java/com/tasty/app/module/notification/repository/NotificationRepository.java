@@ -1,6 +1,6 @@
 package com.tasty.app.module.notification.repository;
 
-import com.tasty.app.infra.dto.Pageable;
+import com.tasty.app.infra.page.Pageable;
 import com.tasty.app.module.notification.domain.Notification;
 import com.tasty.app.module.notification.repository.mapper.NotificationMapper;
 import lombok.RequiredArgsConstructor;

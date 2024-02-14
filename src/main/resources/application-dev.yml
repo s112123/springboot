@@ -12,16 +12,12 @@ mybatis:
 
 # 이미지 업로드 경로
 upload:
-  storage:
-    temp:
-      member: file:///D://upload//images//member//temp//
-    real:
-      member: file:///D://upload//images//member//
   dir:
-    temp:
-      member: D://upload//member//temp//
-    real:
-      member: D://upload//member//
+    member: D:/upload/images/member/
+    review: D:/upload/images/review/
+  storage:
+    member: file:///D:/upload/images/member/
+    review: file:///D:/upload/images/review/
 
 # 리뷰 이미지 업로드 경로
 review:

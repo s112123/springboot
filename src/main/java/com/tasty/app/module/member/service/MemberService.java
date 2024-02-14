@@ -26,8 +26,14 @@ public interface MemberService {
     String uploadImage(MultipartFile multipartFile);
 
     // 회원 프로필 임시 이미지 업로드 (이미지 요청 경로: /upload/images/member/** 반환)
-    String uploadTempImage(String email, MultipartFile multipartFile);
+    String uploadTempImage(MultipartFile multipartFile);
+
+    // 회원 프로필 파일 삭제
+    void deleteImage(String uploadFileName);
 
     // 회원 계정 삭제
     void removeMemberShip(String email);
+
+    // 닉네임 중복 여부
+    boolean isExistsNickName(String email, String nickName);
 }

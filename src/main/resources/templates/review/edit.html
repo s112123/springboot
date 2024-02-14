@@ -20,7 +20,7 @@
   <div class="review-edit-wrap">
     <h3>리뷰 수정</h3>
     <div class="review-edit-box">
-      <form th:action="@{/review/edit}" method="post" id="review-edit-form">
+      <form th:action="@{/review/edit}" method="post" id="review-edit-form" autocomplete="off">
         <div class="review-edit-box-item">
           <input type="text" name="storeName" id="storeName" th:value="${review.storeName}" placeholder="가게이름" />
           <small class="error">가게이름은 필수입니다</small>

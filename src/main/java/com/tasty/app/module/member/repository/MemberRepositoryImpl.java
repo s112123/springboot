@@ -39,4 +39,9 @@ public class MemberRepositoryImpl implements MemberRepository {
     public void deleteMemberShip(String email) {
         memberMapper.deleteMemberShip(email);
     }
+
+    @Override
+    public int findMemberByNickName(String email, String nickName) {
+        return memberMapper.selectOneByNickName(email, nickName);
+    }
 }

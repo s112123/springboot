@@ -20,4 +20,7 @@ public interface MemberMapper {
 
     // 회원 계정 삭제
     void deleteMemberShip(String email);
+    
+    // 닉네임 중복 여부
+    int selectOneByNickName(@Param("email") String email, @Param("nickName") String nickName);
 }

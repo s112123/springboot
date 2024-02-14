@@ -2,7 +2,7 @@ package com.tasty.app.module.review.repository;
 
 import com.tasty.app.module.member.repository.mapper.MemberMapper;
 import com.tasty.app.module.review.domain.Review;
-import com.tasty.app.infra.dto.Pageable;
+import com.tasty.app.infra.page.Pageable;
 import com.tasty.app.module.review.repository.mapper.ReviewMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

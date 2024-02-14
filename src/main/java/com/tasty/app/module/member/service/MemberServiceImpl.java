@@ -1,6 +1,6 @@
 package com.tasty.app.module.member.service;
 
-import com.tasty.app.infra.file.FileUtils;
+import com.tasty.app.infra.file.util.FileUtils;
 import com.tasty.app.module.member.domain.Member;
 import com.tasty.app.module.member.form.AddForm;
 import com.tasty.app.module.member.form.EditForm;
@@ -11,17 +11,13 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
-
 @Slf4j
 @Service
 @RequiredArgsConstructor
 public class MemberServiceImpl implements MemberService {
 
-    @Value("${upload.dir.temp.member}")
-    private String uploadDirTempMember;
-    @Value("${upload.dir.real.member}")
-    private String uploadDirRealMember;
+    @Value("${upload.dir.member}")
+    private String uploadDirMember;
 
     private final MemberRepository memberRepository;
     private final FileUtils fileUtils;
@@ -66,19 +62,27 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public String uploadImage(MultipartFile multipartFile) {
-        return  "/upload/images/member/" + fileUtils.uploadFile(uploadDirRealMember, multipartFile);
+        return  "/images/member/" + fileUtils.uploadFile(uploadDirMember, multipartFile, false);
     }
 
     @Override
-    public String uploadTempImage(String email, MultipartFile multipartFile) {
-        log.info(uploadDirTempMember);
-        uploadDirTempMember = uploadDirTempMember + email + File.separator;
-        log.info(uploadDirTempMember);
-        return  "/upload/images/member/" + fileUtils.uploadFile(uploadDirTempMember, multipartFile);
+    public String uploadTempImage(MultipartFile multipartFile) {
+        return  "/images/member/" + fileUtils.uploadFile(uploadDirMember, multipartFile, true);
+    }
+
+    @Override
+    public void deleteImage(String uploadFileName) {
+        fileUtils.deleteFile(uploadDirMember, uploadFileName);
     }
 
     @Override
     public void removeMemberShip(String email) {
         memberRepository.deleteMemberShip(email);
+    }
+
+    @Override
+    public boolean isExistsNickName(String email, String nickName) {
+        int res = memberRepository.findMemberByNickName(email, nickName);
+        return res > 0;
     }
 }

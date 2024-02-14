@@ -13,7 +13,6 @@ var fileName = document.getElementById('fileName');
 var imageUrl = document.getElementById('imageUrl');
 var btnSubscribeCancels = document.querySelectorAll('.btn-subscribe-cancel');
 var btnSubscribes = document.querySelectorAll('.btn-subscribe');
-var formData = null;
 var isChangePassword = false;
 var isValid = true;
 
@@ -37,33 +36,39 @@ btnUpdate.addEventListener('click', () => {
     return;
   }
 
-  // 회원정보 수정하기
-  // if (confirm("회원정보를 변경하시겠습니까?")) {
-  editMember(form).then(response => {
-    result = response.data;
-    if (result === 'updated') {
-      updatedMessage.style.display = 'block';
-      setTimeout(() => {
-        updatedMessage.style.display = 'none';
-      }, 3000);
-      password.value = '';
+  // 닉네임 중복 여부
+  checkDuplicateNickName(form).then(response => {
+    var isDuplicated = response.data;
+    if (isDuplicated) {
+      form.nickName.nextElementSibling.nextElementSibling.style.display = 'block';
+      return;
     }
-  });
-  //}
 
-  // 이미지 파일 저장
-  saveProfileImage(formData).then(response => {
-    // 응답받은 이미지 경로
-    var $imageUrl = response.data;
-    // 프로필 이미지에 변경된 이미지 표시
-    profileImage.src = $imageUrl;
-    // 이미지 경로
-    imageUrl.value = $imageUrl;
-    // 이미지 파일 이름
-    fileName.value = $imageUrl;
-    fileName.value = fileName.value.substring(fileName.value.lastIndexOf('/') + 1);
+    // 회원정보 수정하기
+    if (confirm("회원정보를 변경하시겠습니까?")) {
+      // 파일 담기
+      var formData = new FormData();
+      formData.append('profile-file', file.files[0]);
 
-    // 임시 이미지 폴더 삭제
+      // 이미지 파일 저장
+      saveProfileImage(formData).then(response => {
+        // 첨부 파일 정보 변경
+        updateImageInfo(response);
+      })
+      .finally(() => {
+        // 수정된 회원정보 전달
+        editMember().then(response => {
+          result = response.data;
+          if (result === 'updated') {
+            updatedMessage.style.display = 'block';
+            setTimeout(() => {
+              updatedMessage.style.display = 'none';
+            }, 3000);
+            password.value = '';
+          }
+        });
+      });
+    }
   });
 });
 
@@ -72,20 +77,13 @@ file.addEventListener('change', (event) => {
   //fileName.value = file.value.replace(/^C:\\fakepath\\/i, '');
 
   // 파일 담기
-  formData = new FormData();
+  var formData = new FormData();
   formData.append('profile-file', event.target.files[0]);
 
   // 임시 파일 저장
   saveTempProfileImage(formData).then((response) => {
-    // 응답받은 이미지 경로
-    var $imageUrl = response.data;
-    // 프로필 이미지에 변경된 이미지 표시
-    profileImage.src = $imageUrl;
-    // 이미지 경로
-    imageUrl.value = $imageUrl;
-    // 이미지 파일 이름
-    fileName.value = $imageUrl;
-    fileName.value = fileName.value.substring(fileName.value.lastIndexOf('/') + 1);
+    // 첨부 파일 정보 변경
+    updateImageInfo(response);
   });
 });
 
@@ -129,15 +127,21 @@ function validateForm(form) {
   return isValid;
 }
 
+// 닉네임 중복 여부
+async function checkDuplicateNickName(form) {
+  var response = await axios.get(`/members/check_nickname/${form.nickName.value}`);
+  return response;
+}
+
 // 수정하기
-async function editMember(form) {
+async function editMember() {
   var editForm = {
-    'nickName': form.nickName.value.trim(),
-    'password': form.password.value.trim(),
-    'imageUrl': form.imageUrl.value.trim(),
-    'fileName': form.fileName.value.trim(),
+    'nickName': nickName.value.trim(),
+    'password': password.value.trim(),
+    'imageUrl': imageUrl.value.trim(),
+    'fileName': fileName.value.trim(),
   };
-  var response = await axios.patch(`/members/${form.email.value}`, editForm);
+  var response = await axios.patch(`/members/${email.value}`, editForm);
   return response;
 }
 
@@ -157,6 +161,19 @@ async function saveTempProfileImage(formData) {
   };
   var response = await axios.post('/members/temp_image/save', formData, {headers: headers});
   return response;
+}
+
+// 첨부 파일 정보 변경
+function updateImageInfo(response) {
+  // 응답받은 이미지 경로
+  var $imageUrl = response.data;
+  // 프로필 이미지에 변경된 이미지 표시
+  profileImage.src = $imageUrl;
+  // 이미지 경로
+  imageUrl.value = $imageUrl;
+  // 이미지 파일 이름
+  fileName.value = $imageUrl;
+  fileName.value = fileName.value.substring(fileName.value.lastIndexOf('/') + 1);
 }
 
 // 내가 구독한 사람에서 구독취소 버튼 클릭

@@ -1,6 +1,6 @@
 package com.tasty.app.module.notification.repository.mapper;
 
-import com.tasty.app.infra.dto.Pageable;
+import com.tasty.app.infra.page.Pageable;
 import com.tasty.app.module.notification.domain.Notification;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;

@@ -1,13 +1,11 @@
 package com.tasty.app.module.notification.service;
 
-import com.tasty.app.infra.dto.Pageable;
+import com.tasty.app.infra.page.Pageable;
 import com.tasty.app.module.notification.domain.Notification;
 import com.tasty.app.module.notification.repository.NotificationRepository;
 import com.tasty.app.module.notification.repository.mapper.NotificationMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.core.annotation.Order;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 
