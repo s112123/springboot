@@ -18,6 +18,11 @@ create table review (
   foreign key (email) references member (email) on update cascade on delete cascade
 );
 
-# email (fk)
-#reply_id (fk)
-
+# review_image (*)-(1) review
+drop table if exists review_image;
+create table review_image (
+  review_image_id bigint auto_increment primary key,
+  review_id bigint not null,
+  upload_file_name varchar(100) not null,
+  foreign key (review_id) references review (review_id) on update cascade on delete cascade
+);

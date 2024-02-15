@@ -4,6 +4,7 @@ import com.tasty.app.module.review.domain.Review;
 import com.tasty.app.infra.page.Pageable;
 import com.tasty.app.module.review.form.EditForm;
 import com.tasty.app.module.review.form.AddForm;
+import com.tasty.app.module.review.form.ReviewImageForm;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
@@ -12,10 +13,16 @@ import java.util.Map;
 public interface ReviewService {
 
     // 리뷰 등록
-    void addReview(AddForm form);
+    void addReview(AddForm form, ReviewImageForm imageForm);
 
     // 리뷰 이미지 업로드 (이미지 요청 경로: /images/review/** 반환)
     String uploadImage(MultipartFile multipartFile);
+
+    // 리뷰 임시 이미지 업로드 (이미지 요청 경로: /images/review/** 반환)
+    String uploadTempImage(MultipartFile multipartFile);
+
+    // 파일 이름 변경 (변경된 파일 이름 반환)
+    String renameUploadFileName(String uploadFileName);
 
     // 리뷰 조회
     Review getReviewById(Long reviewId);
@@ -24,7 +31,7 @@ public interface ReviewService {
     List<Review> getReviews(int sortOption, String search, Pageable pageable);
 
     // 리뷰 수정
-    void editReview(Long reviewId, EditForm form);
+    void editReview(Long reviewId, EditForm form, ReviewImageForm imageForm);
 
     // 리뷰 삭제
     void removeReview(Long reviewId);

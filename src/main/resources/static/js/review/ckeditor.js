@@ -35,7 +35,7 @@ class UploadAdapter {
   // 서버 요청 경로
   _initRequest() {
     const xhr = this.xhr = new XMLHttpRequest();
-    xhr.open('POST', location.protocol + "//" + location.host + '/reviews/upload_image', true);
+    xhr.open('POST', location.protocol + "//" + location.host + '/reviews/upload_temp_image', true);
     xhr.responseType = 'json';
   }
 
@@ -64,3 +64,5 @@ class UploadAdapter {
     this.xhr.send(data)
   }
 }
+
+export {reviewEditor}

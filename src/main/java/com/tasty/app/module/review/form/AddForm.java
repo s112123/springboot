@@ -2,6 +2,8 @@ package com.tasty.app.module.review.form;
 
 import lombok.*;
 
+import java.util.List;
+
 @Getter
 @Setter
 @NoArgsConstructor

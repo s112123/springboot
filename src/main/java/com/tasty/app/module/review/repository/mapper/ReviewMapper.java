@@ -2,6 +2,7 @@ package com.tasty.app.module.review.repository.mapper;
 
 import com.tasty.app.module.review.domain.Review;
 import com.tasty.app.infra.page.Pageable;
+import com.tasty.app.module.review.domain.ReviewImage;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -47,4 +48,13 @@ public interface ReviewMapper {
 
     // 내가 찜한 리뷰 목록
     List<Map<String, Object>> selectAllByGoodByEmail(@Param("email") String email, @Param("pageable") Pageable pageable);
+
+    // 리뷰 이미지 등록
+    void insertAllForReviewImage(@Param("reviewImages") List<ReviewImage> reviewImages);
+
+    // 리뷰 이미지 조회
+    List<ReviewImage> selectAllForReviewImages(Long reviewId);
+
+    // 리뷰 파일 목록 삭제
+    void deleteAllForReviewImages(Long reviewId);
 }

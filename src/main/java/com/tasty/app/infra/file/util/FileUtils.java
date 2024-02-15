@@ -77,4 +77,13 @@ public class FileUtils {
             deleteFile.delete();
         }
     }
+
+    // 파일 이름 변경
+    public void renameFile(String uploadDirPath, String oldUploadFileName, String newUploadFileName) {
+        File oldFile = new File(uploadDirPath + oldUploadFileName);
+        if (oldFile.exists()) {
+            File newFile = new File(uploadDirPath + newUploadFileName);
+            oldFile.renameTo(newFile);
+        }
+    }
 }

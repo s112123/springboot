@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartRequest;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -42,10 +43,10 @@ public class ReviewControllerR {
     }
 
     // 리뷰 등록시, CKEditor 임시 이미지 업로드
-    @PostMapping("/upload_image")
+    @PostMapping("/upload_temp_image")
     public Map<String, Object> uploadReviewTempImage(MultipartRequest multipartRequest) {
         MultipartFile multipartFile = multipartRequest.getFile("upload");
-        String uploadUrl = reviewService.uploadImage(multipartFile);
+        String uploadUrl = reviewService.uploadTempImage(multipartFile);
 
         // response
         Map<String, Object> responseData = new HashMap<>();
@@ -53,5 +54,23 @@ public class ReviewControllerR {
         responseData.put("url", uploadUrl);
 
         return responseData;
+    }
+
+    // 이미지 파일 업로드
+    @PostMapping("/upload_image")
+    public Map<String, Object> uploadReviewImage(@RequestBody Map<String, Object> data) {
+        List<String> uploadFileNames = (List<String>) data.get("uploadFileNames");
+        List<String> newUploadFileNames = new ArrayList<>();
+
+        // 저장된 임시 파일의 이름 변경 작업
+        for (String uploadFileName : uploadFileNames) {
+            newUploadFileNames.add(reviewService.renameUploadFileName(uploadFileName));
+        }
+
+        // response
+        Map<String, Object> response = new HashMap<>();
+        response.put("result", "saved");
+        response.put("uploadFileNames", newUploadFileNames);
+        return response;
     }
 }

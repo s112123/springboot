@@ -3,6 +3,7 @@ package com.tasty.app.module.review.repository;
 import com.tasty.app.module.member.repository.mapper.MemberMapper;
 import com.tasty.app.module.review.domain.Review;
 import com.tasty.app.infra.page.Pageable;
+import com.tasty.app.module.review.domain.ReviewImage;
 import com.tasty.app.module.review.repository.mapper.ReviewMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -68,5 +69,20 @@ public class ReviewRepositoryImpl implements ReviewRepository {
     @Override
     public List<Map<String, Object>> findAllByGoodByEmail(String email, Pageable pageable) {
         return reviewMapper.selectAllByGoodByEmail(email, pageable);
+    }
+
+    @Override
+    public void saveReviewFile(List<ReviewImage> reviewImages) {
+        reviewMapper.insertAllForReviewImage(reviewImages);
+    }
+
+    @Override
+    public List<ReviewImage> findAllReviewImages(Long reviewId) {
+        return reviewMapper.selectAllForReviewImages(reviewId);
+    }
+
+    @Override
+    public void deleteAllForReviewImage(Long reviewId) {
+        reviewMapper.deleteAllForReviewImages(reviewId);
     }
 }

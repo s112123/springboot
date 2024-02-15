@@ -6,6 +6,7 @@ import com.tasty.app.module.member.service.MemberService;
 import com.tasty.app.module.review.domain.Review;
 import com.tasty.app.module.review.form.AddForm;
 import com.tasty.app.module.review.form.EditForm;
+import com.tasty.app.module.review.form.ReviewImageForm;
 import com.tasty.app.module.review.service.ReviewService;
 import com.tasty.app.module.subscribe.service.SubscribeService;
 import lombok.RequiredArgsConstructor;
@@ -14,8 +15,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import javax.servlet.http.HttpSession;
 
 @Slf4j
 @Controller
@@ -38,8 +37,9 @@ public class ReviewController {
 
     // 리뷰 등록 처리
     @PostMapping("/add")
-    public String addReview(@ModelAttribute("form") AddForm form) {
-        reviewService.addReview(form);
+    public String addReview(@ModelAttribute("form") AddForm form, ReviewImageForm imageForm) {
+        // 리뷰 내용 저장
+        reviewService.addReview(form, imageForm);
         return "redirect:/";
     }
 
@@ -82,8 +82,8 @@ public class ReviewController {
 
     // 리뷰 변경 처리
     @PostMapping("/edit")
-    public String editReview(@RequestParam("review_id") Long reviewId, EditForm form) {
-        reviewService.editReview(reviewId, form);
+    public String editReview(@RequestParam("review_id") Long reviewId, EditForm form, ReviewImageForm imageForm) {
+        reviewService.editReview(reviewId, form, imageForm);
         return "redirect:/";
     }
 

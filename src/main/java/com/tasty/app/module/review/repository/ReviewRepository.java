@@ -2,6 +2,7 @@ package com.tasty.app.module.review.repository;
 
 import com.tasty.app.module.review.domain.Review;
 import com.tasty.app.infra.page.Pageable;
+import com.tasty.app.module.review.domain.ReviewImage;
 
 import java.util.List;
 import java.util.Map;
@@ -34,4 +35,13 @@ public interface ReviewRepository {
 
     // 내가 찜한 리뷰
     List<Map<String, Object>> findAllByGoodByEmail(String email, Pageable pageable);
+
+    // 리뷰 파일 등록
+    void saveReviewFile(List<ReviewImage> reviewImages);
+
+    // 리뷰 이미지 조회
+    List<ReviewImage> findAllReviewImages(Long reviewId);
+
+    // 리뷰 파일 목록 삭제
+    void deleteAllForReviewImage(Long reviewId);
 }
