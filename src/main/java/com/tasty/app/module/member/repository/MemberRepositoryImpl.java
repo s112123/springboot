@@ -44,4 +44,9 @@ public class MemberRepositoryImpl implements MemberRepository {
     public int findMemberByNickName(String email, String nickName) {
         return memberMapper.selectOneByNickName(email, nickName);
     }
+
+    @Override
+    public void editPassword(String email, String password) {
+        memberMapper.updatePassword(email, password);
+    }
 }

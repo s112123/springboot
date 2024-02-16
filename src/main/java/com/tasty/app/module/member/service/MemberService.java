@@ -36,4 +36,7 @@ public interface MemberService {
 
     // 닉네임 중복 여부
     boolean isExistsNickName(String email, String nickName);
+
+    // 비밀번호 변경
+    void editPassword(String email, String password);
 }

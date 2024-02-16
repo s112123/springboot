@@ -23,4 +23,7 @@ public interface MemberMapper {
     
     // 닉네임 중복 여부
     int selectOneByNickName(@Param("email") String email, @Param("nickName") String nickName);
+
+    // 임시 비밀번호 저장
+    void updatePassword(@Param("email") String email, @Param("password") String password);
 }

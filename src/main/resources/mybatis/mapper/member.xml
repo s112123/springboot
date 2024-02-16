@@ -37,4 +37,11 @@
     from member
     where <![CDATA[email <> #{email}]]> and nick_name = #{nickName}
   </select>
+
+  <!-- 비밀번호 변경 -->
+  <update id="updatePassword">
+    update member
+    set password = #{password}
+    where email = #{email}
+  </update>
 </mapper>

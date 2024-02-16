@@ -6,6 +6,7 @@ var errorEmail = document.getElementById('error-email');
 var errorPassword = document.getElementById('error-password');
 var errorGlobal = document.getElementById('error-global');
 var btnSignIn = document.getElementById('btn-sign-in');
+var btnFindPassword = document.getElementById('find-password');
 var isValid = true;
 
 // 로그인 버튼 클릭
@@ -27,6 +28,40 @@ btnSignIn.addEventListener('click', () => {
     }
   });
 });
+
+// 비밀번호 찾기 버튼 클릭
+btnFindPassword.addEventListener('click', () => {
+  // 이메일 입력 여부 확인
+  if (email.value.trim().length === 0) {
+    alert('이메일을 입력해주세요');
+    return;
+  }
+  // 이메일 형식 여부 확인
+  regex = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+  isRegex = regex.test(email.value.trim());
+  if (!isRegex) {
+    alert('이메일 형식이 아닙니다');
+    return;
+  }
+
+  // 임시 비밀번호 발송
+  if (confirm('입력하신 이메일 주소로 임시 비밀번호를 전송하시겠습니까?')) {
+    sendTempPassword(email).then(response => {
+      var isExistsEmail = response.data;
+      if (!isExistsEmail) {
+        alert('가입되지 않은 이메일 입니다');
+        return;
+      }
+      alert('이메일로 임시 비밀번호가 전송되었습니다');
+    });
+  }
+});
+
+// 임시 비밀번호 발송
+async function sendTempPassword(email) {
+  var response = await axios.get(`/mail/temp-password/${email.value.trim()}`);
+  return response;
+}
 
 // 로그인 처리
 async function login(formData) {

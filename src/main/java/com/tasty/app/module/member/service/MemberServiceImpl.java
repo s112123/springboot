@@ -85,4 +85,9 @@ public class MemberServiceImpl implements MemberService {
         int res = memberRepository.findMemberByNickName(email, nickName);
         return res > 0;
     }
+
+    @Override
+    public void editPassword(String email, String password) {
+        memberRepository.editPassword(email, password);
+    }
 }
