@@ -36,8 +36,8 @@ public class Member {
         return Member.builder()
                 .email(addForm.getEmail())
                 .password(addForm.getPassword())
-                .nickName(addForm.getEmail())
-                .imageUrl("/members/image/default_profile_image.png")
+                .nickName(addForm.getEmail().substring(0, 3) + "*****")
+                .imageUrl("/upload/images/member/default_profile_image.png")
                 .fileName("default_profile_image.png")
                 .build();
     }

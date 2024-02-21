@@ -5,6 +5,7 @@ import com.tasty.app.module.login.repository.LoginRepository;
 import com.tasty.app.module.member.domain.Member;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Service;
 
 @Slf4j
@@ -19,7 +20,7 @@ public class LoginServiceImpl implements LoginService {
         Member member = loginRepository.login(form.getEmail());
         // 로그인 성공
         if (member != null) {
-            if (form.getPassword().equals(member.getPassword())) {
+            if (BCrypt.checkpw(form.getPassword(), member.getPassword())) {
                 return 1;
             }
         }

@@ -68,12 +68,12 @@ public class ReviewServiceImpl implements ReviewService {
 
     @Override
     public String uploadImage(MultipartFile multipartFile) {
-        return  "/images/review/" + fileUtils.uploadFile(uploadDirReview, multipartFile, false);
+        return  "/upload/images/review/" + fileUtils.uploadFile(uploadDirReview, multipartFile, false);
     }
 
     @Override
     public String uploadTempImage(MultipartFile multipartFile) {
-        return  "/images/review/" + fileUtils.uploadFile(uploadDirReview, multipartFile, true);
+        return  "/upload/images/review/" + fileUtils.uploadFile(uploadDirReview, multipartFile, true);
     }
 
     @Override

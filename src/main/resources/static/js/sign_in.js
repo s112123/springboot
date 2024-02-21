@@ -1,6 +1,7 @@
 // 변수 선언
 var email = document.getElementById('email');
 var password = document.getElementById('password');
+var remember = document.getElementById('remember');
 var errors = document.querySelectorAll('.error');
 var errorEmail = document.getElementById('error-email');
 var errorPassword = document.getElementById('error-password');
@@ -13,7 +14,8 @@ var isValid = true;
 btnSignIn.addEventListener('click', () => {
   var formData = {
     'email': email.value.trim(),
-    'password': password.value.trim()
+    'password': password.value.trim(),
+    'remember': remember.checked
   };
 
   // 로그인 처리

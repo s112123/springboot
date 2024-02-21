@@ -26,12 +26,12 @@
         <form action="/review/add" method="post" id="review-add-form" autocomplete="off">
           <input type="hidden" name="email" id="email" th:value="${session.email}" />
           <div class="review-add-box-item">
-            <input type="text" name="storeName" id="storeName" placeholder="가게이름" />
-            <small class="error">가게이름은 필수입니다</small>
+            <input type="text" name="storeName" id="storeName" placeholder="위치이름" />
+            <small class="error">위치이름은 필수입니다</small>
           </div>
           <div class="review-add-box-item">
-            <input type="text" name="storeAddress" id="storeAddress" placeHolder="가게주소" />
-            <small class="error">가게주소는 필수입니다</small>
+            <input type="text" name="storeAddress" id="storeAddress" placeHolder="위치주소" />
+            <small class="error">위치주소는 필수입니다</small>
           </div>
           <div class="review-add-box-item">
             <input type="text" name="title" id="title" placeholder="제목" />

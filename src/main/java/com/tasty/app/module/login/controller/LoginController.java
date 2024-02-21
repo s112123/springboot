@@ -1,20 +1,17 @@
 package com.tasty.app.module.login.controller;
 
+import com.tasty.app.infra.cookie.CookieUtils;
 import com.tasty.app.module.login.form.LoginForm;
 import com.tasty.app.module.login.service.LoginService;
-import com.tasty.app.module.member.domain.Member;
-import com.tasty.app.module.member.service.MemberService;
-import com.tasty.app.module.notification.service.NotificationService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.Map;
@@ -25,11 +22,21 @@ import java.util.Map;
 public class LoginController {
 
     private final LoginService loginService;
-    private final MemberService memberService;
+    private final CookieUtils cookieUtils;
 
     // 로그인 화면
     @GetMapping("/login")
-    public String loginForm() {
+    public String loginForm(
+            @RequestParam(value = "register", defaultValue = "false") boolean register,
+            @CookieValue(value="remember", required=false) Cookie cookie,
+            Model model
+    ) {
+        model.addAttribute("register", register);
+
+        if (cookie != null) {
+            model.addAttribute("remember", cookie.getValue());
+        }
+
         return "sign_in";
     }
 
@@ -47,7 +54,17 @@ public class LoginController {
         // 로그인이 되면 세션 생성
         int res = loginService.login(form);
         if (res == 1) {
+            // 세션 생성
             session.setAttribute("email", form.getEmail());
+
+            // 아이디 저장 (쿠키)
+            if (form.isRemember()) {
+                // 체크박스가 체크되어 있으면 쿠키 생성
+                cookieUtils.makeCookie("remember", form.getEmail(), 1);
+            } else {
+                // 체크박스가 체크되어 있지 않으면 쿠키 삭제
+                cookieUtils.removeCookieByName("remember");
+            }
         }
 
         Map<String, Object> response = new HashMap<>();

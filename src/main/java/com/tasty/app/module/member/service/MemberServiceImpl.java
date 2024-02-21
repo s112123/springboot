@@ -8,6 +8,7 @@ import com.tasty.app.module.member.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -37,6 +38,9 @@ public class MemberServiceImpl implements MemberService {
         }
 
         // 비번 암호 (spring security)
+        String encrypted = BCrypt.hashpw(form.getPassword(), BCrypt.gensalt());
+        form.setPassword(encrypted);
+
         Member member = Member.toMemberFromAddForm(form);
         memberRepository.save(member);
         return 1;
@@ -50,10 +54,15 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public void editMember(String email, EditForm form) {
+        Member findMember = getMemberByEmail(email);
+
         if (form.getPassword().equals("")) {
             // 기존의 비밀번호 유지
-            Member member = getMemberByEmail(email);
-            form.setPassword(member.getPassword());
+            form.setPassword(findMember.getPassword());
+        } else {
+            // 변경된 비번 암호 (spring security)
+            String encrypted = BCrypt.hashpw(form.getPassword(), BCrypt.gensalt());
+            form.setPassword(encrypted);
         }
 
         Member member = Member.toMemberFromEditForm(form);
@@ -62,12 +71,12 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public String uploadImage(MultipartFile multipartFile) {
-        return  "/images/member/" + fileUtils.uploadFile(uploadDirMember, multipartFile, false);
+        return  "/upload/images/member/" + fileUtils.uploadFile(uploadDirMember, multipartFile, false);
     }
 
     @Override
     public String uploadTempImage(MultipartFile multipartFile) {
-        return  "/images/member/" + fileUtils.uploadFile(uploadDirMember, multipartFile, true);
+        return  "/upload/images/member/" + fileUtils.uploadFile(uploadDirMember, multipartFile, true);
     }
 
     @Override

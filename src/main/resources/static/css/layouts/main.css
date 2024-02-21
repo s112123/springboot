@@ -5,7 +5,6 @@ main {
 
 /* PAGINATION */
 .pageable {
-  border: 1px solid blue;
 	width: 100%;
 	padding: 15px;
 	display: flex;

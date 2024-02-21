@@ -152,7 +152,7 @@
 
 /* BOTTOM */
 .profile-box .profile-box-bottom {
-  margin: 55px 0px;
+  margin: 55px 0px 0px 0px;
   display: flex;
   justify-content: space-between;
 }
@@ -164,7 +164,7 @@
 }
 
 .profile-box .profile-box-bottom ul {
-  height: 300px;
+  height: 250px;
   padding: 5px;
   list-style: none;
   overflow-y: scroll;

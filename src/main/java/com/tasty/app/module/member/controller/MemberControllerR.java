@@ -1,5 +1,8 @@
 package com.tasty.app.module.member.controller;
 
+import com.tasty.app.infra.cookie.CookieUtils;
+import com.tasty.app.module.email.service.EmailService;
+import com.tasty.app.module.email.service.EmailServiceImpl;
 import com.tasty.app.module.login.form.LoginForm;
 import com.tasty.app.module.member.domain.Member;
 import com.tasty.app.module.member.form.AddForm;
@@ -12,6 +15,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.Cookie;
 import javax.validation.Valid;
 import java.util.HashMap;
 import java.util.Map;
@@ -23,13 +27,15 @@ import java.util.Map;
 public class MemberControllerR {
 
     private final MemberService memberService;
+    private final EmailService emailService;
+    private final CookieUtils cookieUtils;
 
     // 아이디 중복 확인
     @PostMapping("/exists_email")
     public Map<String, Boolean> isExistsEmail(@RequestBody LoginForm form) {
-        Map<String, Boolean> response = new HashMap<>();
-        response.put("isExists", memberService.isExistsEmail(form.getEmail()));
-        return response;
+        Map<String, Boolean> responseData = new HashMap<>();
+        responseData.put("isExists", memberService.isExistsEmail(form.getEmail()));
+        return responseData;
     }
 
     // 인증 메일 발송
@@ -39,27 +45,46 @@ public class MemberControllerR {
             return bindingResult.getFieldError("email");
         }
 
-        // 이메일 코드 발송
+        // 인증 메일 발송
+        // 1. 인증 메일 링크에 이메일, 이메일 인증 uuid를 쿼리 스트링으로 보낸다 (ConcurrencyMap에 저장해둔다)
+        // 2. 인증 링크를 클릭하면 uuid 값을 가지는 쿠키가 생성된다
+        // 3. 회원등록시, 쿠키 값과 ConcurrencyMap에 저장된 값을 비교한다
+        // 4. 비교해서 맞으면 회원가입 완료 및 ConcurrencyMap을 비우고, 그렇지 않으면 인증 미처리 메세지 발송
+        emailService.sendEmailForValid(form.getEmail());
 
-        Map<String, Object> response = new HashMap<>();
-        response.put("send", true);
-        response.put("defaultMessage", "인증 메일이 발송되었습니다");
-        return response;
+        Map<String, Object> responseData = new HashMap<>();
+        responseData.put("send", true);
+        responseData.put("defaultMessage", "인증 메일이 발송되었습니다.\n 메일 인증을 하신 후, 회원가입을 완료하세요.");
+        return responseData;
     }
 
     // 회원 등록 처리
     @PostMapping
-    public Object add(@Valid @RequestBody AddForm form, BindingResult bindingResult) {
+    public Object add(
+            @Valid @RequestBody AddForm form, BindingResult bindingResult,
+            @CookieValue(value = "validEmail", required = false) Cookie cookie) {
+        Map<String, Object> responseData = new HashMap<>();
+
         if (bindingResult.hasErrors()) {
             return bindingResult.getAllErrors();
         }
 
         // 인증 확인: addMember를 중복검사가 아닌 인증 여부로 바꿔야 함
-        int res = memberService.addMember(form);
-        Map<String, Object> response = new HashMap<>();
-        response.put("res", res);
-        response.put("defaultMessage", "중복된 이메일입니다");
-        return response;
+        // 회원등록시, 메일 인증 쿠키 값과 ConcurrencyMap에 저장된 값을 비교한다
+        if (cookie == null) {
+            responseData.put("defaultMessage", "메일 인증을 완료하십시오");
+        } else {
+            if (!EmailServiceImpl.validEmailIds.get(form.getEmail()).equals(cookie.getValue())) {
+                responseData.put("defaultMessage", "메일 인증을 완료하십시오");
+            } else {
+                memberService.addMember(form);
+                EmailServiceImpl.validEmailIds.remove(form.getEmail());
+                cookieUtils.removeCookieByName("validEmail");
+                responseData.put("defaultMessage", "success");
+            }
+        }
+
+        return responseData;
     }
 
     // 회원 정보 수정

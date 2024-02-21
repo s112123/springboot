@@ -24,12 +24,12 @@
     <div class="review-edit-box">
       <form th:action="@{/review/edit}" method="post" id="review-edit-form" autocomplete="off">
         <div class="review-edit-box-item">
-          <input type="text" name="storeName" id="storeName" th:value="${review.storeName}" placeholder="가게이름" />
-          <small class="error">가게이름은 필수입니다</small>
+          <input type="text" name="storeName" id="storeName" th:value="${review.storeName}" placeholder="위치이름" />
+          <small class="error">위치이름은 필수입니다</small>
         </div>
         <div class="review-edit-box-item">
-          <input type="text" name="storeAddress" id="storeAddress" th:value="${review.storeAddress}" placeHolder="가게주소" />
-          <small class="error">가게주소는 필수입니다</small>
+          <input type="text" name="storeAddress" id="storeAddress" th:value="${review.storeAddress}" placeHolder="위치주소" />
+          <small class="error">위치주소는 필수입니다</small>
         </div>
         <div class="review-edit-box-item">
           <input type="text" name="title" id="title" th:value="${review.title}" placeholder="제목" />

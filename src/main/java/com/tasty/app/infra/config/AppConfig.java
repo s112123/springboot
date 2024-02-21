@@ -10,6 +10,7 @@ import org.springframework.web.servlet.resource.PathResourceResolver;
 
 @Slf4j
 @Configuration
+@Profile("dev")
 public class AppConfig implements WebMvcConfigurer {
 
     @Value("${upload.storage.member}")
@@ -19,9 +20,7 @@ public class AppConfig implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        log.info(uploadStorageMember);
-        log.info(uploadStorageReview);
-        registry.addResourceHandler("/images/member/**", "/images/review/**")
+        registry.addResourceHandler("/upload/images/member/**", "/upload/images/review/**")
                 .addResourceLocations(uploadStorageMember, uploadStorageReview);
     }
 }

@@ -5,6 +5,16 @@
   align-items: center;
 }
 
+#register-message {
+  width: 100%;
+  padding: 5px 10px;
+  margin-bottom: 20px;
+  background-color: rgba(65, 196, 118, 0.2);
+  color: rgb(34, 116, 67);
+  font-size: 14px;
+  font-weight: 500;
+}
+
 .sign-in-box {
   width: 400px;
   padding: 50px 50px;
