@@ -55,11 +55,13 @@ public class CookieUtils {
     // 특정 쿠키 삭제
     public void removeCookieByName(String name) {
         Cookie[] cookies = request.getCookies();
-        for (int i = 0; i < cookies.length; i++) {
-            if (cookies[i].getName().equals(name)) {
-                cookies[i].setMaxAge(0);
-                response.addCookie(cookies[i]);
-            };
+        if (cookies != null) {
+            for (int i = 0; i < cookies.length; i++) {
+                if (cookies[i].getName().equals(name)) {
+                    cookies[i].setMaxAge(0);
+                    response.addCookie(cookies[i]);
+                };
+            }
         }
     }
 }

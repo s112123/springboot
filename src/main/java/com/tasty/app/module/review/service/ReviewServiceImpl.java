@@ -78,7 +78,7 @@ public class ReviewServiceImpl implements ReviewService {
 
     @Override
     public String renameUploadFileName(String uploadFileName) {
-        // 변경 전: 20240215_5329008e-acfa-45e0-bb6f-f6bb410882fe.png
+        // 변경 전: 2024-02-15_5329008e-acfa-45e0-bb6f-f6bb410882fe.png
         // 변경 후: 5329008e-acfa-45e0-bb6f-f6bb410882fe.png
         String newUploadFileName = uploadFileName.substring(uploadFileName.indexOf("_") + 1);
         fileUtils.renameFile(uploadDirReview, uploadFileName, newUploadFileName);

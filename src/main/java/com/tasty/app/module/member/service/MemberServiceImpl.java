@@ -97,6 +97,7 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public void editPassword(String email, String password) {
-        memberRepository.editPassword(email, password);
+        String encrypted = BCrypt.hashpw(password, BCrypt.gensalt());
+        memberRepository.editPassword(email, encrypted);
     }
 }

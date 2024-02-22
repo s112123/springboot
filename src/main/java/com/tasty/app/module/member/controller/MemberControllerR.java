@@ -113,7 +113,10 @@ public class MemberControllerR {
         if (multipartFile != null) {
             // 기존 파일 삭제
             String oldImageFileName = member.getFileName();
-            memberService.deleteImage(oldImageFileName);
+
+            if (!oldImageFileName.equals("default_profile_image.png")) {
+                memberService.deleteImage(oldImageFileName);
+            }
 
             // 프로필 이미지 저장
             String uploadUrl = memberService.uploadImage(multipartFile);

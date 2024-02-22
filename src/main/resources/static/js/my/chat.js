@@ -137,6 +137,31 @@ async function readMessage(chatRoomKey, senderEmail, receiverEmail, isRead) {
   return response;
 }
 
+// 메세지 입력 input 에서 Enter 키 처리
+message.addEventListener('keypress', () => {
+  if (event.keyCode === 13) {
+    // 대화 상대 선택 유무 및 메세지 내용 입력 여부 확인
+    if (!isClicked) {
+      alert("채팅상대를 선택하세요");
+      return;
+    }
+
+    if (message.value.trim().length === 0) {
+      alert("메세지를 입력하세요");
+      return;
+    }
+
+    // 채팅 메세지 보내기
+    var chatMessage = {
+      'senderEmail': senderEmail.value,
+      'receiverEmail': receiverEmail.value,
+      'message': message.value.trim()
+    };
+    sendChatMessage(chatMessage);
+    message.value = '';
+  }
+});
+
 // 보내기 버튼 클릭시, 채팅방 생성 및 메세지 발송
 btnSend.addEventListener('click', () => {
   // 대화 상대 선택 유무 및 메세지 내용 입력 여부 확인

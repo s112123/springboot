@@ -73,6 +73,8 @@ async function login(formData) {
 
 // 유효성 검사
 function validateLogin(results) {
+  isValid = true;
+
   errors.forEach((error) => {
     error.style.display = 'none';
   });
