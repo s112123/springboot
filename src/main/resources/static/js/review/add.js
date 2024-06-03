@@ -8,6 +8,7 @@ var thumbnail = document.getElementById('thumbnailUrl');
 var thumbnailFileName = document.getElementById('thumbnailFileName');
 var star = document.getElementById('star');
 var btnAdd = document.getElementById('add-review');
+var btnCancel = document.getElementById('cancel-review');
 var form = document.getElementById('review-add-form');
 var isValid = true;
 
@@ -93,6 +94,14 @@ btnAdd.addEventListener('click', (e) => {
     });
   }
 });
+
+// 취소 버튼 클릭
+btnCancel.addEventListener('click', () => {
+  if (confirm('리뷰 등록을 취소하시겠습니까?')) {
+    location.href = "/";
+  }
+});
+
 
 // 게시물에 첨부되었던 임시 파일 이름을 실제 업로드 되는 파일 이름으로 변경
 async function uploadFile() {

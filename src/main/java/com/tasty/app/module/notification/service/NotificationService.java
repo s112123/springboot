@@ -21,7 +21,7 @@ public class NotificationService {
 
     // SseEmitter 저장소
     private final Map<String, SseEmitter> emitters = new ConcurrentHashMap<>();
-    private final Long TIME_OUT = 1000L * 60L * 1L;
+    private final Long TIME_OUT = 3000L;
     private final NotificationRepository notificationRepository;
     private final NotificationMapper notificationMapper;
 
@@ -30,8 +30,14 @@ public class NotificationService {
         SseEmitter emitter = new SseEmitter(TIME_OUT);
         emitters.put(email, emitter);
 
-        emitter.onCompletion(() -> emitters.remove(email));
-        emitter.onTimeout(() -> emitters.remove(email));
+        emitter.onCompletion(() -> {
+            log.info("Completion!!");
+            emitters.remove(email);
+        });
+        emitter.onTimeout(() -> {
+            log.info("Timeout!!");
+            emitters.remove(email);
+        });
 
         // 최초 구독시, Dummy 데이터 전송
         sendNotification(email, "subscribe");

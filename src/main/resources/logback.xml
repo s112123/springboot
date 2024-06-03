@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <!-- Appender -->
+  <!-- 콘솔, 파일, DB, SMTP 등 출력 위치를 설정 -->
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+      <layout class="ch.qos.logback.classic.PatternLayout">
+        <pattern>%d{HH:mm:ss.SSS} [%-20thread] %-5level %-70logger{36} - %msg%n</pattern>
+      </layout>
+    </encoder>
+  </appender>
+
+  <timestamp key="bySecond" datePattern="yyyyMMdd" />
+  <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+    <file>./logs/${bySecond}_logs.log</file>
+    <append>true</append>
+    <immediateFlush>true</immediateFlush>
+    <encoder>
+      <pattern>%d{HH:mm:ss.SSS} [%-20thread] %-5level %-70logger{36} - %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <logger name="org.springframework.jdbc" level="info" />
+  <logger name="org.demo.mvc.member.repository.mybatis.mapper.MemberMapper" level="trace" />
+
+  <!-- logging.level.root 의 로그 레벨 설정 -->
+  <root level="INFO">
+    <!-- Appender 지정 -->
+    <appender-ref ref="STDOUT" />
+    <appender-ref ref="FILE" />
+  </root>
+</configuration>
+
