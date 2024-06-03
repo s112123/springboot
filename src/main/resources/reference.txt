@@ -1,0 +1,212 @@
+########## 요청 주소 목록 ##########
+### 메인 화면 ###
+1) GET /
+- 메인 화면으로 리뷰 목록 화면을 출력한다
+
+
+
+### 로그인 관련 ###
+1) GET /login
+- 로그인 화면을 출력한다
+
+2) POST /login 
+- REST API
+- 이메일, 비밀번호 유효성 검사를 한 후, 로그인을 처리 한다
+- 세션 생성
+- 아이디 저장 체크박스가 체크되어 있으면 쿠키 생성
+
+3) GET /logout
+- 로그아웃을 처리 후, 로그인 화면을 출력한다
+- 로그인된 세션을 삭제한다
+
+
+
+### 비밀번호 찾기 관련 ###
+1) GET /mail/temp-password/{toEmail}
+- REST API
+- 입력된 이메일로 랜덤으로 생성한 비밀번호를 사용자 이메일로 발송한다
+- 비밀번호는 임시 비밀번호로 변경되고, 로그인 후 내 프로필의 내 정보에서 비밀번호를 변경해야 한다
+
+
+
+### 회원 관련 ###
+1) GET /member/add
+- 로그인 화면에서 회원가입 버튼을 누르면 회원 등록 화면을 출력한다
+
+2) POST /members/exists_email
+- REST API
+- 가입 이메일을 입력할 때, 이메일 중복을 체크한다
+
+3) POST /members/send_email
+- REST API
+- 메일 인증 버튼을 누르면 인증 메일을 발송한다
+
+4) GET /member/valid_email
+- 인증 메일 확인 후, 인증 완료 화면을 출력한다
+
+5) POST /members
+- REST API
+- 회원 가입을 처리한다
+- 회원의 최초 닉네임은 이메일 앞글자 3자리 + ***** 으로 처리된다
+
+
+
+### 리뷰 관련 ###
+1) GET /reviews
+- REST API
+- REST API로 리뷰 목록을 가져와 리뷰 목록 화면에 출력한다
+- 검색 기능 (검색을 하면 최근 순으로 정렬 되고 전체 버튼을 누르면 전체 결과가 나온다)
+- 정렬 기능 (최근 순, 평점 순)
+
+2) GET /review/add
+- 리뷰 등록 화면을 출력한다 (로그인을 하면 리뷰쓰기 버튼이 보인다)
+
+3) POST /review/add
+- 리뷰를 등록한다
+
+4) POST /reviews/upload_temp_image
+- REST API
+- 리뷰 에디터에서 글을 쓸 때, 올린 이미지를 임시로 서버에 저장한다
+- 파일 경로: /upload/images/review/yyyy-mm-dd_파일이름.png
+- 파일 이름은 UUID로 랜덤으로 생성된다
+- 파일 이름의 접두어로 "날짜_" 가 붙는다
+- 스케쥴러를 통해 이틀 전 날짜의 임시파일은 자동으로 삭제한다
+
+5) POST /reviews/upload_image
+- 리뷰를 쓰고 등록 버튼을 클릭하면 올린 이미지를 서버에 완전히 저장한다
+- 파일 경로: /upload/images/review/파일이름.png
+
+6) GET /review/view
+- 리뷰 목록에서 리뷰를 누르면 해당 리뷰 내용을 출력한다
+
+7) GET /review/edit
+- 리뷰 수정 화면을 출력한다
+
+8) POST /review/edit
+- 리뷰 수정을 처리한다
+
+9) GET /review/remove
+- 리뷰를 삭제한다
+
+10) GET /goods/{reviewId}
+- REST API
+- 리뷰 조회 화면에서 찜 버튼을 누르면 해당 리뷰를 찜한다
+- 내 프로필 화면의 내가 찜한 리뷰 화면에서 찜한 리뷰의 목록을 확인할 수 있다
+
+11) GET /goods/cancel/{reviewId}
+- REST API
+- 찜한 리뷰에서 찜 취소 버튼을 클릭하면 찜 취소가 된다
+- 내 프로필 화면의 내가 찜한 리뷰 화면에서 찜한 리뷰의 목록에서 제거된다
+
+
+
+### 구독 관련 ###
+1) POST /subscribes
+- REST API
+- 구독하기 버튼을 누르면 대상 사용자를 구독한다
+- 구독하기 버튼 위치: 리뷰 조회 화면, 내 프로필 화면에서 나를 등록한 사람 목록
+
+2) POST /subscribes/cancel
+- REST API
+- 구독취소 버튼을 누르면 대상 사용자를 구독 취소한다
+- 구독하기 버튼 위치: 리뷰 조회 화면, 내 프로필 화면에서 내가 등록한 사람 목록
+
+
+
+### 내 프로필 관련 ###
+1) GET /my/profile
+- 내 프로필 화면을 출력한다
+- 내 정보, 내가 구독한 사람 목록, 나를 구독한 사람 목록이 출력된다
+
+2) POST /members/temp_image/save
+- REST API
+- 내 프로필 화면에서 이미지 변경 시, 임시 파일을 서버에 저장한다
+- 파일 경로: /upload/images/member/yyyy-mm-dd_파일이름.png
+- 파일 이름은 UUID로 랜덤으로 생성된다
+- 파일 이름의 접두어로 "날짜_" 가 붙는다
+- 스케쥴러를 통해 이틀 전 날짜의 임시파일은 자동으로 삭제한다
+
+3) POST /members/image/save
+- REST API
+- 내 프로필 화면에서 이미지를 변경하고 변경 버튼을 누르면 변경 파일을 서버에 저장한다
+- 파일 경로: /upload/images/member/파일이름.png
+
+4) GET /members/check_nickname/{nickName}
+- REST API
+- 내 프로필 화면에서 닉네임 변경 시, 닉네임 중복 여부를 확인한다
+
+5) PATCH /members/{email}
+- REST API
+- 내 프로필 화면에서 이미지, 닉네임, 비밀번호를 변경한다
+- 변경 버튼을 누르면 닉네임 중복 여부 확인 후, 이미지, 닉네임, 비밀번호를 변경한다
+
+6) GET /my/profile/remove
+- REST API
+- 내 프로필 화면에서 회원탈퇴 버튼을 클릭하면 회원 탈퇴를 처리한다
+- 회원이 등록한 리뷰, 구독, 채팅 내용도 모두 삭제된다
+
+
+
+### 내가 쓴 리뷰 관련 ###
+1) GET /my/review
+- 내가 쓴 리뷰 목록 화면을 출력한다
+
+2) GET /my/review/remove
+- 특정 리뷰 1개를 삭제한다
+
+3) POST /my/review/remove_all
+- 선택된 리뷰를 일괄 삭제한다
+
+
+
+### 내가 찜한 리뷰 관련 ###
+1) GET /my/good
+- 내가 찜한 리뷰 목록 화면을 출력한다
+
+
+
+### 알림 내역 관련 ###
+1) GET /my/notification
+- 알림 내역 목록 화면을 출력한다
+
+2) GET /my/notification/read/{notificationId}
+- 알림 내용을 클릭하면 읽음으로 처리한다
+- 읽지 않은 알림은 왼쪽에 빨간색으로 표시되고 읽으면 회색 처리된다
+
+3) GET /my/notification/read_all
+- 모두 읽음 버튼을 클릭하면 읽지 않은 알림 내역이 모두 읽음 처리된다
+
+
+
+### 1:1 채팅 관련 ###
+1) GET /my/chat
+- 1:1 채팅 화면을 출력한다
+- 왼쪽에는 내가 구독한 사람의 목록이 출력된다
+- 채팅 메시지를 보내려면 대화상대를 선택한 후, 채팅을 시작할 수 있다
+
+2) GET /chats/make_room/{receiverEmail}
+- REST API
+- 대화상대와의 채팅방이 없으면 채팅방을 생성한다
+
+3) GET /chats/{receiverEmail}
+- REST API
+- 상대와 대화한 기록을 출력한다
+
+4) PATCH /chats/read
+- REST API
+- 받은 채팅 메시지를 확인하면 읽음 처리된다
+
+5) /chat_service
+- 메시지는 WebSocket으로 발송
+
+
+
+### 알림 관련 (SSE) ###
+1) GET /notifications/subscribe/{email}
+- REST API
+- 특정 대상(email)에게 구독을 요청한다
+
+2) POST /notifications/publish/{toEmail}
+- REST API
+- 구독한 대상에게 서버에서 알림을 발송한다
+- 알림 내용: 나를 구독한 경우, 내 리뷰를 찜한 경우

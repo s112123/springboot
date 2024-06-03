@@ -31,11 +31,11 @@ public class NotificationService {
         emitters.put(email, emitter);
 
         emitter.onCompletion(() -> {
-            log.info("Completion!!");
+            //log.info("Completion!!");
             emitters.remove(email);
         });
         emitter.onTimeout(() -> {
-            log.info("Timeout!!");
+            //log.info("Timeout!!");
             emitters.remove(email);
         });
 
@@ -53,7 +53,7 @@ public class NotificationService {
 
     // 알림 보내기
     public void sendNotification(String email, Object notifications) {
-        log.info("알림 보내기");
+        //log.info("알림 보내기");
         SseEmitter emitter = emitters.get(email);
 
         if (emitter != null) {
