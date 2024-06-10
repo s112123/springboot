@@ -35,6 +35,6 @@ public class LogInterceptor implements HandlerInterceptor {
         String email = (String) request.getAttribute("email");
         String httpMethod = request.getMethod();
         String requestURI = request.getRequestURI();
-        log.info("request: email={}, httpMethod={}, requestURI={}, handler={}", email, httpMethod, requestURI, handler);
+        log.info("response: email={}, httpMethod={}, requestURI={}, handler={}", email, httpMethod, requestURI, handler);
     }
 }
