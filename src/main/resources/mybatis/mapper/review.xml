@@ -66,7 +66,7 @@
       <!-- sortOption: 전체 (0), 최근 순 (1), 평점 순 (2) -->
       <if test="sortOption == 0"> review_id desc</if>
       <if test="sortOption == 1"> review_id desc</if>
-      <if test="sortOption == 2"> star desc</if>
+      <if test="sortOption == 2"> star desc, review_id desc</if>
     </trim>
     limit #{pageable.offset}, #{pageable.size}
   </select>
