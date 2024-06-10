@@ -14,7 +14,7 @@ import java.util.List;
 public class InterceptorConfig implements WebMvcConfigurer {
 
     private static List<String> excludePathsOfAuthentication = new ArrayList<>(Arrays.asList(
-            "/css/**", "/js/**",
+            "/css/**", "/js/**", "/upload/images/member/**", "/upload/images/review/**",
             "/", "/error", "/login", "/logout",
             "/reviews", "/review/view",
             "/member/add", "/members", "/members/send_email", "/members/exists_email", "/member/valid_email",
