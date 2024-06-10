@@ -1,0 +1,13 @@
+.container {
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.valid-email-box {
+  width: 500px;
+  padding: 50px 50px;
+	box-shadow: 0 0 5px rgb(150, 150, 150);
+	border-radius: 5px;
+}

@@ -7506,3 +7506,868 @@ java.lang.IllegalStateException: Cannot call sendRedirect() after the response h
 15:36:46.845 [SpringApplicationShutdownHook ] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean                         - Closing JPA EntityManagerFactory for persistence unit 'default'
 15:36:46.848 [SpringApplicationShutdownHook ] INFO  com.zaxxer.hikari.HikariDataSource                                     - HikariPool-1 - Shutdown initiated...
 15:36:46.862 [SpringApplicationShutdownHook ] INFO  com.zaxxer.hikari.HikariDataSource                                     - HikariPool-1 - Shutdown completed.
+15:58:50.705 [background-preinit            ] INFO  o.h.validator.internal.util.Version                                    - HV000001: Hibernate Validator 6.2.5.Final
+15:58:50.710 [main                          ] INFO  com.tasty.app.AppApplication                                           - Starting AppApplication using Java 11.0.16.1 on DESKTOP-OI2N0AQ with PID 18652 (D:\workspace_tasty\app\out\production\classes started by s112123 in D:\workspace_tasty\app)
+15:58:50.712 [main                          ] INFO  com.tasty.app.AppApplication                                           - The following 1 profile is active: "dev"
+15:58:52.002 [main                          ] INFO  o.s.d.r.c.RepositoryConfigurationDelegate                              - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+15:58:52.040 [main                          ] INFO  o.s.d.r.c.RepositoryConfigurationDelegate                              - Finished Spring Data repository scanning in 25 ms. Found 0 JPA repository interfaces.
+15:58:53.098 [main                          ] INFO  o.s.b.w.e.tomcat.TomcatWebServer                                       - Tomcat initialized with port(s): 8080 (http)
+15:58:53.112 [main                          ] INFO  o.a.coyote.http11.Http11NioProtocol                                    - Initializing ProtocolHandler ["http-nio-8080"]
+15:58:53.113 [main                          ] INFO  o.a.catalina.core.StandardService                                      - Starting service [Tomcat]
+15:58:53.113 [main                          ] INFO  o.a.catalina.core.StandardEngine                                       - Starting Servlet engine: [Apache Tomcat/9.0.68]
+15:58:53.309 [main                          ] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]                                     - Initializing Spring embedded WebApplicationContext
+15:58:53.309 [main                          ] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext                         - Root WebApplicationContext: initialization completed in 2240 ms
+15:58:53.484 [main                          ] INFO  com.zaxxer.hikari.HikariDataSource                                     - HikariPool-1 - Starting...
+15:58:53.906 [main                          ] INFO  com.zaxxer.hikari.HikariDataSource                                     - HikariPool-1 - Start completed.
+15:58:53.973 [main                          ] INFO  o.h.jpa.internal.util.LogHelper                                        - HHH000204: Processing PersistenceUnitInfo [name: default]
+15:58:54.038 [main                          ] INFO  org.hibernate.Version                                                  - HHH000412: Hibernate ORM core version 5.6.12.Final
+15:58:54.284 [main                          ] INFO  o.h.annotations.common.Version                                         - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+15:58:54.456 [main                          ] INFO  org.hibernate.dialect.Dialect                                          - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+15:58:54.698 [main                          ] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator                                     - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+15:58:54.710 [main                          ] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean                         - Initialized JPA EntityManagerFactory for persistence unit 'default'
+15:58:55.505 [main                          ] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration                   - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+15:58:55.719 [main                          ] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping                                  - Adding welcome page template: index
+15:58:56.032 [main                          ] INFO  o.a.coyote.http11.Http11NioProtocol                                    - Starting ProtocolHandler ["http-nio-8080"]
+15:58:56.063 [main                          ] INFO  o.s.b.w.e.tomcat.TomcatWebServer                                       - Tomcat started on port(s): 8080 (http) with context path ''
+15:58:56.066 [main                          ] INFO  o.s.m.s.b.SimpleBrokerMessageHandler                                   - Starting...
+15:58:56.066 [main                          ] INFO  o.s.m.s.b.SimpleBrokerMessageHandler                                   - BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@7a600e21]]
+15:58:56.066 [main                          ] INFO  o.s.m.s.b.SimpleBrokerMessageHandler                                   - Started.
+15:58:56.075 [MessageBroker-1               ] INFO  c.t.a.i.schedule.FileScheduleUtils                                     - uploadDirPath=D:/upload/images/member/
+15:58:56.075 [MessageBroker-1               ] INFO  c.t.a.i.schedule.FileScheduleUtils                                     - uploadDirPath=D:/upload/images/review/
+15:58:56.079 [main                          ] INFO  com.tasty.app.AppApplication                                           - Started AppApplication in 5.986 seconds (JVM running for 6.822)
+15:58:59.239 [http-nio-8080-exec-1          ] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]                                     - Initializing Spring DispatcherServlet 'dispatcherServlet'
+15:58:59.240 [http-nio-8080-exec-1          ] INFO  o.s.web.servlet.DispatcherServlet                                      - Initializing Servlet 'dispatcherServlet'
+15:58:59.241 [http-nio-8080-exec-1          ] INFO  o.s.web.servlet.DispatcherServlet                                      - Completed initialization in 1 ms
+15:58:59.641 [http-nio-8080-exec-1          ] WARN  o.a.c.util.SessionIdGeneratorBase                                      - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [300] milliseconds.
+15:58:59.643 [http-nio-8080-exec-1          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/, handler=com.tasty.app.module.main.controller.MainController#home()
+15:59:00.863 [http-nio-8080-exec-1          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/, handler=com.tasty.app.module.main.controller.MainController#home()
+15:59:00.917 [http-nio-8080-exec-5          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/css/layouts/fragments/footer.css, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+15:59:00.917 [http-nio-8080-exec-2          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/css/layouts/init.css, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+15:59:00.917 [http-nio-8080-exec-6          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/js/layouts/fragments/header.js, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+15:59:00.917 [http-nio-8080-exec-7          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/css/index.css, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+15:59:00.917 [http-nio-8080-exec-3          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/css/layouts/fragments/header.css, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+15:59:00.917 [http-nio-8080-exec-4          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/css/layouts/main.css, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+15:59:00.936 [http-nio-8080-exec-2          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/css/layouts/init.css, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+15:59:00.936 [http-nio-8080-exec-7          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/css/index.css, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+15:59:00.936 [http-nio-8080-exec-3          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/css/layouts/fragments/header.css, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+15:59:00.936 [http-nio-8080-exec-6          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/js/layouts/fragments/header.js, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+15:59:00.936 [http-nio-8080-exec-5          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/css/layouts/fragments/footer.css, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+15:59:00.936 [http-nio-8080-exec-4          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/css/layouts/main.css, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+15:59:00.942 [http-nio-8080-exec-8          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/js/index.js, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+15:59:00.945 [http-nio-8080-exec-8          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/js/index.js, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+15:59:01.107 [http-nio-8080-exec-9          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/reviews, handler=com.tasty.app.module.review.controller.ReviewControllerR#reviews(int, String, Pageable)
+15:59:01.322 [http-nio-8080-exec-9          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/reviews, handler=com.tasty.app.module.review.controller.ReviewControllerR#reviews(int, String, Pageable)
+15:59:01.336 [http-nio-8080-exec-10         ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/upload/images/review/97105497-ee1a-497f-a039-ab557585c761.png, handler=ResourceHttpRequestHandler [URL [file:/D:/upload/images/member/], URL [file:/D:/upload/images/review/]]
+15:59:01.336 [http-nio-8080-exec-10         ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/upload/images/review/97105497-ee1a-497f-a039-ab557585c761.png, handler=ResourceHttpRequestHandler [URL [file:/D:/upload/images/member/], URL [file:/D:/upload/images/review/]]
+15:59:01.342 [http-nio-8080-exec-1          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/login, handler=com.tasty.app.module.login.controller.LoginController#loginForm(boolean, Cookie, Model)
+15:59:01.378 [http-nio-8080-exec-1          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/login, handler=com.tasty.app.module.login.controller.LoginController#loginForm(boolean, Cookie, Model)
+15:59:03.398 [http-nio-8080-exec-2          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/, handler=com.tasty.app.module.main.controller.MainController#home()
+15:59:03.410 [http-nio-8080-exec-2          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/, handler=com.tasty.app.module.main.controller.MainController#home()
+15:59:03.429 [http-nio-8080-exec-5          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/reviews, handler=com.tasty.app.module.review.controller.ReviewControllerR#reviews(int, String, Pageable)
+15:59:03.436 [http-nio-8080-exec-5          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/reviews, handler=com.tasty.app.module.review.controller.ReviewControllerR#reviews(int, String, Pageable)
+15:59:03.446 [http-nio-8080-exec-7          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/upload/images/review/97105497-ee1a-497f-a039-ab557585c761.png, handler=ResourceHttpRequestHandler [URL [file:/D:/upload/images/member/], URL [file:/D:/upload/images/review/]]
+15:59:03.447 [http-nio-8080-exec-7          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/upload/images/review/97105497-ee1a-497f-a039-ab557585c761.png, handler=ResourceHttpRequestHandler [URL [file:/D:/upload/images/member/], URL [file:/D:/upload/images/review/]]
+15:59:03.461 [http-nio-8080-exec-6          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/login, handler=com.tasty.app.module.login.controller.LoginController#loginForm(boolean, Cookie, Model)
+15:59:03.474 [http-nio-8080-exec-6          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/login, handler=com.tasty.app.module.login.controller.LoginController#loginForm(boolean, Cookie, Model)
+15:59:13.678 [http-nio-8080-exec-4          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/, handler=com.tasty.app.module.main.controller.MainController#home()
+15:59:13.687 [http-nio-8080-exec-4          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/, handler=com.tasty.app.module.main.controller.MainController#home()
+15:59:13.702 [http-nio-8080-exec-3          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/reviews, handler=com.tasty.app.module.review.controller.ReviewControllerR#reviews(int, String, Pageable)
+15:59:13.709 [http-nio-8080-exec-3          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/reviews, handler=com.tasty.app.module.review.controller.ReviewControllerR#reviews(int, String, Pageable)
+15:59:13.717 [http-nio-8080-exec-8          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/upload/images/review/97105497-ee1a-497f-a039-ab557585c761.png, handler=ResourceHttpRequestHandler [URL [file:/D:/upload/images/member/], URL [file:/D:/upload/images/review/]]
+15:59:13.718 [http-nio-8080-exec-8          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/upload/images/review/97105497-ee1a-497f-a039-ab557585c761.png, handler=ResourceHttpRequestHandler [URL [file:/D:/upload/images/member/], URL [file:/D:/upload/images/review/]]
+15:59:13.723 [http-nio-8080-exec-9          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/login, handler=com.tasty.app.module.login.controller.LoginController#loginForm(boolean, Cookie, Model)
+15:59:13.732 [http-nio-8080-exec-9          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/login, handler=com.tasty.app.module.login.controller.LoginController#loginForm(boolean, Cookie, Model)
+15:59:17.425 [http-nio-8080-exec-10         ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/login, handler=com.tasty.app.module.login.controller.LoginController#loginForm(boolean, Cookie, Model)
+15:59:17.432 [http-nio-8080-exec-10         ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/login, handler=com.tasty.app.module.login.controller.LoginController#loginForm(boolean, Cookie, Model)
+15:59:17.453 [http-nio-8080-exec-1          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/css/sign_in.css, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+15:59:17.453 [http-nio-8080-exec-2          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/js/sign_in.js, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+15:59:17.456 [http-nio-8080-exec-2          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/js/sign_in.js, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+15:59:17.456 [http-nio-8080-exec-1          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/css/sign_in.css, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+15:59:18.446 [http-nio-8080-exec-5          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/, handler=com.tasty.app.module.main.controller.MainController#home()
+15:59:18.456 [http-nio-8080-exec-5          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/, handler=com.tasty.app.module.main.controller.MainController#home()
+15:59:18.481 [http-nio-8080-exec-7          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/reviews, handler=com.tasty.app.module.review.controller.ReviewControllerR#reviews(int, String, Pageable)
+15:59:18.489 [http-nio-8080-exec-7          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/reviews, handler=com.tasty.app.module.review.controller.ReviewControllerR#reviews(int, String, Pageable)
+15:59:18.497 [http-nio-8080-exec-6          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/upload/images/review/97105497-ee1a-497f-a039-ab557585c761.png, handler=ResourceHttpRequestHandler [URL [file:/D:/upload/images/member/], URL [file:/D:/upload/images/review/]]
+15:59:18.497 [http-nio-8080-exec-6          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/upload/images/review/97105497-ee1a-497f-a039-ab557585c761.png, handler=ResourceHttpRequestHandler [URL [file:/D:/upload/images/member/], URL [file:/D:/upload/images/review/]]
+15:59:18.501 [http-nio-8080-exec-4          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/login, handler=com.tasty.app.module.login.controller.LoginController#loginForm(boolean, Cookie, Model)
+15:59:18.509 [http-nio-8080-exec-4          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/login, handler=com.tasty.app.module.login.controller.LoginController#loginForm(boolean, Cookie, Model)
+15:59:19.638 [http-nio-8080-exec-3          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/review/view, handler=com.tasty.app.module.review.controller.ReviewController#viewReview(String, Long, Model)
+15:59:19.704 [http-nio-8080-exec-3          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/review/view, handler=com.tasty.app.module.review.controller.ReviewController#viewReview(String, Long, Model)
+15:59:19.722 [http-nio-8080-exec-8          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/css/review/view.css, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+15:59:19.726 [http-nio-8080-exec-8          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/css/review/view.css, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+15:59:19.726 [http-nio-8080-exec-9          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/js/review/kakao_map.js, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+15:59:19.726 [http-nio-8080-exec-1          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/upload/images/member/8ad9229b-89b1-491a-b42f-b842b5af7cff.png, handler=ResourceHttpRequestHandler [URL [file:/D:/upload/images/member/], URL [file:/D:/upload/images/review/]]
+15:59:19.726 [http-nio-8080-exec-5          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/upload/images/review/97105497-ee1a-497f-a039-ab557585c761.png, handler=ResourceHttpRequestHandler [URL [file:/D:/upload/images/member/], URL [file:/D:/upload/images/review/]]
+15:59:19.727 [http-nio-8080-exec-1          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/upload/images/member/8ad9229b-89b1-491a-b42f-b842b5af7cff.png, handler=ResourceHttpRequestHandler [URL [file:/D:/upload/images/member/], URL [file:/D:/upload/images/review/]]
+15:59:19.727 [http-nio-8080-exec-5          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/upload/images/review/97105497-ee1a-497f-a039-ab557585c761.png, handler=ResourceHttpRequestHandler [URL [file:/D:/upload/images/member/], URL [file:/D:/upload/images/review/]]
+15:59:19.730 [http-nio-8080-exec-9          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/js/review/kakao_map.js, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+15:59:19.732 [http-nio-8080-exec-7          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/login, handler=com.tasty.app.module.login.controller.LoginController#loginForm(boolean, Cookie, Model)
+15:59:19.733 [http-nio-8080-exec-2          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/js/review/subscribe.js, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+15:59:19.733 [http-nio-8080-exec-10         ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/js/review/good.js, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+15:59:19.736 [http-nio-8080-exec-2          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/js/review/subscribe.js, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+15:59:19.736 [http-nio-8080-exec-10         ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/js/review/good.js, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+15:59:19.741 [http-nio-8080-exec-7          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/login, handler=com.tasty.app.module.login.controller.LoginController#loginForm(boolean, Cookie, Model)
+15:59:19.743 [http-nio-8080-exec-6          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/login, handler=com.tasty.app.module.login.controller.LoginController#loginForm(boolean, Cookie, Model)
+15:59:19.749 [http-nio-8080-exec-6          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/login, handler=com.tasty.app.module.login.controller.LoginController#loginForm(boolean, Cookie, Model)
+15:59:19.754 [http-nio-8080-exec-4          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/js/review/view.js, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+15:59:19.756 [http-nio-8080-exec-4          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/js/review/view.js, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+15:59:19.923 [http-nio-8080-exec-3          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/upload/images/map/location.png, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+15:59:19.923 [http-nio-8080-exec-3          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/upload/images/map/location.png, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+15:59:19.929 [http-nio-8080-exec-8          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/login, handler=com.tasty.app.module.login.controller.LoginController#loginForm(boolean, Cookie, Model)
+15:59:19.935 [http-nio-8080-exec-8          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/login, handler=com.tasty.app.module.login.controller.LoginController#loginForm(boolean, Cookie, Model)
+15:59:55.483 [MessageBroker-2               ] INFO  o.s.w.s.c.WebSocketMessageBrokerStats                                  - WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 3, active threads = 1, queued tasks = 1, completed tasks = 1]
+16:01:19.402 [http-nio-8080-exec-6          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/member/valid_email, handler=com.tasty.app.module.member.controller.MemberController#validEmailPage(String, String, Model)
+16:01:19.416 [http-nio-8080-exec-6          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/member/valid_email, handler=com.tasty.app.module.member.controller.MemberController#validEmailPage(String, String, Model)
+16:01:19.430 [http-nio-8080-exec-4          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/css/valid_email.css, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+16:01:19.438 [http-nio-8080-exec-4          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/css/valid_email.css, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+16:02:22.035 [http-nio-8080-exec-8          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/login, handler=com.tasty.app.module.login.controller.LoginController#loginForm(boolean, Cookie, Model)
+16:02:22.040 [http-nio-8080-exec-8          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/login, handler=com.tasty.app.module.login.controller.LoginController#loginForm(boolean, Cookie, Model)
+16:02:35.219 [http-nio-8080-exec-1          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=POST, requestURI=/login, handler=com.tasty.app.module.login.controller.LoginController#login(LoginForm, BindingResult, HttpSession)
+16:02:35.435 [http-nio-8080-exec-1          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=POST, requestURI=/login, handler=com.tasty.app.module.login.controller.LoginController#login(LoginForm, BindingResult, HttpSession)
+16:02:35.445 [http-nio-8080-exec-10         ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=v011235@naver.com, httpMethod=GET, requestURI=/, handler=com.tasty.app.module.main.controller.MainController#home()
+16:02:35.450 [http-nio-8080-exec-10         ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=v011235@naver.com, httpMethod=GET, requestURI=/, handler=com.tasty.app.module.main.controller.MainController#home()
+16:02:35.465 [http-nio-8080-exec-2          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=v011235@naver.com, httpMethod=GET, requestURI=/reviews, handler=com.tasty.app.module.review.controller.ReviewControllerR#reviews(int, String, Pageable)
+16:02:35.473 [http-nio-8080-exec-2          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=v011235@naver.com, httpMethod=GET, requestURI=/reviews, handler=com.tasty.app.module.review.controller.ReviewControllerR#reviews(int, String, Pageable)
+16:02:35.502 [http-nio-8080-exec-9          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=v011235@naver.com, httpMethod=GET, requestURI=/notifications/subscribe/v011235@naver.com, handler=com.tasty.app.module.notification.controller.NotificationControllerR#subscribe(String)
+16:02:35.504 [http-nio-8080-exec-7          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=v011235@naver.com, httpMethod=GET, requestURI=/upload/images/review/97105497-ee1a-497f-a039-ab557585c761.png, handler=ResourceHttpRequestHandler [URL [file:/D:/upload/images/member/], URL [file:/D:/upload/images/review/]]
+16:02:35.507 [http-nio-8080-exec-7          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=v011235@naver.com, httpMethod=GET, requestURI=/upload/images/review/97105497-ee1a-497f-a039-ab557585c761.png, handler=ResourceHttpRequestHandler [URL [file:/D:/upload/images/member/], URL [file:/D:/upload/images/review/]]
+16:02:38.273 [http-nio-8080-exec-5          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=v011235@naver.com, httpMethod=GET, requestURI=/logout, handler=com.tasty.app.module.login.controller.LoginController#logout(HttpSession)
+16:02:38.276 [http-nio-8080-exec-5          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=v011235@naver.com, httpMethod=GET, requestURI=/logout, handler=com.tasty.app.module.login.controller.LoginController#logout(HttpSession)
+16:02:38.283 [http-nio-8080-exec-6          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/login, handler=com.tasty.app.module.login.controller.LoginController#loginForm(boolean, Cookie, Model)
+16:02:38.293 [http-nio-8080-exec-6          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/login, handler=com.tasty.app.module.login.controller.LoginController#loginForm(boolean, Cookie, Model)
+16:02:39.071 [http-nio-8080-exec-4          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/notifications/subscribe/v011235@naver.com, handler=com.tasty.app.module.notification.controller.NotificationControllerR#subscribe(String)
+16:02:39.074 [http-nio-8080-exec-4          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/notifications/subscribe/v011235@naver.com, handler=com.tasty.app.module.notification.controller.NotificationControllerR#subscribe(String)
+16:02:39.076 [http-nio-8080-exec-4          ] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet]                                    - Servlet.service() for servlet [dispatcherServlet] threw exception
+java.lang.IllegalStateException: Cannot call sendRedirect() after the response has been committed
+	at org.apache.catalina.connector.ResponseFacade.sendRedirect(ResponseFacade.java:488)
+	at com.tasty.app.infra.interceptor.AuthenticateInterceptor.preHandle(AuthenticateInterceptor.java:19)
+	at org.springframework.web.servlet.HandlerExecutionChain.applyPreHandle(HandlerExecutionChain.java:148)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1066)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:964)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:670)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:779)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:102)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:102)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:711)
+	at org.apache.catalina.core.ApplicationDispatcher.doDispatch(ApplicationDispatcher.java:632)
+	at org.apache.catalina.core.ApplicationDispatcher.dispatch(ApplicationDispatcher.java:600)
+	at org.apache.catalina.core.AsyncContextImpl$AsyncRunnable.run(AsyncContextImpl.java:587)
+	at org.apache.catalina.core.AsyncContextImpl.doInternalDispatch(AsyncContextImpl.java:353)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:194)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.asyncDispatch(CoyoteAdapter.java:250)
+	at org.apache.coyote.AbstractProcessor.dispatch(AbstractProcessor.java:241)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:59)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+16:02:39.077 [http-nio-8080-exec-4          ] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet]                                    - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalStateException: Cannot call sendRedirect() after the response has been committed] with root cause
+java.lang.IllegalStateException: Cannot call sendRedirect() after the response has been committed
+	at org.apache.catalina.connector.ResponseFacade.sendRedirect(ResponseFacade.java:488)
+	at com.tasty.app.infra.interceptor.AuthenticateInterceptor.preHandle(AuthenticateInterceptor.java:19)
+	at org.springframework.web.servlet.HandlerExecutionChain.applyPreHandle(HandlerExecutionChain.java:148)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1066)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:964)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:670)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:779)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:102)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:102)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:711)
+	at org.apache.catalina.core.ApplicationDispatcher.doDispatch(ApplicationDispatcher.java:632)
+	at org.apache.catalina.core.ApplicationDispatcher.dispatch(ApplicationDispatcher.java:600)
+	at org.apache.catalina.core.AsyncContextImpl$AsyncRunnable.run(AsyncContextImpl.java:587)
+	at org.apache.catalina.core.AsyncContextImpl.doInternalDispatch(AsyncContextImpl.java:353)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:194)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.asyncDispatch(CoyoteAdapter.java:250)
+	at org.apache.coyote.AbstractProcessor.dispatch(AbstractProcessor.java:241)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:59)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+16:02:39.080 [http-nio-8080-exec-4          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/notifications/subscribe/v011235@naver.com, handler=org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+16:02:39.082 [http-nio-8080-exec-4          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/notifications/subscribe/v011235@naver.com, handler=org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+16:02:40.210 [http-nio-8080-exec-3          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/login, handler=com.tasty.app.module.login.controller.LoginController#loginForm(boolean, Cookie, Model)
+16:02:40.217 [http-nio-8080-exec-3          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/login, handler=com.tasty.app.module.login.controller.LoginController#loginForm(boolean, Cookie, Model)
+16:02:42.721 [http-nio-8080-exec-8          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=POST, requestURI=/login, handler=com.tasty.app.module.login.controller.LoginController#login(LoginForm, BindingResult, HttpSession)
+16:02:42.801 [http-nio-8080-exec-8          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=POST, requestURI=/login, handler=com.tasty.app.module.login.controller.LoginController#login(LoginForm, BindingResult, HttpSession)
+16:02:42.812 [http-nio-8080-exec-1          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=v011235@naver.com, httpMethod=GET, requestURI=/, handler=com.tasty.app.module.main.controller.MainController#home()
+16:02:42.818 [http-nio-8080-exec-1          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=v011235@naver.com, httpMethod=GET, requestURI=/, handler=com.tasty.app.module.main.controller.MainController#home()
+16:02:42.835 [http-nio-8080-exec-10         ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=v011235@naver.com, httpMethod=GET, requestURI=/reviews, handler=com.tasty.app.module.review.controller.ReviewControllerR#reviews(int, String, Pageable)
+16:02:42.843 [http-nio-8080-exec-10         ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=v011235@naver.com, httpMethod=GET, requestURI=/reviews, handler=com.tasty.app.module.review.controller.ReviewControllerR#reviews(int, String, Pageable)
+16:02:42.868 [http-nio-8080-exec-2          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=v011235@naver.com, httpMethod=GET, requestURI=/notifications/subscribe/v011235@naver.com, handler=com.tasty.app.module.notification.controller.NotificationControllerR#subscribe(String)
+16:02:45.420 [http-nio-8080-exec-7          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=v011235@naver.com, httpMethod=GET, requestURI=/my/profile, handler=com.tasty.app.module.my.profile.controller.ProfileController#myProfile(String, int, Model)
+16:02:45.461 [http-nio-8080-exec-7          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=v011235@naver.com, httpMethod=GET, requestURI=/my/profile, handler=com.tasty.app.module.my.profile.controller.ProfileController#myProfile(String, int, Model)
+16:02:45.484 [http-nio-8080-exec-9          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=v011235@naver.com, httpMethod=GET, requestURI=/css/my/fragments/aside.css, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+16:02:45.485 [http-nio-8080-exec-5          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=v011235@naver.com, httpMethod=GET, requestURI=/css/my/profile.css, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+16:02:45.485 [http-nio-8080-exec-6          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=v011235@naver.com, httpMethod=GET, requestURI=/upload/images/member/default_profile_image.png, handler=ResourceHttpRequestHandler [URL [file:/D:/upload/images/member/], URL [file:/D:/upload/images/review/]]
+16:02:45.485 [http-nio-8080-exec-3          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=v011235@naver.com, httpMethod=GET, requestURI=/js/my/profile.js, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+16:02:45.485 [http-nio-8080-exec-4          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=v011235@naver.com, httpMethod=GET, requestURI=/js/my/fragments/aside.js, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+16:02:45.487 [http-nio-8080-exec-6          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=v011235@naver.com, httpMethod=GET, requestURI=/upload/images/member/default_profile_image.png, handler=ResourceHttpRequestHandler [URL [file:/D:/upload/images/member/], URL [file:/D:/upload/images/review/]]
+16:02:45.487 [http-nio-8080-exec-9          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=v011235@naver.com, httpMethod=GET, requestURI=/css/my/fragments/aside.css, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+16:02:45.488 [http-nio-8080-exec-5          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=v011235@naver.com, httpMethod=GET, requestURI=/css/my/profile.css, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+16:02:45.489 [http-nio-8080-exec-4          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=v011235@naver.com, httpMethod=GET, requestURI=/js/my/fragments/aside.js, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+16:02:45.489 [http-nio-8080-exec-3          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=v011235@naver.com, httpMethod=GET, requestURI=/js/my/profile.js, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+16:02:45.500 [http-nio-8080-exec-8          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=v011235@naver.com, httpMethod=GET, requestURI=/notifications/subscribe/v011235@naver.com, handler=com.tasty.app.module.notification.controller.NotificationControllerR#subscribe(String)
+16:02:46.066 [http-nio-8080-exec-1          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=v011235@naver.com, httpMethod=GET, requestURI=/notifications/subscribe/v011235@naver.com, handler=com.tasty.app.module.notification.controller.NotificationControllerR#subscribe(String)
+16:02:46.067 [http-nio-8080-exec-1          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=v011235@naver.com, httpMethod=GET, requestURI=/notifications/subscribe/v011235@naver.com, handler=com.tasty.app.module.notification.controller.NotificationControllerR#subscribe(String)
+16:02:49.073 [http-nio-8080-exec-10         ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=v011235@naver.com, httpMethod=GET, requestURI=/notifications/subscribe/v011235@naver.com, handler=com.tasty.app.module.notification.controller.NotificationControllerR#subscribe(String)
+16:02:49.074 [http-nio-8080-exec-10         ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=v011235@naver.com, httpMethod=GET, requestURI=/notifications/subscribe/v011235@naver.com, handler=com.tasty.app.module.notification.controller.NotificationControllerR#subscribe(String)
+16:02:49.204 [http-nio-8080-exec-2          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=v011235@naver.com, httpMethod=GET, requestURI=/, handler=com.tasty.app.module.main.controller.MainController#home()
+16:02:49.210 [http-nio-8080-exec-2          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=v011235@naver.com, httpMethod=GET, requestURI=/, handler=com.tasty.app.module.main.controller.MainController#home()
+16:02:49.237 [http-nio-8080-exec-7          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=v011235@naver.com, httpMethod=GET, requestURI=/reviews, handler=com.tasty.app.module.review.controller.ReviewControllerR#reviews(int, String, Pageable)
+16:02:49.237 [http-nio-8080-exec-9          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=v011235@naver.com, httpMethod=GET, requestURI=/notifications/subscribe/v011235@naver.com, handler=com.tasty.app.module.notification.controller.NotificationControllerR#subscribe(String)
+16:02:49.246 [http-nio-8080-exec-7          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=v011235@naver.com, httpMethod=GET, requestURI=/reviews, handler=com.tasty.app.module.review.controller.ReviewControllerR#reviews(int, String, Pageable)
+16:02:51.951 [http-nio-8080-exec-6          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=v011235@naver.com, httpMethod=GET, requestURI=/logout, handler=com.tasty.app.module.login.controller.LoginController#logout(HttpSession)
+16:02:51.952 [http-nio-8080-exec-6          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=v011235@naver.com, httpMethod=GET, requestURI=/logout, handler=com.tasty.app.module.login.controller.LoginController#logout(HttpSession)
+16:02:51.958 [http-nio-8080-exec-5          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/login, handler=com.tasty.app.module.login.controller.LoginController#loginForm(boolean, Cookie, Model)
+16:02:51.962 [http-nio-8080-exec-5          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/login, handler=com.tasty.app.module.login.controller.LoginController#loginForm(boolean, Cookie, Model)
+16:02:53.072 [http-nio-8080-exec-3          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/notifications/subscribe/v011235@naver.com, handler=com.tasty.app.module.notification.controller.NotificationControllerR#subscribe(String)
+16:02:53.072 [http-nio-8080-exec-3          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/notifications/subscribe/v011235@naver.com, handler=com.tasty.app.module.notification.controller.NotificationControllerR#subscribe(String)
+16:02:53.073 [http-nio-8080-exec-3          ] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet]                                    - Servlet.service() for servlet [dispatcherServlet] threw exception
+java.lang.IllegalStateException: Cannot call sendRedirect() after the response has been committed
+	at org.apache.catalina.connector.ResponseFacade.sendRedirect(ResponseFacade.java:488)
+	at com.tasty.app.infra.interceptor.AuthenticateInterceptor.preHandle(AuthenticateInterceptor.java:19)
+	at org.springframework.web.servlet.HandlerExecutionChain.applyPreHandle(HandlerExecutionChain.java:148)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1066)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:964)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:670)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:779)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:102)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:102)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:711)
+	at org.apache.catalina.core.ApplicationDispatcher.doDispatch(ApplicationDispatcher.java:632)
+	at org.apache.catalina.core.ApplicationDispatcher.dispatch(ApplicationDispatcher.java:600)
+	at org.apache.catalina.core.AsyncContextImpl$AsyncRunnable.run(AsyncContextImpl.java:587)
+	at org.apache.catalina.core.AsyncContextImpl.doInternalDispatch(AsyncContextImpl.java:353)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:194)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.asyncDispatch(CoyoteAdapter.java:250)
+	at org.apache.coyote.AbstractProcessor.dispatch(AbstractProcessor.java:241)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:59)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+16:02:53.074 [http-nio-8080-exec-3          ] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet]                                    - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalStateException: Cannot call sendRedirect() after the response has been committed] with root cause
+java.lang.IllegalStateException: Cannot call sendRedirect() after the response has been committed
+	at org.apache.catalina.connector.ResponseFacade.sendRedirect(ResponseFacade.java:488)
+	at com.tasty.app.infra.interceptor.AuthenticateInterceptor.preHandle(AuthenticateInterceptor.java:19)
+	at org.springframework.web.servlet.HandlerExecutionChain.applyPreHandle(HandlerExecutionChain.java:148)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1066)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:964)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:670)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:779)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:102)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:102)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:711)
+	at org.apache.catalina.core.ApplicationDispatcher.doDispatch(ApplicationDispatcher.java:632)
+	at org.apache.catalina.core.ApplicationDispatcher.dispatch(ApplicationDispatcher.java:600)
+	at org.apache.catalina.core.AsyncContextImpl$AsyncRunnable.run(AsyncContextImpl.java:587)
+	at org.apache.catalina.core.AsyncContextImpl.doInternalDispatch(AsyncContextImpl.java:353)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:194)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.asyncDispatch(CoyoteAdapter.java:250)
+	at org.apache.coyote.AbstractProcessor.dispatch(AbstractProcessor.java:241)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:59)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+16:02:53.075 [http-nio-8080-exec-3          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/notifications/subscribe/v011235@naver.com, handler=org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+16:02:53.076 [http-nio-8080-exec-3          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/notifications/subscribe/v011235@naver.com, handler=org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+16:02:53.447 [http-nio-8080-exec-4          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/, handler=com.tasty.app.module.main.controller.MainController#home()
+16:02:53.451 [http-nio-8080-exec-4          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/, handler=com.tasty.app.module.main.controller.MainController#home()
+16:02:53.470 [http-nio-8080-exec-8          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/reviews, handler=com.tasty.app.module.review.controller.ReviewControllerR#reviews(int, String, Pageable)
+16:02:53.479 [http-nio-8080-exec-8          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/reviews, handler=com.tasty.app.module.review.controller.ReviewControllerR#reviews(int, String, Pageable)
+16:02:54.917 [http-nio-8080-exec-1          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/login, handler=com.tasty.app.module.login.controller.LoginController#loginForm(boolean, Cookie, Model)
+16:02:54.921 [http-nio-8080-exec-1          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/login, handler=com.tasty.app.module.login.controller.LoginController#loginForm(boolean, Cookie, Model)
+16:02:57.672 [http-nio-8080-exec-10         ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=POST, requestURI=/login, handler=com.tasty.app.module.login.controller.LoginController#login(LoginForm, BindingResult, HttpSession)
+16:02:57.753 [http-nio-8080-exec-10         ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=POST, requestURI=/login, handler=com.tasty.app.module.login.controller.LoginController#login(LoginForm, BindingResult, HttpSession)
+16:02:57.764 [http-nio-8080-exec-2          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=v011235@naver.com, httpMethod=GET, requestURI=/, handler=com.tasty.app.module.main.controller.MainController#home()
+16:02:57.770 [http-nio-8080-exec-2          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=v011235@naver.com, httpMethod=GET, requestURI=/, handler=com.tasty.app.module.main.controller.MainController#home()
+16:02:57.789 [http-nio-8080-exec-9          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=v011235@naver.com, httpMethod=GET, requestURI=/reviews, handler=com.tasty.app.module.review.controller.ReviewControllerR#reviews(int, String, Pageable)
+16:02:57.797 [http-nio-8080-exec-9          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=v011235@naver.com, httpMethod=GET, requestURI=/reviews, handler=com.tasty.app.module.review.controller.ReviewControllerR#reviews(int, String, Pageable)
+16:02:57.800 [http-nio-8080-exec-7          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=v011235@naver.com, httpMethod=GET, requestURI=/notifications/subscribe/v011235@naver.com, handler=com.tasty.app.module.notification.controller.NotificationControllerR#subscribe(String)
+16:03:01.068 [http-nio-8080-exec-6          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=v011235@naver.com, httpMethod=GET, requestURI=/notifications/subscribe/v011235@naver.com, handler=com.tasty.app.module.notification.controller.NotificationControllerR#subscribe(String)
+16:03:01.068 [http-nio-8080-exec-6          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=v011235@naver.com, httpMethod=GET, requestURI=/notifications/subscribe/v011235@naver.com, handler=com.tasty.app.module.notification.controller.NotificationControllerR#subscribe(String)
+16:03:01.093 [http-nio-8080-exec-5          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=v011235@naver.com, httpMethod=GET, requestURI=/my/profile, handler=com.tasty.app.module.my.profile.controller.ProfileController#myProfile(String, int, Model)
+16:03:01.104 [http-nio-8080-exec-5          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=v011235@naver.com, httpMethod=GET, requestURI=/my/profile, handler=com.tasty.app.module.my.profile.controller.ProfileController#myProfile(String, int, Model)
+16:03:01.147 [http-nio-8080-exec-3          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=v011235@naver.com, httpMethod=GET, requestURI=/notifications/subscribe/v011235@naver.com, handler=com.tasty.app.module.notification.controller.NotificationControllerR#subscribe(String)
+16:03:04.041 [http-nio-8080-exec-4          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=v011235@naver.com, httpMethod=GET, requestURI=/my/profile/remove, handler=com.tasty.app.module.my.profile.controller.ProfileController#removeMembership(HttpSession)
+16:03:04.048 [http-nio-8080-exec-4          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=v011235@naver.com, httpMethod=GET, requestURI=/my/profile/remove, handler=com.tasty.app.module.my.profile.controller.ProfileController#removeMembership(HttpSession)
+16:03:04.058 [http-nio-8080-exec-8          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/, handler=com.tasty.app.module.main.controller.MainController#home()
+16:03:04.062 [http-nio-8080-exec-8          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/, handler=com.tasty.app.module.main.controller.MainController#home()
+16:03:04.080 [http-nio-8080-exec-1          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/reviews, handler=com.tasty.app.module.review.controller.ReviewControllerR#reviews(int, String, Pageable)
+16:03:04.087 [http-nio-8080-exec-1          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/reviews, handler=com.tasty.app.module.review.controller.ReviewControllerR#reviews(int, String, Pageable)
+16:03:05.076 [http-nio-8080-exec-10         ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/notifications/subscribe/v011235@naver.com, handler=com.tasty.app.module.notification.controller.NotificationControllerR#subscribe(String)
+16:03:05.076 [http-nio-8080-exec-10         ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/notifications/subscribe/v011235@naver.com, handler=com.tasty.app.module.notification.controller.NotificationControllerR#subscribe(String)
+16:03:05.077 [http-nio-8080-exec-10         ] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet]                                    - Servlet.service() for servlet [dispatcherServlet] threw exception
+java.lang.IllegalStateException: Cannot call sendRedirect() after the response has been committed
+	at org.apache.catalina.connector.ResponseFacade.sendRedirect(ResponseFacade.java:488)
+	at com.tasty.app.infra.interceptor.AuthenticateInterceptor.preHandle(AuthenticateInterceptor.java:19)
+	at org.springframework.web.servlet.HandlerExecutionChain.applyPreHandle(HandlerExecutionChain.java:148)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1066)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:964)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:670)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:779)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:102)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:102)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:711)
+	at org.apache.catalina.core.ApplicationDispatcher.doDispatch(ApplicationDispatcher.java:632)
+	at org.apache.catalina.core.ApplicationDispatcher.dispatch(ApplicationDispatcher.java:600)
+	at org.apache.catalina.core.AsyncContextImpl$AsyncRunnable.run(AsyncContextImpl.java:587)
+	at org.apache.catalina.core.AsyncContextImpl.doInternalDispatch(AsyncContextImpl.java:353)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:194)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.asyncDispatch(CoyoteAdapter.java:250)
+	at org.apache.coyote.AbstractProcessor.dispatch(AbstractProcessor.java:241)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:59)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+16:03:05.078 [http-nio-8080-exec-10         ] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet]                                    - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalStateException: Cannot call sendRedirect() after the response has been committed] with root cause
+java.lang.IllegalStateException: Cannot call sendRedirect() after the response has been committed
+	at org.apache.catalina.connector.ResponseFacade.sendRedirect(ResponseFacade.java:488)
+	at com.tasty.app.infra.interceptor.AuthenticateInterceptor.preHandle(AuthenticateInterceptor.java:19)
+	at org.springframework.web.servlet.HandlerExecutionChain.applyPreHandle(HandlerExecutionChain.java:148)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1066)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:964)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:670)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:779)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:102)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:102)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:711)
+	at org.apache.catalina.core.ApplicationDispatcher.doDispatch(ApplicationDispatcher.java:632)
+	at org.apache.catalina.core.ApplicationDispatcher.dispatch(ApplicationDispatcher.java:600)
+	at org.apache.catalina.core.AsyncContextImpl$AsyncRunnable.run(AsyncContextImpl.java:587)
+	at org.apache.catalina.core.AsyncContextImpl.doInternalDispatch(AsyncContextImpl.java:353)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:194)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.asyncDispatch(CoyoteAdapter.java:250)
+	at org.apache.coyote.AbstractProcessor.dispatch(AbstractProcessor.java:241)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:59)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+16:03:05.079 [http-nio-8080-exec-10         ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/notifications/subscribe/v011235@naver.com, handler=org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+16:03:05.080 [http-nio-8080-exec-10         ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/notifications/subscribe/v011235@naver.com, handler=org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+16:03:05.681 [http-nio-8080-exec-2          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/login, handler=com.tasty.app.module.login.controller.LoginController#loginForm(boolean, Cookie, Model)
+16:03:05.686 [http-nio-8080-exec-2          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/login, handler=com.tasty.app.module.login.controller.LoginController#loginForm(boolean, Cookie, Model)
+16:03:08.872 [http-nio-8080-exec-9          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/member/add, handler=com.tasty.app.module.member.controller.MemberController#addForm(AddForm)
+16:03:08.881 [http-nio-8080-exec-9          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/member/add, handler=com.tasty.app.module.member.controller.MemberController#addForm(AddForm)
+16:03:08.898 [http-nio-8080-exec-7          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/css/sign_up.css, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+16:03:08.900 [http-nio-8080-exec-6          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/js/sign_up.js, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+16:03:08.900 [http-nio-8080-exec-7          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/css/sign_up.css, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+16:03:08.902 [http-nio-8080-exec-6          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/js/sign_up.js, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+16:03:10.182 [http-nio-8080-exec-5          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=POST, requestURI=/members/exists_email, handler=com.tasty.app.module.member.controller.MemberControllerR#isExistsEmail(LoginForm)
+16:03:10.186 [http-nio-8080-exec-5          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=POST, requestURI=/members/exists_email, handler=com.tasty.app.module.member.controller.MemberControllerR#isExistsEmail(LoginForm)
+16:03:11.042 [http-nio-8080-exec-3          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=POST, requestURI=/members/send_email, handler=com.tasty.app.module.member.controller.MemberControllerR#sendEmail(LoginForm, BindingResult)
+16:03:11.553 [http-nio-8080-exec-3          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=POST, requestURI=/members/send_email, handler=com.tasty.app.module.member.controller.MemberControllerR#sendEmail(LoginForm, BindingResult)
+16:03:19.885 [http-nio-8080-exec-4          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/member/valid_email, handler=com.tasty.app.module.member.controller.MemberController#validEmailPage(String, String, Model)
+16:03:19.886 [http-nio-8080-exec-4          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/member/valid_email, handler=com.tasty.app.module.member.controller.MemberController#validEmailPage(String, String, Model)
+16:03:19.902 [http-nio-8080-exec-8          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/css/valid_email.css, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+16:03:19.906 [http-nio-8080-exec-8          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/css/valid_email.css, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+16:04:03.061 [SpringApplicationShutdownHook ] INFO  o.s.m.s.b.SimpleBrokerMessageHandler                                   - Stopping...
+16:04:03.062 [SpringApplicationShutdownHook ] INFO  o.s.m.s.b.SimpleBrokerMessageHandler                                   - BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@7a600e21]]
+16:04:03.062 [SpringApplicationShutdownHook ] INFO  o.s.m.s.b.SimpleBrokerMessageHandler                                   - Stopped.
+16:04:03.318 [SpringApplicationShutdownHook ] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean                         - Closing JPA EntityManagerFactory for persistence unit 'default'
+16:04:03.320 [SpringApplicationShutdownHook ] INFO  com.zaxxer.hikari.HikariDataSource                                     - HikariPool-1 - Shutdown initiated...
+16:04:03.333 [SpringApplicationShutdownHook ] INFO  com.zaxxer.hikari.HikariDataSource                                     - HikariPool-1 - Shutdown completed.
+16:04:06.168 [main                          ] INFO  com.tasty.app.AppApplication                                           - Starting AppApplication using Java 11.0.16.1 on DESKTOP-OI2N0AQ with PID 6040 (D:\workspace_tasty\app\out\production\classes started by s112123 in D:\workspace_tasty\app)
+16:04:06.168 [background-preinit            ] INFO  o.h.validator.internal.util.Version                                    - HV000001: Hibernate Validator 6.2.5.Final
+16:04:06.173 [main                          ] INFO  com.tasty.app.AppApplication                                           - The following 1 profile is active: "dev"
+16:04:07.388 [main                          ] INFO  o.s.d.r.c.RepositoryConfigurationDelegate                              - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16:04:07.426 [main                          ] INFO  o.s.d.r.c.RepositoryConfigurationDelegate                              - Finished Spring Data repository scanning in 27 ms. Found 0 JPA repository interfaces.
+16:04:08.514 [main                          ] INFO  o.s.b.w.e.tomcat.TomcatWebServer                                       - Tomcat initialized with port(s): 8080 (http)
+16:04:08.527 [main                          ] INFO  o.a.coyote.http11.Http11NioProtocol                                    - Initializing ProtocolHandler ["http-nio-8080"]
+16:04:08.528 [main                          ] INFO  o.a.catalina.core.StandardService                                      - Starting service [Tomcat]
+16:04:08.528 [main                          ] INFO  o.a.catalina.core.StandardEngine                                       - Starting Servlet engine: [Apache Tomcat/9.0.68]
+16:04:08.719 [main                          ] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]                                     - Initializing Spring embedded WebApplicationContext
+16:04:08.719 [main                          ] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext                         - Root WebApplicationContext: initialization completed in 2211 ms
+16:04:08.871 [main                          ] INFO  com.zaxxer.hikari.HikariDataSource                                     - HikariPool-1 - Starting...
+16:04:09.236 [main                          ] INFO  com.zaxxer.hikari.HikariDataSource                                     - HikariPool-1 - Start completed.
+16:04:09.305 [main                          ] INFO  o.h.jpa.internal.util.LogHelper                                        - HHH000204: Processing PersistenceUnitInfo [name: default]
+16:04:09.364 [main                          ] INFO  org.hibernate.Version                                                  - HHH000412: Hibernate ORM core version 5.6.12.Final
+16:04:09.598 [main                          ] INFO  o.h.annotations.common.Version                                         - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+16:04:09.764 [main                          ] INFO  org.hibernate.dialect.Dialect                                          - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+16:04:10.024 [main                          ] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator                                     - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+16:04:10.036 [main                          ] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean                         - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16:04:10.753 [main                          ] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration                   - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+16:04:10.979 [main                          ] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping                                  - Adding welcome page template: index
+16:04:11.310 [main                          ] INFO  o.a.coyote.http11.Http11NioProtocol                                    - Starting ProtocolHandler ["http-nio-8080"]
+16:04:11.352 [main                          ] INFO  o.s.b.w.e.tomcat.TomcatWebServer                                       - Tomcat started on port(s): 8080 (http) with context path ''
+16:04:11.355 [main                          ] INFO  o.s.m.s.b.SimpleBrokerMessageHandler                                   - Starting...
+16:04:11.356 [main                          ] INFO  o.s.m.s.b.SimpleBrokerMessageHandler                                   - BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@57f83c82]]
+16:04:11.357 [main                          ] INFO  o.s.m.s.b.SimpleBrokerMessageHandler                                   - Started.
+16:04:11.368 [MessageBroker-1               ] INFO  c.t.a.i.schedule.FileScheduleUtils                                     - uploadDirPath=D:/upload/images/member/
+16:04:11.369 [MessageBroker-1               ] INFO  c.t.a.i.schedule.FileScheduleUtils                                     - uploadDirPath=D:/upload/images/review/
+16:04:11.373 [main                          ] INFO  com.tasty.app.AppApplication                                           - Started AppApplication in 5.799 seconds (JVM running for 6.63)
+16:04:20.229 [http-nio-8080-exec-1          ] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]                                     - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:04:20.230 [http-nio-8080-exec-1          ] INFO  o.s.web.servlet.DispatcherServlet                                      - Initializing Servlet 'dispatcherServlet'
+16:04:20.231 [http-nio-8080-exec-1          ] INFO  o.s.web.servlet.DispatcherServlet                                      - Completed initialization in 1 ms
+16:04:20.630 [http-nio-8080-exec-1          ] WARN  o.a.c.util.SessionIdGeneratorBase                                      - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [299] milliseconds.
+16:04:20.632 [http-nio-8080-exec-1          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=POST, requestURI=/members/send_email, handler=com.tasty.app.module.member.controller.MemberControllerR#sendEmail(LoginForm, BindingResult)
+16:04:21.391 [http-nio-8080-exec-1          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=POST, requestURI=/members/send_email, handler=com.tasty.app.module.member.controller.MemberControllerR#sendEmail(LoginForm, BindingResult)
+16:04:24.972 [http-nio-8080-exec-2          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/member/valid_email, handler=com.tasty.app.module.member.controller.MemberController#validEmailPage(String, String, Model)
+16:04:25.485 [http-nio-8080-exec-2          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/member/valid_email, handler=com.tasty.app.module.member.controller.MemberController#validEmailPage(String, String, Model)
+16:04:25.501 [http-nio-8080-exec-3          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/css/valid_email.css, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+16:04:25.514 [http-nio-8080-exec-3          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/css/valid_email.css, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+16:04:44.955 [SpringApplicationShutdownHook ] INFO  o.s.m.s.b.SimpleBrokerMessageHandler                                   - Stopping...
+16:04:44.956 [SpringApplicationShutdownHook ] INFO  o.s.m.s.b.SimpleBrokerMessageHandler                                   - BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@57f83c82]]
+16:04:44.956 [SpringApplicationShutdownHook ] INFO  o.s.m.s.b.SimpleBrokerMessageHandler                                   - Stopped.
+16:04:45.211 [SpringApplicationShutdownHook ] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean                         - Closing JPA EntityManagerFactory for persistence unit 'default'
+16:04:45.214 [SpringApplicationShutdownHook ] INFO  com.zaxxer.hikari.HikariDataSource                                     - HikariPool-1 - Shutdown initiated...
+16:04:45.226 [SpringApplicationShutdownHook ] INFO  com.zaxxer.hikari.HikariDataSource                                     - HikariPool-1 - Shutdown completed.
+16:04:48.101 [background-preinit            ] INFO  o.h.validator.internal.util.Version                                    - HV000001: Hibernate Validator 6.2.5.Final
+16:04:48.101 [main                          ] INFO  com.tasty.app.AppApplication                                           - Starting AppApplication using Java 11.0.16.1 on DESKTOP-OI2N0AQ with PID 4140 (D:\workspace_tasty\app\out\production\classes started by s112123 in D:\workspace_tasty\app)
+16:04:48.106 [main                          ] INFO  com.tasty.app.AppApplication                                           - The following 1 profile is active: "dev"
+16:04:49.344 [main                          ] INFO  o.s.d.r.c.RepositoryConfigurationDelegate                              - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16:04:49.381 [main                          ] INFO  o.s.d.r.c.RepositoryConfigurationDelegate                              - Finished Spring Data repository scanning in 27 ms. Found 0 JPA repository interfaces.
+16:04:50.467 [main                          ] INFO  o.s.b.w.e.tomcat.TomcatWebServer                                       - Tomcat initialized with port(s): 8080 (http)
+16:04:50.480 [main                          ] INFO  o.a.coyote.http11.Http11NioProtocol                                    - Initializing ProtocolHandler ["http-nio-8080"]
+16:04:50.480 [main                          ] INFO  o.a.catalina.core.StandardService                                      - Starting service [Tomcat]
+16:04:50.481 [main                          ] INFO  o.a.catalina.core.StandardEngine                                       - Starting Servlet engine: [Apache Tomcat/9.0.68]
+16:04:50.671 [main                          ] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]                                     - Initializing Spring embedded WebApplicationContext
+16:04:50.671 [main                          ] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext                         - Root WebApplicationContext: initialization completed in 2212 ms
+16:04:50.827 [main                          ] INFO  com.zaxxer.hikari.HikariDataSource                                     - HikariPool-1 - Starting...
+16:04:51.225 [main                          ] INFO  com.zaxxer.hikari.HikariDataSource                                     - HikariPool-1 - Start completed.
+16:04:51.291 [main                          ] INFO  o.h.jpa.internal.util.LogHelper                                        - HHH000204: Processing PersistenceUnitInfo [name: default]
+16:04:51.350 [main                          ] INFO  org.hibernate.Version                                                  - HHH000412: Hibernate ORM core version 5.6.12.Final
+16:04:51.592 [main                          ] INFO  o.h.annotations.common.Version                                         - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+16:04:51.753 [main                          ] INFO  org.hibernate.dialect.Dialect                                          - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+16:04:51.990 [main                          ] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator                                     - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+16:04:52.002 [main                          ] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean                         - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16:04:52.776 [main                          ] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration                   - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+16:04:53.007 [main                          ] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping                                  - Adding welcome page template: index
+16:04:53.343 [main                          ] INFO  o.a.coyote.http11.Http11NioProtocol                                    - Starting ProtocolHandler ["http-nio-8080"]
+16:04:53.370 [main                          ] INFO  o.s.b.w.e.tomcat.TomcatWebServer                                       - Tomcat started on port(s): 8080 (http) with context path ''
+16:04:53.372 [main                          ] INFO  o.s.m.s.b.SimpleBrokerMessageHandler                                   - Starting...
+16:04:53.373 [main                          ] INFO  o.s.m.s.b.SimpleBrokerMessageHandler                                   - BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@ab94a32]]
+16:04:53.373 [main                          ] INFO  o.s.m.s.b.SimpleBrokerMessageHandler                                   - Started.
+16:04:53.381 [MessageBroker-1               ] INFO  c.t.a.i.schedule.FileScheduleUtils                                     - uploadDirPath=D:/upload/images/member/
+16:04:53.381 [MessageBroker-1               ] INFO  c.t.a.i.schedule.FileScheduleUtils                                     - uploadDirPath=D:/upload/images/review/
+16:04:53.385 [main                          ] INFO  com.tasty.app.AppApplication                                           - Started AppApplication in 5.927 seconds (JVM running for 6.752)
+16:04:56.038 [http-nio-8080-exec-1          ] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]                                     - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:04:56.039 [http-nio-8080-exec-1          ] INFO  o.s.web.servlet.DispatcherServlet                                      - Initializing Servlet 'dispatcherServlet'
+16:04:56.040 [http-nio-8080-exec-1          ] INFO  o.s.web.servlet.DispatcherServlet                                      - Completed initialization in 1 ms
+16:04:56.436 [http-nio-8080-exec-1          ] WARN  o.a.c.util.SessionIdGeneratorBase                                      - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [290] milliseconds.
+16:04:56.438 [http-nio-8080-exec-1          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/member/valid_email, handler=com.tasty.app.module.member.controller.MemberController#validEmailPage(String, String, Model)
+16:04:56.966 [http-nio-8080-exec-1          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/member/valid_email, handler=com.tasty.app.module.member.controller.MemberController#validEmailPage(String, String, Model)
+16:04:56.986 [http-nio-8080-exec-2          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/css/valid_email.css, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+16:04:57.005 [http-nio-8080-exec-2          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/css/valid_email.css, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+16:05:05.848 [http-nio-8080-exec-3          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=POST, requestURI=/members/send_email, handler=com.tasty.app.module.member.controller.MemberControllerR#sendEmail(LoginForm, BindingResult)
+16:05:06.569 [http-nio-8080-exec-3          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=POST, requestURI=/members/send_email, handler=com.tasty.app.module.member.controller.MemberControllerR#sendEmail(LoginForm, BindingResult)
+16:05:14.838 [http-nio-8080-exec-4          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/member/valid_email, handler=com.tasty.app.module.member.controller.MemberController#validEmailPage(String, String, Model)
+16:05:14.841 [http-nio-8080-exec-4          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/member/valid_email, handler=com.tasty.app.module.member.controller.MemberController#validEmailPage(String, String, Model)
+16:05:14.857 [http-nio-8080-exec-5          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/css/valid_email.css, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+16:05:14.859 [http-nio-8080-exec-5          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/css/valid_email.css, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+16:05:21.731 [http-nio-8080-exec-6          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/member/valid_email, handler=com.tasty.app.module.member.controller.MemberController#validEmailPage(String, String, Model)
+16:05:21.733 [http-nio-8080-exec-6          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/member/valid_email, handler=com.tasty.app.module.member.controller.MemberController#validEmailPage(String, String, Model)
+16:05:21.748 [http-nio-8080-exec-7          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/css/valid_email.css, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+16:05:21.749 [http-nio-8080-exec-7          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/css/valid_email.css, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+16:05:26.062 [http-nio-8080-exec-8          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/member/valid_email, handler=com.tasty.app.module.member.controller.MemberController#validEmailPage(String, String, Model)
+16:05:26.064 [http-nio-8080-exec-8          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/member/valid_email, handler=com.tasty.app.module.member.controller.MemberController#validEmailPage(String, String, Model)
+16:05:26.078 [http-nio-8080-exec-9          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/css/valid_email.css, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+16:05:26.079 [http-nio-8080-exec-9          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/css/valid_email.css, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+16:05:52.757 [MessageBroker-2               ] INFO  o.s.w.s.c.WebSocketMessageBrokerStats                                  - WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 3, active threads = 1, queued tasks = 1, completed tasks = 1]
+16:06:19.036 [SpringApplicationShutdownHook ] INFO  o.s.m.s.b.SimpleBrokerMessageHandler                                   - Stopping...
+16:06:19.037 [SpringApplicationShutdownHook ] INFO  o.s.m.s.b.SimpleBrokerMessageHandler                                   - BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@ab94a32]]
+16:06:19.037 [SpringApplicationShutdownHook ] INFO  o.s.m.s.b.SimpleBrokerMessageHandler                                   - Stopped.
+16:06:19.295 [SpringApplicationShutdownHook ] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean                         - Closing JPA EntityManagerFactory for persistence unit 'default'
+16:06:19.297 [SpringApplicationShutdownHook ] INFO  com.zaxxer.hikari.HikariDataSource                                     - HikariPool-1 - Shutdown initiated...
+16:06:19.308 [SpringApplicationShutdownHook ] INFO  com.zaxxer.hikari.HikariDataSource                                     - HikariPool-1 - Shutdown completed.
+16:06:22.164 [background-preinit            ] INFO  o.h.validator.internal.util.Version                                    - HV000001: Hibernate Validator 6.2.5.Final
+16:06:22.171 [main                          ] INFO  com.tasty.app.AppApplication                                           - Starting AppApplication using Java 11.0.16.1 on DESKTOP-OI2N0AQ with PID 3952 (D:\workspace_tasty\app\out\production\classes started by s112123 in D:\workspace_tasty\app)
+16:06:22.173 [main                          ] INFO  com.tasty.app.AppApplication                                           - The following 1 profile is active: "dev"
+16:06:23.494 [main                          ] INFO  o.s.d.r.c.RepositoryConfigurationDelegate                              - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16:06:23.532 [main                          ] INFO  o.s.d.r.c.RepositoryConfigurationDelegate                              - Finished Spring Data repository scanning in 27 ms. Found 0 JPA repository interfaces.
+16:06:24.620 [main                          ] INFO  o.s.b.w.e.tomcat.TomcatWebServer                                       - Tomcat initialized with port(s): 8080 (http)
+16:06:24.634 [main                          ] INFO  o.a.coyote.http11.Http11NioProtocol                                    - Initializing ProtocolHandler ["http-nio-8080"]
+16:06:24.634 [main                          ] INFO  o.a.catalina.core.StandardService                                      - Starting service [Tomcat]
+16:06:24.634 [main                          ] INFO  o.a.catalina.core.StandardEngine                                       - Starting Servlet engine: [Apache Tomcat/9.0.68]
+16:06:24.824 [main                          ] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]                                     - Initializing Spring embedded WebApplicationContext
+16:06:24.824 [main                          ] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext                         - Root WebApplicationContext: initialization completed in 2261 ms
+16:06:24.995 [main                          ] INFO  com.zaxxer.hikari.HikariDataSource                                     - HikariPool-1 - Starting...
+16:06:25.392 [main                          ] INFO  com.zaxxer.hikari.HikariDataSource                                     - HikariPool-1 - Start completed.
+16:06:25.468 [main                          ] INFO  o.h.jpa.internal.util.LogHelper                                        - HHH000204: Processing PersistenceUnitInfo [name: default]
+16:06:25.532 [main                          ] INFO  org.hibernate.Version                                                  - HHH000412: Hibernate ORM core version 5.6.12.Final
+16:06:25.767 [main                          ] INFO  o.h.annotations.common.Version                                         - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+16:06:25.924 [main                          ] INFO  org.hibernate.dialect.Dialect                                          - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+16:06:26.178 [main                          ] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator                                     - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+16:06:26.193 [main                          ] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean                         - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16:06:26.905 [main                          ] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration                   - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+16:06:27.139 [main                          ] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping                                  - Adding welcome page template: index
+16:06:27.491 [main                          ] INFO  o.a.coyote.http11.Http11NioProtocol                                    - Starting ProtocolHandler ["http-nio-8080"]
+16:06:27.523 [main                          ] INFO  o.s.b.w.e.tomcat.TomcatWebServer                                       - Tomcat started on port(s): 8080 (http) with context path ''
+16:06:27.526 [main                          ] INFO  o.s.m.s.b.SimpleBrokerMessageHandler                                   - Starting...
+16:06:27.527 [main                          ] INFO  o.s.m.s.b.SimpleBrokerMessageHandler                                   - BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@7a600e21]]
+16:06:27.527 [main                          ] INFO  o.s.m.s.b.SimpleBrokerMessageHandler                                   - Started.
+16:06:27.538 [MessageBroker-1               ] INFO  c.t.a.i.schedule.FileScheduleUtils                                     - uploadDirPath=D:/upload/images/member/
+16:06:27.539 [MessageBroker-1               ] INFO  c.t.a.i.schedule.FileScheduleUtils                                     - uploadDirPath=D:/upload/images/review/
+16:06:27.542 [main                          ] INFO  com.tasty.app.AppApplication                                           - Started AppApplication in 5.979 seconds (JVM running for 6.832)
+16:06:30.242 [http-nio-8080-exec-1          ] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]                                     - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:06:30.242 [http-nio-8080-exec-1          ] INFO  o.s.web.servlet.DispatcherServlet                                      - Initializing Servlet 'dispatcherServlet'
+16:06:30.243 [http-nio-8080-exec-1          ] INFO  o.s.web.servlet.DispatcherServlet                                      - Completed initialization in 1 ms
+16:06:30.637 [http-nio-8080-exec-1          ] WARN  o.a.c.util.SessionIdGeneratorBase                                      - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [296] milliseconds.
+16:06:30.639 [http-nio-8080-exec-1          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=POST, requestURI=/members/send_email, handler=com.tasty.app.module.member.controller.MemberControllerR#sendEmail(LoginForm, BindingResult)
+16:06:31.359 [http-nio-8080-exec-1          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=POST, requestURI=/members/send_email, handler=com.tasty.app.module.member.controller.MemberControllerR#sendEmail(LoginForm, BindingResult)
+16:06:36.722 [http-nio-8080-exec-3          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/member/valid_email, handler=com.tasty.app.module.member.controller.MemberController#validEmailPage(String, String, Model)
+16:06:37.251 [http-nio-8080-exec-3          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/member/valid_email, handler=com.tasty.app.module.member.controller.MemberController#validEmailPage(String, String, Model)
+16:06:37.271 [http-nio-8080-exec-2          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/css/valid_email.css, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+16:06:37.285 [http-nio-8080-exec-2          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/css/valid_email.css, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+16:06:53.734 [SpringApplicationShutdownHook ] INFO  o.s.m.s.b.SimpleBrokerMessageHandler                                   - Stopping...
+16:06:53.734 [SpringApplicationShutdownHook ] INFO  o.s.m.s.b.SimpleBrokerMessageHandler                                   - BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@7a600e21]]
+16:06:53.734 [SpringApplicationShutdownHook ] INFO  o.s.m.s.b.SimpleBrokerMessageHandler                                   - Stopped.
+16:06:53.999 [SpringApplicationShutdownHook ] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean                         - Closing JPA EntityManagerFactory for persistence unit 'default'
+16:06:54.001 [SpringApplicationShutdownHook ] INFO  com.zaxxer.hikari.HikariDataSource                                     - HikariPool-1 - Shutdown initiated...
+16:06:54.013 [SpringApplicationShutdownHook ] INFO  com.zaxxer.hikari.HikariDataSource                                     - HikariPool-1 - Shutdown completed.
+16:06:56.821 [background-preinit            ] INFO  o.h.validator.internal.util.Version                                    - HV000001: Hibernate Validator 6.2.5.Final
+16:06:56.826 [main                          ] INFO  com.tasty.app.AppApplication                                           - Starting AppApplication using Java 11.0.16.1 on DESKTOP-OI2N0AQ with PID 19684 (D:\workspace_tasty\app\out\production\classes started by s112123 in D:\workspace_tasty\app)
+16:06:56.827 [main                          ] INFO  com.tasty.app.AppApplication                                           - The following 1 profile is active: "dev"
+16:06:58.049 [main                          ] INFO  o.s.d.r.c.RepositoryConfigurationDelegate                              - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16:06:58.089 [main                          ] INFO  o.s.d.r.c.RepositoryConfigurationDelegate                              - Finished Spring Data repository scanning in 28 ms. Found 0 JPA repository interfaces.
+16:06:59.255 [main                          ] INFO  o.s.b.w.e.tomcat.TomcatWebServer                                       - Tomcat initialized with port(s): 8080 (http)
+16:06:59.269 [main                          ] INFO  o.a.coyote.http11.Http11NioProtocol                                    - Initializing ProtocolHandler ["http-nio-8080"]
+16:06:59.270 [main                          ] INFO  o.a.catalina.core.StandardService                                      - Starting service [Tomcat]
+16:06:59.270 [main                          ] INFO  o.a.catalina.core.StandardEngine                                       - Starting Servlet engine: [Apache Tomcat/9.0.68]
+16:06:59.493 [main                          ] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]                                     - Initializing Spring embedded WebApplicationContext
+16:06:59.493 [main                          ] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext                         - Root WebApplicationContext: initialization completed in 2328 ms
+16:06:59.677 [main                          ] INFO  com.zaxxer.hikari.HikariDataSource                                     - HikariPool-1 - Starting...
+16:07:00.075 [main                          ] INFO  com.zaxxer.hikari.HikariDataSource                                     - HikariPool-1 - Start completed.
+16:07:00.144 [main                          ] INFO  o.h.jpa.internal.util.LogHelper                                        - HHH000204: Processing PersistenceUnitInfo [name: default]
+16:07:00.205 [main                          ] INFO  org.hibernate.Version                                                  - HHH000412: Hibernate ORM core version 5.6.12.Final
+16:07:00.465 [main                          ] INFO  o.h.annotations.common.Version                                         - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+16:07:00.632 [main                          ] INFO  org.hibernate.dialect.Dialect                                          - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+16:07:00.884 [main                          ] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator                                     - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+16:07:00.900 [main                          ] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean                         - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16:07:01.580 [main                          ] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration                   - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+16:07:01.785 [main                          ] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping                                  - Adding welcome page template: index
+16:07:02.086 [main                          ] INFO  o.a.coyote.http11.Http11NioProtocol                                    - Starting ProtocolHandler ["http-nio-8080"]
+16:07:02.126 [main                          ] INFO  o.s.b.w.e.tomcat.TomcatWebServer                                       - Tomcat started on port(s): 8080 (http) with context path ''
+16:07:02.129 [main                          ] INFO  o.s.m.s.b.SimpleBrokerMessageHandler                                   - Starting...
+16:07:02.130 [main                          ] INFO  o.s.m.s.b.SimpleBrokerMessageHandler                                   - BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@7a600e21]]
+16:07:02.130 [main                          ] INFO  o.s.m.s.b.SimpleBrokerMessageHandler                                   - Started.
+16:07:02.139 [MessageBroker-1               ] INFO  c.t.a.i.schedule.FileScheduleUtils                                     - uploadDirPath=D:/upload/images/member/
+16:07:02.139 [MessageBroker-1               ] INFO  c.t.a.i.schedule.FileScheduleUtils                                     - uploadDirPath=D:/upload/images/review/
+16:07:02.145 [main                          ] INFO  com.tasty.app.AppApplication                                           - Started AppApplication in 5.897 seconds (JVM running for 6.723)
+16:07:04.812 [http-nio-8080-exec-1          ] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]                                     - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:07:04.812 [http-nio-8080-exec-1          ] INFO  o.s.web.servlet.DispatcherServlet                                      - Initializing Servlet 'dispatcherServlet'
+16:07:04.813 [http-nio-8080-exec-1          ] INFO  o.s.web.servlet.DispatcherServlet                                      - Completed initialization in 1 ms
+16:07:05.198 [http-nio-8080-exec-1          ] WARN  o.a.c.util.SessionIdGeneratorBase                                      - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [288] milliseconds.
+16:07:05.201 [http-nio-8080-exec-1          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=POST, requestURI=/members/send_email, handler=com.tasty.app.module.member.controller.MemberControllerR#sendEmail(LoginForm, BindingResult)
+16:07:05.989 [http-nio-8080-exec-1          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=POST, requestURI=/members/send_email, handler=com.tasty.app.module.member.controller.MemberControllerR#sendEmail(LoginForm, BindingResult)
+16:07:13.433 [http-nio-8080-exec-2          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/member/valid_email, handler=com.tasty.app.module.member.controller.MemberController#validEmailPage(String, String, Model)
+16:07:13.953 [http-nio-8080-exec-2          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/member/valid_email, handler=com.tasty.app.module.member.controller.MemberController#validEmailPage(String, String, Model)
+16:07:13.974 [http-nio-8080-exec-3          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/css/valid_email.css, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+16:07:13.986 [http-nio-8080-exec-3          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/css/valid_email.css, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+16:07:22.251 [http-nio-8080-exec-4          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/member/valid_email, handler=com.tasty.app.module.member.controller.MemberController#validEmailPage(String, String, Model)
+16:07:22.253 [http-nio-8080-exec-4          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/member/valid_email, handler=com.tasty.app.module.member.controller.MemberController#validEmailPage(String, String, Model)
+16:07:22.269 [http-nio-8080-exec-5          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/css/valid_email.css, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+16:07:22.271 [http-nio-8080-exec-5          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/css/valid_email.css, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+16:07:35.846 [SpringApplicationShutdownHook ] INFO  o.s.m.s.b.SimpleBrokerMessageHandler                                   - Stopping...
+16:07:35.846 [SpringApplicationShutdownHook ] INFO  o.s.m.s.b.SimpleBrokerMessageHandler                                   - BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@7a600e21]]
+16:07:35.846 [SpringApplicationShutdownHook ] INFO  o.s.m.s.b.SimpleBrokerMessageHandler                                   - Stopped.
+16:07:36.096 [SpringApplicationShutdownHook ] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean                         - Closing JPA EntityManagerFactory for persistence unit 'default'
+16:07:36.098 [SpringApplicationShutdownHook ] INFO  com.zaxxer.hikari.HikariDataSource                                     - HikariPool-1 - Shutdown initiated...
+16:07:36.110 [SpringApplicationShutdownHook ] INFO  com.zaxxer.hikari.HikariDataSource                                     - HikariPool-1 - Shutdown completed.
+16:07:38.976 [background-preinit            ] INFO  o.h.validator.internal.util.Version                                    - HV000001: Hibernate Validator 6.2.5.Final
+16:07:38.979 [main                          ] INFO  com.tasty.app.AppApplication                                           - Starting AppApplication using Java 11.0.16.1 on DESKTOP-OI2N0AQ with PID 19096 (D:\workspace_tasty\app\out\production\classes started by s112123 in D:\workspace_tasty\app)
+16:07:38.981 [main                          ] INFO  com.tasty.app.AppApplication                                           - The following 1 profile is active: "dev"
+16:07:40.259 [main                          ] INFO  o.s.d.r.c.RepositoryConfigurationDelegate                              - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16:07:40.303 [main                          ] INFO  o.s.d.r.c.RepositoryConfigurationDelegate                              - Finished Spring Data repository scanning in 32 ms. Found 0 JPA repository interfaces.
+16:07:41.435 [main                          ] INFO  o.s.b.w.e.tomcat.TomcatWebServer                                       - Tomcat initialized with port(s): 8080 (http)
+16:07:41.449 [main                          ] INFO  o.a.coyote.http11.Http11NioProtocol                                    - Initializing ProtocolHandler ["http-nio-8080"]
+16:07:41.449 [main                          ] INFO  o.a.catalina.core.StandardService                                      - Starting service [Tomcat]
+16:07:41.449 [main                          ] INFO  o.a.catalina.core.StandardEngine                                       - Starting Servlet engine: [Apache Tomcat/9.0.68]
+16:07:41.651 [main                          ] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]                                     - Initializing Spring embedded WebApplicationContext
+16:07:41.651 [main                          ] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext                         - Root WebApplicationContext: initialization completed in 2314 ms
+16:07:41.813 [main                          ] INFO  com.zaxxer.hikari.HikariDataSource                                     - HikariPool-1 - Starting...
+16:07:42.193 [main                          ] INFO  com.zaxxer.hikari.HikariDataSource                                     - HikariPool-1 - Start completed.
+16:07:42.258 [main                          ] INFO  o.h.jpa.internal.util.LogHelper                                        - HHH000204: Processing PersistenceUnitInfo [name: default]
+16:07:42.316 [main                          ] INFO  org.hibernate.Version                                                  - HHH000412: Hibernate ORM core version 5.6.12.Final
+16:07:42.554 [main                          ] INFO  o.h.annotations.common.Version                                         - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+16:07:42.720 [main                          ] INFO  org.hibernate.dialect.Dialect                                          - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+16:07:42.997 [main                          ] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator                                     - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+16:07:43.012 [main                          ] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean                         - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16:07:43.705 [main                          ] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration                   - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+16:07:43.911 [main                          ] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping                                  - Adding welcome page template: index
+16:07:44.248 [main                          ] INFO  o.a.coyote.http11.Http11NioProtocol                                    - Starting ProtocolHandler ["http-nio-8080"]
+16:07:44.282 [main                          ] INFO  o.s.b.w.e.tomcat.TomcatWebServer                                       - Tomcat started on port(s): 8080 (http) with context path ''
+16:07:44.284 [main                          ] INFO  o.s.m.s.b.SimpleBrokerMessageHandler                                   - Starting...
+16:07:44.285 [main                          ] INFO  o.s.m.s.b.SimpleBrokerMessageHandler                                   - BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@7a600e21]]
+16:07:44.285 [main                          ] INFO  o.s.m.s.b.SimpleBrokerMessageHandler                                   - Started.
+16:07:44.295 [MessageBroker-1               ] INFO  c.t.a.i.schedule.FileScheduleUtils                                     - uploadDirPath=D:/upload/images/member/
+16:07:44.295 [MessageBroker-1               ] INFO  c.t.a.i.schedule.FileScheduleUtils                                     - uploadDirPath=D:/upload/images/review/
+16:07:44.299 [main                          ] INFO  com.tasty.app.AppApplication                                           - Started AppApplication in 5.908 seconds (JVM running for 6.775)
+16:08:27.983 [http-nio-8080-exec-2          ] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]                                     - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:08:27.984 [http-nio-8080-exec-2          ] INFO  o.s.web.servlet.DispatcherServlet                                      - Initializing Servlet 'dispatcherServlet'
+16:08:27.985 [http-nio-8080-exec-2          ] INFO  o.s.web.servlet.DispatcherServlet                                      - Completed initialization in 1 ms
+16:08:28.352 [http-nio-8080-exec-2          ] WARN  o.a.c.util.SessionIdGeneratorBase                                      - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [263] milliseconds.
+16:08:28.353 [http-nio-8080-exec-2          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=POST, requestURI=/members/send_email, handler=com.tasty.app.module.member.controller.MemberControllerR#sendEmail(LoginForm, BindingResult)
+16:08:29.095 [http-nio-8080-exec-2          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=POST, requestURI=/members/send_email, handler=com.tasty.app.module.member.controller.MemberControllerR#sendEmail(LoginForm, BindingResult)
+16:08:34.209 [http-nio-8080-exec-1          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/member/valid_email, handler=com.tasty.app.module.member.controller.MemberController#validEmailPage(String, String, Model)
+16:08:34.713 [http-nio-8080-exec-1          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/member/valid_email, handler=com.tasty.app.module.member.controller.MemberController#validEmailPage(String, String, Model)
+16:08:34.733 [http-nio-8080-exec-3          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/css/valid_email.css, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+16:08:34.748 [http-nio-8080-exec-3          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/css/valid_email.css, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+16:08:42.914 [http-nio-8080-exec-4          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=POST, requestURI=/members/send_email, handler=com.tasty.app.module.member.controller.MemberControllerR#sendEmail(LoginForm, BindingResult)
+16:08:43.395 [http-nio-8080-exec-4          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=POST, requestURI=/members/send_email, handler=com.tasty.app.module.member.controller.MemberControllerR#sendEmail(LoginForm, BindingResult)
+16:08:43.694 [MessageBroker-2               ] INFO  o.s.w.s.c.WebSocketMessageBrokerStats                                  - WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 3, active threads = 1, queued tasks = 1, completed tasks = 1]
+16:08:50.108 [http-nio-8080-exec-5          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/member/valid_email, handler=com.tasty.app.module.member.controller.MemberController#validEmailPage(String, String, Model)
+16:08:50.110 [http-nio-8080-exec-5          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/member/valid_email, handler=com.tasty.app.module.member.controller.MemberController#validEmailPage(String, String, Model)
+16:08:50.126 [http-nio-8080-exec-6          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/css/valid_email.css, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+16:08:50.128 [http-nio-8080-exec-6          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/css/valid_email.css, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+16:08:58.435 [http-nio-8080-exec-7          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=POST, requestURI=/members, handler=com.tasty.app.module.member.controller.MemberControllerR#add(AddForm, BindingResult, Cookie)
+16:08:58.447 [http-nio-8080-exec-7          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=POST, requestURI=/members, handler=com.tasty.app.module.member.controller.MemberControllerR#add(AddForm, BindingResult, Cookie)
+16:10:41.250 [SpringApplicationShutdownHook ] INFO  o.s.m.s.b.SimpleBrokerMessageHandler                                   - Stopping...
+16:10:41.250 [SpringApplicationShutdownHook ] INFO  o.s.m.s.b.SimpleBrokerMessageHandler                                   - BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@7a600e21]]
+16:10:41.250 [SpringApplicationShutdownHook ] INFO  o.s.m.s.b.SimpleBrokerMessageHandler                                   - Stopped.
+16:10:41.533 [SpringApplicationShutdownHook ] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean                         - Closing JPA EntityManagerFactory for persistence unit 'default'
+16:10:41.535 [SpringApplicationShutdownHook ] INFO  com.zaxxer.hikari.HikariDataSource                                     - HikariPool-1 - Shutdown initiated...
+16:10:41.548 [SpringApplicationShutdownHook ] INFO  com.zaxxer.hikari.HikariDataSource                                     - HikariPool-1 - Shutdown completed.
+16:10:44.410 [background-preinit            ] INFO  o.h.validator.internal.util.Version                                    - HV000001: Hibernate Validator 6.2.5.Final
+16:10:44.416 [main                          ] INFO  com.tasty.app.AppApplication                                           - Starting AppApplication using Java 11.0.16.1 on DESKTOP-OI2N0AQ with PID 17596 (D:\workspace_tasty\app\out\production\classes started by s112123 in D:\workspace_tasty\app)
+16:10:44.418 [main                          ] INFO  com.tasty.app.AppApplication                                           - The following 1 profile is active: "dev"
+16:10:45.706 [main                          ] INFO  o.s.d.r.c.RepositoryConfigurationDelegate                              - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16:10:45.746 [main                          ] INFO  o.s.d.r.c.RepositoryConfigurationDelegate                              - Finished Spring Data repository scanning in 29 ms. Found 0 JPA repository interfaces.
+16:10:46.848 [main                          ] INFO  o.s.b.w.e.tomcat.TomcatWebServer                                       - Tomcat initialized with port(s): 8080 (http)
+16:10:46.861 [main                          ] INFO  o.a.coyote.http11.Http11NioProtocol                                    - Initializing ProtocolHandler ["http-nio-8080"]
+16:10:46.861 [main                          ] INFO  o.a.catalina.core.StandardService                                      - Starting service [Tomcat]
+16:10:46.862 [main                          ] INFO  o.a.catalina.core.StandardEngine                                       - Starting Servlet engine: [Apache Tomcat/9.0.68]
+16:10:47.043 [main                          ] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]                                     - Initializing Spring embedded WebApplicationContext
+16:10:47.043 [main                          ] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext                         - Root WebApplicationContext: initialization completed in 2249 ms
+16:10:47.211 [main                          ] INFO  com.zaxxer.hikari.HikariDataSource                                     - HikariPool-1 - Starting...
+16:10:47.626 [main                          ] INFO  com.zaxxer.hikari.HikariDataSource                                     - HikariPool-1 - Start completed.
+16:10:47.695 [main                          ] INFO  o.h.jpa.internal.util.LogHelper                                        - HHH000204: Processing PersistenceUnitInfo [name: default]
+16:10:47.765 [main                          ] INFO  org.hibernate.Version                                                  - HHH000412: Hibernate ORM core version 5.6.12.Final
+16:10:48.056 [main                          ] INFO  o.h.annotations.common.Version                                         - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+16:10:48.229 [main                          ] INFO  org.hibernate.dialect.Dialect                                          - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+16:10:48.516 [main                          ] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator                                     - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+16:10:48.530 [main                          ] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean                         - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16:10:49.311 [main                          ] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration                   - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+16:10:49.548 [main                          ] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping                                  - Adding welcome page template: index
+16:10:49.888 [main                          ] INFO  o.a.coyote.http11.Http11NioProtocol                                    - Starting ProtocolHandler ["http-nio-8080"]
+16:10:49.924 [main                          ] INFO  o.s.b.w.e.tomcat.TomcatWebServer                                       - Tomcat started on port(s): 8080 (http) with context path ''
+16:10:49.926 [main                          ] INFO  o.s.m.s.b.SimpleBrokerMessageHandler                                   - Starting...
+16:10:49.927 [main                          ] INFO  o.s.m.s.b.SimpleBrokerMessageHandler                                   - BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@7a600e21]]
+16:10:49.927 [main                          ] INFO  o.s.m.s.b.SimpleBrokerMessageHandler                                   - Started.
+16:10:49.938 [MessageBroker-1               ] INFO  c.t.a.i.schedule.FileScheduleUtils                                     - uploadDirPath=D:/upload/images/member/
+16:10:49.939 [MessageBroker-1               ] INFO  c.t.a.i.schedule.FileScheduleUtils                                     - uploadDirPath=D:/upload/images/review/
+16:10:49.944 [main                          ] INFO  com.tasty.app.AppApplication                                           - Started AppApplication in 6.138 seconds (JVM running for 7.013)
+16:10:53.037 [http-nio-8080-exec-2          ] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]                                     - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:10:53.037 [http-nio-8080-exec-2          ] INFO  o.s.web.servlet.DispatcherServlet                                      - Initializing Servlet 'dispatcherServlet'
+16:10:53.038 [http-nio-8080-exec-2          ] INFO  o.s.web.servlet.DispatcherServlet                                      - Completed initialization in 1 ms
+16:10:53.429 [http-nio-8080-exec-2          ] WARN  o.a.c.util.SessionIdGeneratorBase                                      - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [292] milliseconds.
+16:10:53.431 [http-nio-8080-exec-2          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=POST, requestURI=/members/send_email, handler=com.tasty.app.module.member.controller.MemberControllerR#sendEmail(LoginForm, BindingResult)
+16:10:54.165 [http-nio-8080-exec-2          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=POST, requestURI=/members/send_email, handler=com.tasty.app.module.member.controller.MemberControllerR#sendEmail(LoginForm, BindingResult)
+16:10:59.927 [http-nio-8080-exec-1          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/member/valid_email, handler=com.tasty.app.module.member.controller.MemberController#validEmailPage(String, String, Model)
+16:11:00.428 [http-nio-8080-exec-1          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/member/valid_email, handler=com.tasty.app.module.member.controller.MemberController#validEmailPage(String, String, Model)
+16:11:00.447 [http-nio-8080-exec-3          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/css/valid_email.css, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+16:11:00.459 [http-nio-8080-exec-3          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/css/valid_email.css, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+16:11:07.474 [SpringApplicationShutdownHook ] INFO  o.s.m.s.b.SimpleBrokerMessageHandler                                   - Stopping...
+16:11:07.474 [SpringApplicationShutdownHook ] INFO  o.s.m.s.b.SimpleBrokerMessageHandler                                   - BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@7a600e21]]
+16:11:07.474 [SpringApplicationShutdownHook ] INFO  o.s.m.s.b.SimpleBrokerMessageHandler                                   - Stopped.
+16:11:07.749 [SpringApplicationShutdownHook ] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean                         - Closing JPA EntityManagerFactory for persistence unit 'default'
+16:11:07.753 [SpringApplicationShutdownHook ] INFO  com.zaxxer.hikari.HikariDataSource                                     - HikariPool-1 - Shutdown initiated...
+16:11:07.765 [SpringApplicationShutdownHook ] INFO  com.zaxxer.hikari.HikariDataSource                                     - HikariPool-1 - Shutdown completed.
+16:11:10.707 [background-preinit            ] INFO  o.h.validator.internal.util.Version                                    - HV000001: Hibernate Validator 6.2.5.Final
+16:11:10.712 [main                          ] INFO  com.tasty.app.AppApplication                                           - Starting AppApplication using Java 11.0.16.1 on DESKTOP-OI2N0AQ with PID 16980 (D:\workspace_tasty\app\out\production\classes started by s112123 in D:\workspace_tasty\app)
+16:11:10.713 [main                          ] INFO  com.tasty.app.AppApplication                                           - The following 1 profile is active: "dev"
+16:11:12.059 [main                          ] INFO  o.s.d.r.c.RepositoryConfigurationDelegate                              - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16:11:12.113 [main                          ] INFO  o.s.d.r.c.RepositoryConfigurationDelegate                              - Finished Spring Data repository scanning in 43 ms. Found 0 JPA repository interfaces.
+16:11:13.296 [main                          ] INFO  o.s.b.w.e.tomcat.TomcatWebServer                                       - Tomcat initialized with port(s): 8080 (http)
+16:11:13.312 [main                          ] INFO  o.a.coyote.http11.Http11NioProtocol                                    - Initializing ProtocolHandler ["http-nio-8080"]
+16:11:13.313 [main                          ] INFO  o.a.catalina.core.StandardService                                      - Starting service [Tomcat]
+16:11:13.313 [main                          ] INFO  o.a.catalina.core.StandardEngine                                       - Starting Servlet engine: [Apache Tomcat/9.0.68]
+16:11:13.510 [main                          ] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]                                     - Initializing Spring embedded WebApplicationContext
+16:11:13.510 [main                          ] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext                         - Root WebApplicationContext: initialization completed in 2405 ms
+16:11:13.665 [main                          ] INFO  com.zaxxer.hikari.HikariDataSource                                     - HikariPool-1 - Starting...
+16:11:14.024 [main                          ] INFO  com.zaxxer.hikari.HikariDataSource                                     - HikariPool-1 - Start completed.
+16:11:14.090 [main                          ] INFO  o.h.jpa.internal.util.LogHelper                                        - HHH000204: Processing PersistenceUnitInfo [name: default]
+16:11:14.155 [main                          ] INFO  org.hibernate.Version                                                  - HHH000412: Hibernate ORM core version 5.6.12.Final
+16:11:14.394 [main                          ] INFO  o.h.annotations.common.Version                                         - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+16:11:14.552 [main                          ] INFO  org.hibernate.dialect.Dialect                                          - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+16:11:14.821 [main                          ] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator                                     - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+16:11:14.836 [main                          ] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean                         - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16:11:15.525 [main                          ] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration                   - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+16:11:15.717 [main                          ] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping                                  - Adding welcome page template: index
+16:11:15.989 [main                          ] INFO  o.a.coyote.http11.Http11NioProtocol                                    - Starting ProtocolHandler ["http-nio-8080"]
+16:11:16.019 [main                          ] INFO  o.s.b.w.e.tomcat.TomcatWebServer                                       - Tomcat started on port(s): 8080 (http) with context path ''
+16:11:16.022 [main                          ] INFO  o.s.m.s.b.SimpleBrokerMessageHandler                                   - Starting...
+16:11:16.023 [main                          ] INFO  o.s.m.s.b.SimpleBrokerMessageHandler                                   - BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@69dc7b24]]
+16:11:16.023 [main                          ] INFO  o.s.m.s.b.SimpleBrokerMessageHandler                                   - Started.
+16:11:16.032 [MessageBroker-1               ] INFO  c.t.a.i.schedule.FileScheduleUtils                                     - uploadDirPath=D:/upload/images/member/
+16:11:16.033 [MessageBroker-1               ] INFO  c.t.a.i.schedule.FileScheduleUtils                                     - uploadDirPath=D:/upload/images/review/
+16:11:16.037 [main                          ] INFO  com.tasty.app.AppApplication                                           - Started AppApplication in 6.001 seconds (JVM running for 6.884)
+16:11:18.126 [http-nio-8080-exec-2          ] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]                                     - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:11:18.126 [http-nio-8080-exec-2          ] INFO  o.s.web.servlet.DispatcherServlet                                      - Initializing Servlet 'dispatcherServlet'
+16:11:18.127 [http-nio-8080-exec-2          ] INFO  o.s.web.servlet.DispatcherServlet                                      - Completed initialization in 1 ms
+16:11:18.511 [http-nio-8080-exec-2          ] WARN  o.a.c.util.SessionIdGeneratorBase                                      - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [285] milliseconds.
+16:11:18.515 [http-nio-8080-exec-2          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=POST, requestURI=/members/send_email, handler=com.tasty.app.module.member.controller.MemberControllerR#sendEmail(LoginForm, BindingResult)
+16:11:19.233 [http-nio-8080-exec-2          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=POST, requestURI=/members/send_email, handler=com.tasty.app.module.member.controller.MemberControllerR#sendEmail(LoginForm, BindingResult)
+16:11:24.122 [http-nio-8080-exec-1          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/member/valid_email, handler=com.tasty.app.module.member.controller.MemberController#validEmailPage(String, String, Model)
+16:11:24.637 [http-nio-8080-exec-1          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/member/valid_email, handler=com.tasty.app.module.member.controller.MemberController#validEmailPage(String, String, Model)
+16:11:24.655 [http-nio-8080-exec-3          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/css/valid_email.css, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+16:11:24.666 [http-nio-8080-exec-3          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/css/valid_email.css, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+16:12:02.582 [http-nio-8080-exec-4          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/member/valid_email, handler=com.tasty.app.module.member.controller.MemberController#validEmailPage(String, String, Model)
+16:12:02.585 [http-nio-8080-exec-4          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/member/valid_email, handler=com.tasty.app.module.member.controller.MemberController#validEmailPage(String, String, Model)
+16:12:02.601 [http-nio-8080-exec-5          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - request: email=null, httpMethod=GET, requestURI=/css/valid_email.css, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+16:12:02.603 [http-nio-8080-exec-5          ] INFO  c.t.a.i.interceptor.LogInterceptor                                     - response: email=null, httpMethod=GET, requestURI=/css/valid_email.css, handler=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+16:12:15.501 [MessageBroker-2               ] INFO  o.s.w.s.c.WebSocketMessageBrokerStats                                  - WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 3, active threads = 1, queued tasks = 1, completed tasks = 1]
+16:13:00.929 [Test worker                   ] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper                            - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.tasty.app.AppApplicationTests], using SpringBootContextLoader
+16:13:00.939 [Test worker                   ] INFO  o.s.t.c.s.AbstractContextLoader                                        - Could not detect default resource locations for test class [com.tasty.app.AppApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+16:13:00.939 [Test worker                   ] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils                           - Could not detect default configuration classes for test class [com.tasty.app.AppApplicationTests]: AppApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+16:13:01.071 [Test worker                   ] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper                            - Found @SpringBootConfiguration com.tasty.app.AppApplication for test class com.tasty.app.AppApplicationTests
+16:13:01.183 [Test worker                   ] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper                            - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+16:13:01.202 [Test worker                   ] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper                            - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@41d7b27f, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@49096b06, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@4a183d02, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@5d05ef57, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@213deac2, org.springframework.test.context.support.DirtiesContextTestExecutionListener@23eee4b8, org.springframework.test.context.transaction.TransactionalTestExecutionListener@28952dea, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@5a9800f8, org.springframework.test.context.event.EventPublishingTestExecutionListener@143d9a93, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@40226788, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@4159e81b, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@5b5caf08, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@23cd4ff2, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@70807224, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@7e97551f]
+16:13:01.643 [Test worker                   ] INFO  com.tasty.app.AppApplicationTests                                      - Starting AppApplicationTests using Java 11.0.16.1 on DESKTOP-OI2N0AQ with PID 17576 (started by s112123 in D:\workspace_tasty\app)
+16:13:01.644 [Test worker                   ] INFO  com.tasty.app.AppApplicationTests                                      - The following 1 profile is active: "dev"
+16:13:01.660 [background-preinit            ] INFO  o.h.validator.internal.util.Version                                    - HV000001: Hibernate Validator 6.2.5.Final
+16:13:02.884 [Test worker                   ] INFO  o.s.d.r.c.RepositoryConfigurationDelegate                              - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16:13:02.925 [Test worker                   ] INFO  o.s.d.r.c.RepositoryConfigurationDelegate                              - Finished Spring Data repository scanning in 30 ms. Found 0 JPA repository interfaces.
+16:13:03.639 [Test worker                   ] INFO  com.zaxxer.hikari.HikariDataSource                                     - HikariPool-1 - Starting...
+16:13:04.058 [Test worker                   ] INFO  com.zaxxer.hikari.HikariDataSource                                     - HikariPool-1 - Start completed.
+16:13:04.144 [Test worker                   ] INFO  o.h.jpa.internal.util.LogHelper                                        - HHH000204: Processing PersistenceUnitInfo [name: default]
+16:13:04.215 [Test worker                   ] INFO  org.hibernate.Version                                                  - HHH000412: Hibernate ORM core version 5.6.12.Final
+16:13:04.484 [Test worker                   ] INFO  o.h.annotations.common.Version                                         - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+16:13:04.690 [Test worker                   ] INFO  org.hibernate.dialect.Dialect                                          - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+16:13:04.925 [Test worker                   ] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator                                     - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+16:13:04.939 [Test worker                   ] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean                         - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16:13:05.963 [Test worker                   ] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration                   - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+16:13:06.662 [Test worker                   ] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping                                  - Adding welcome page template: index
+16:13:07.294 [Test worker                   ] INFO  o.s.m.s.b.SimpleBrokerMessageHandler                                   - Starting...
+16:13:07.295 [Test worker                   ] INFO  o.s.m.s.b.SimpleBrokerMessageHandler                                   - BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@79735611]]
+16:13:07.297 [Test worker                   ] INFO  o.s.m.s.b.SimpleBrokerMessageHandler                                   - Started.
+16:13:07.307 [MessageBroker-1               ] INFO  c.t.a.i.schedule.FileScheduleUtils                                     - uploadDirPath=D:/upload/images/member/
+16:13:07.308 [MessageBroker-1               ] INFO  c.t.a.i.schedule.FileScheduleUtils                                     - uploadDirPath=D:/upload/images/review/
+16:13:07.314 [Test worker                   ] INFO  com.tasty.app.AppApplicationTests                                      - Started AppApplicationTests in 6.066 seconds (JVM running for 8.026)
+16:13:07.657 [SpringApplicationShutdownHook ] INFO  o.s.m.s.b.SimpleBrokerMessageHandler                                   - Stopping...
+16:13:07.657 [SpringApplicationShutdownHook ] INFO  o.s.m.s.b.SimpleBrokerMessageHandler                                   - BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@79735611]]
+16:13:07.657 [SpringApplicationShutdownHook ] INFO  o.s.m.s.b.SimpleBrokerMessageHandler                                   - Stopped.
+16:13:07.665 [SpringApplicationShutdownHook ] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean                         - Closing JPA EntityManagerFactory for persistence unit 'default'
+16:13:07.668 [SpringApplicationShutdownHook ] INFO  com.zaxxer.hikari.HikariDataSource                                     - HikariPool-1 - Shutdown initiated...
+16:13:07.686 [SpringApplicationShutdownHook ] INFO  com.zaxxer.hikari.HikariDataSource                                     - HikariPool-1 - Shutdown completed.
